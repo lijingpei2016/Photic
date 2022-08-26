@@ -22,13 +22,14 @@ static NSString * const cellName = @"cellName";
 
 @implementation ViewController
 
+#pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     NSLog(@"hello，photic");
     
-    self.demoList = @[@"镜头",@"相册"];
-    self.demoPageNameList = @[@"PHOCameraViewController",@""];
+    self.demoList = @[@"镜头", @"相册"];
+    self.demoPageNameList = @[@"PCCameraViewController", @"PCEditViewController"];
     
     [self.view addSubview:self.tableView];
     
@@ -37,8 +38,8 @@ static NSString * const cellName = @"cellName";
     
 }
 
+#pragma mark - Utility
 - (void)requestAuthorization{
-    
     [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
         dispatch_async(dispatch_get_main_queue(), ^(){
             if (!granted) {
@@ -78,6 +79,7 @@ static NSString * const cellName = @"cellName";
     }];
 }
 
+#pragma mark - Delegate
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.demoList.count;
 }
@@ -105,6 +107,7 @@ static NSString * const cellName = @"cellName";
     [self.navigationController pushViewController:vc animated:YES];
 }
 
+#pragma mark - Property
 - (UITableView *)tableView {
     if (_tableView == nil) {
         _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStyleGrouped];

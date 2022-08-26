@@ -33,6 +33,7 @@
 //码率
 #define kVideoBitRatePreset 3.6 //7.2 10s、1080p、30帧视频的比特率大概为15000kbps，大小为18MB-19MB左右
 
+#define kDefaultVideoPrefixPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 
 #define CLog(format, ...) LogInternal(kLevelInfo, "photic", __FILENAME__, __LINE__, __FUNCTION__, @"]\n", format, ##__VA_ARGS__)
 

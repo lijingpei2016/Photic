@@ -5,11 +5,11 @@
 //  Created by LJP on 2022/8/22.
 //
 
-#import "PHOCameraViewController.h"
+#import "PCCameraViewController.h"
 #import "GPUImageBeautifyFilter.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 
-@interface PHOCameraViewController ()
+@interface PCCameraViewController ()
 
 @property (nonatomic, strong) GPUImageStillCamera *mCamera;
 @property (nonatomic, strong) GPUImageView *mGPUImageView;
@@ -36,7 +36,7 @@
 
 @end
 
-@implementation PHOCameraViewController
+@implementation PCCameraViewController
 
 #pragma mark - Lifecycle
 - (void)viewDidLoad {

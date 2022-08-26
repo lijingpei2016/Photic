@@ -3,10 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16AAEB5D28B8706500D4EAE1 /* PCEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AAEB5C28B8706500D4EAE1 /* PCEditViewController.m */; };
+		16AAEB6128B8A6E300D4EAE1 /* PCVideoCropItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AAEB6028B8A6E300D4EAE1 /* PCVideoCropItem.m */; };
+		16AAEB6528B8ABF700D4EAE1 /* PCImageToVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AAEB6428B8ABF700D4EAE1 /* PCImageToVideo.m */; };
+		16AAEB6828B8AC3C00D4EAE1 /* UIImage+ResizeSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AAEB6628B8AC3B00D4EAE1 /* UIImage+ResizeSize.m */; };
 		16BFFCFE28B33013000A1FE6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BFFCFD28B33013000A1FE6 /* AppDelegate.m */; };
 		16BFFD0428B33013000A1FE6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BFFD0328B33013000A1FE6 /* ViewController.m */; };
 		16BFFD0728B33013000A1FE6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16BFFD0528B33013000A1FE6 /* Main.storyboard */; };
@@ -14,7 +18,7 @@
 		16BFFD0F28B33016000A1FE6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BFFD0E28B33016000A1FE6 /* main.m */; };
 		16BFFD1928B33017000A1FE6 /* PhoticTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BFFD1828B33017000A1FE6 /* PhoticTests.m */; };
 		16BFFD2428B33017000A1FE6 /* PhoticUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BFFD2328B33017000A1FE6 /* PhoticUITests.m */; };
-		16BFFD3428B333E0000A1FE6 /* PHOCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BFFD3328B333E0000A1FE6 /* PHOCameraViewController.m */; };
+		16BFFD3428B333E0000A1FE6 /* PCCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BFFD3328B333E0000A1FE6 /* PCCameraViewController.m */; };
 		16BFFE9528B35F02000A1FE6 /* lookup_soft_elegance_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 16BFFD4128B35F00000A1FE6 /* lookup_soft_elegance_2.png */; };
 		16BFFE9628B35F02000A1FE6 /* lookup_soft_elegance_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 16BFFD4228B35F00000A1FE6 /* lookup_soft_elegance_1.png */; };
 		16BFFE9728B35F02000A1FE6 /* lookup.png in Resources */ = {isa = PBXBuildFile; fileRef = 16BFFD4328B35F00000A1FE6 /* lookup.png */; };
@@ -206,6 +210,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16AAEB5B28B8706500D4EAE1 /* PCEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCEditViewController.h; sourceTree = "<group>"; };
+		16AAEB5C28B8706500D4EAE1 /* PCEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCEditViewController.m; sourceTree = "<group>"; };
+		16AAEB5F28B8A6E300D4EAE1 /* PCVideoCropItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCVideoCropItem.h; sourceTree = "<group>"; };
+		16AAEB6028B8A6E300D4EAE1 /* PCVideoCropItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCVideoCropItem.m; sourceTree = "<group>"; };
+		16AAEB6328B8ABF700D4EAE1 /* PCImageToVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCImageToVideo.h; sourceTree = "<group>"; };
+		16AAEB6428B8ABF700D4EAE1 /* PCImageToVideo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCImageToVideo.m; sourceTree = "<group>"; };
+		16AAEB6628B8AC3B00D4EAE1 /* UIImage+ResizeSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+ResizeSize.m"; sourceTree = "<group>"; };
+		16AAEB6728B8AC3C00D4EAE1 /* UIImage+ResizeSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+ResizeSize.h"; sourceTree = "<group>"; };
 		16BFFCF928B33013000A1FE6 /* Photic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Photic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16BFFCFC28B33013000A1FE6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		16BFFCFD28B33013000A1FE6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -221,8 +233,8 @@
 		16BFFD1F28B33017000A1FE6 /* PhoticUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhoticUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16BFFD2328B33017000A1FE6 /* PhoticUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoticUITests.m; sourceTree = "<group>"; };
 		16BFFD2528B33017000A1FE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		16BFFD3228B333E0000A1FE6 /* PHOCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PHOCameraViewController.h; sourceTree = "<group>"; };
-		16BFFD3328B333E0000A1FE6 /* PHOCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PHOCameraViewController.m; sourceTree = "<group>"; };
+		16BFFD3228B333E0000A1FE6 /* PCCameraViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCameraViewController.h; sourceTree = "<group>"; };
+		16BFFD3328B333E0000A1FE6 /* PCCameraViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCameraViewController.m; sourceTree = "<group>"; };
 		16BFFD3C28B33743000A1FE6 /* PhoticHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoticHeader.h; sourceTree = "<group>"; };
 		16BFFD4128B35F00000A1FE6 /* lookup_soft_elegance_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_soft_elegance_2.png; sourceTree = "<group>"; };
 		16BFFD4228B35F00000A1FE6 /* lookup_soft_elegance_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lookup_soft_elegance_1.png; sourceTree = "<group>"; };
@@ -598,8 +610,36 @@
 				92B2037C4C1657A1358A7C75 /* Pods-Photic.debug.xcconfig */,
 				C73DB27EB7B60AEB696D325B /* Pods-Photic.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		16AAEB5A28B86FE400D4EAE1 /* EditViewController */ = {
+			isa = PBXGroup;
+			children = (
+				16AAEB5B28B8706500D4EAE1 /* PCEditViewController.h */,
+				16AAEB5C28B8706500D4EAE1 /* PCEditViewController.m */,
+			);
+			path = EditViewController;
+			sourceTree = "<group>";
+		};
+		16AAEB5E28B89E8F00D4EAE1 /* VideoEdit */ = {
+			isa = PBXGroup;
+			children = (
+				16AAEB5F28B8A6E300D4EAE1 /* PCVideoCropItem.h */,
+				16AAEB6028B8A6E300D4EAE1 /* PCVideoCropItem.m */,
+			);
+			path = VideoEdit;
+			sourceTree = "<group>";
+		};
+		16AAEB6228B8ABD600D4EAE1 /* ImageToVideo */ = {
+			isa = PBXGroup;
+			children = (
+				16AAEB6328B8ABF700D4EAE1 /* PCImageToVideo.h */,
+				16AAEB6428B8ABF700D4EAE1 /* PCImageToVideo.m */,
+				16AAEB6728B8AC3C00D4EAE1 /* UIImage+ResizeSize.h */,
+				16AAEB6628B8AC3B00D4EAE1 /* UIImage+ResizeSize.m */,
+			);
+			path = ImageToVideo;
 			sourceTree = "<group>";
 		};
 		16BFFCF028B33013000A1FE6 = {
@@ -658,8 +698,8 @@
 			children = (
 				16BFFF4128B360FD000A1FE6 /* GPUImageBeautifyFilter.h */,
 				16BFFF4028B360FD000A1FE6 /* GPUImageBeautifyFilter.m */,
-				16BFFD3228B333E0000A1FE6 /* PHOCameraViewController.h */,
-				16BFFD3328B333E0000A1FE6 /* PHOCameraViewController.m */,
+				16BFFD3228B333E0000A1FE6 /* PCCameraViewController.h */,
+				16BFFD3328B333E0000A1FE6 /* PCCameraViewController.m */,
 			);
 			path = CameraViewController;
 			sourceTree = "<group>";
@@ -680,9 +720,12 @@
 		16BFFD3628B33416000A1FE6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				16BFFD3D28B35EED000A1FE6 /* Trilateral */,
 				16BFFD3528B33401000A1FE6 /* Main */,
+				16BFFD3D28B35EED000A1FE6 /* Trilateral */,
 				16BFFD3128B3339A000A1FE6 /* CameraViewController */,
+				16AAEB5A28B86FE400D4EAE1 /* EditViewController */,
+				16AAEB5E28B89E8F00D4EAE1 /* VideoEdit */,
+				16AAEB6228B8ABD600D4EAE1 /* ImageToVideo */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1278,7 +1321,7 @@
 				16BFFF3428B35F03000A1FE6 /* GPUImageChromaKeyBlendFilter.m in Sources */,
 				16BFFF0F28B35F03000A1FE6 /* GPUImageRGBOpeningFilter.m in Sources */,
 				16BFFEBA28B35F03000A1FE6 /* GPUImageJFAVoronoiFilter.m in Sources */,
-				16BFFD3428B333E0000A1FE6 /* PHOCameraViewController.m in Sources */,
+				16BFFD3428B333E0000A1FE6 /* PCCameraViewController.m in Sources */,
 				16BFFEA428B35F03000A1FE6 /* GPUImageSoftEleganceFilter.m in Sources */,
 				16BFFF1B28B35F03000A1FE6 /* GPUImageLocalBinaryPatternFilter.m in Sources */,
 				16BFFF0D28B35F03000A1FE6 /* GPUImageBuffer.m in Sources */,
@@ -1305,6 +1348,7 @@
 				16BFFF0E28B35F03000A1FE6 /* GPUImageThresholdSketchFilter.m in Sources */,
 				16BFFF3128B35F03000A1FE6 /* GPUImageExposureFilter.m in Sources */,
 				16BFFED528B35F03000A1FE6 /* GPUImagePixellateFilter.m in Sources */,
+				16AAEB6128B8A6E300D4EAE1 /* PCVideoCropItem.m in Sources */,
 				16BFFEC328B35F03000A1FE6 /* GPUImageAlphaBlendFilter.m in Sources */,
 				16BFFF1328B35F03000A1FE6 /* GPUImageLowPassFilter.m in Sources */,
 				16BFFF1028B35F03000A1FE6 /* GPUImageWhiteBalanceFilter.m in Sources */,
@@ -1316,6 +1360,7 @@
 				16BFFF2E28B35F03000A1FE6 /* GPUImageKuwaharaFilter.m in Sources */,
 				16BFFEE228B35F03000A1FE6 /* GPUImageDirectionalSobelEdgeDetectionFilter.m in Sources */,
 				16BFFEE928B35F03000A1FE6 /* GPUImageFramebuffer.m in Sources */,
+				16AAEB6828B8AC3C00D4EAE1 /* UIImage+ResizeSize.m in Sources */,
 				16BFFF0928B35F03000A1FE6 /* GPUImageVoronoiConsumerFilter.m in Sources */,
 				16BFFEEA28B35F03000A1FE6 /* GPUImageLaplacianFilter.m in Sources */,
 				16BFFEC028B35F03000A1FE6 /* GPUImageBilateralFilter.m in Sources */,
@@ -1324,6 +1369,7 @@
 				16BFFEC128B35F03000A1FE6 /* GPUImageHistogramGenerator.m in Sources */,
 				16BFFF1D28B35F03000A1FE6 /* GPUImageScreenBlendFilter.m in Sources */,
 				16BFFECA28B35F03000A1FE6 /* GPUImageZoomBlurFilter.m in Sources */,
+				16AAEB6528B8ABF700D4EAE1 /* PCImageToVideo.m in Sources */,
 				16BFFF0628B35F03000A1FE6 /* GPUImageHalftoneFilter.m in Sources */,
 				16BFFF0A28B35F03000A1FE6 /* GPUImageMovieComposition.m in Sources */,
 				16BFFEB528B35F03000A1FE6 /* GPUImagePixellatePositionFilter.m in Sources */,
@@ -1381,6 +1427,7 @@
 				16BFFF0528B35F03000A1FE6 /* GPUImageHazeFilter.m in Sources */,
 				16BFFEFD28B35F03000A1FE6 /* GPUImageSwirlFilter.m in Sources */,
 				16BFFEFC28B35F03000A1FE6 /* GPUImageMaskFilter.m in Sources */,
+				16AAEB5D28B8706500D4EAE1 /* PCEditViewController.m in Sources */,
 				16BFFF2F28B35F03000A1FE6 /* GPUImageSingleComponentGaussianBlurFilter.m in Sources */,
 				16BFFEA828B35F03000A1FE6 /* GPUImageWeakPixelInclusionFilter.m in Sources */,
 				16BFFED828B35F03000A1FE6 /* GPUImageSphereRefractionFilter.m in Sources */,

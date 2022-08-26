@@ -19,13 +19,11 @@
 @property (nonatomic, strong) GPUImageLookupFilter *mLookupFilter;
 @property (nonatomic, strong) GPUImagePicture *mLookupImageSource;
 
-@property (nonatomic, strong) GPUImageMovieWriter *mMovieWriter; //录制与合成视频的类
+@property (nonatomic, strong) GPUImageMovieWriter *mMovieWriter;
 @property (nonatomic, strong) NSURL *mOutputURL;
 
 /// 镜头缩放系数
 @property (nonatomic, assign) CGFloat cameraZoom;
-@property (nonatomic, assign) BOOL changeZooming;
-
 
 ///焦点框
 @property (nonatomic, strong) UIView *focusView;
@@ -40,40 +38,16 @@
 
 @implementation PHOCameraViewController
 
+#pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self.view addSubview:self.mGPUImageView];
-    [self.view addSubview:self.videoBtn];
-    [self.view addSubview:self.pictureBtn];
-    [self.view addSubview:self.focusView];
-    
+    [self setupUI];
     [self setupCamera];
 }
 
-- (void)setupCamera {
 
-    //初始化滤镜
-    self.mBeautyFilter = [[GPUImageBeautifyFilter alloc]init];
-    self.mBrightFilter = [[GPUImageBrightnessFilter alloc]init];
-    self.mBrightFilter.brightness = 0.01;
-    
-    [self.mCamera addTarget:self.mBeautyFilter];
-    [self.mBeautyFilter addTarget:self.mBrightFilter];
-    [self.mBrightFilter addTarget:self.mGPUImageView];
-        
-    [self setupMovieWriter];
-
-    [self.mCamera startCameraCapture];
-}
-
-- (void)setupMovieWriter {
-    self.mMovieWriter = [[GPUImageMovieWriter alloc] initWithMovieURL:self.mOutputURL size:CGSizeMake(1080.0, 1920.0)];
-    self.mMovieWriter.encodingLiveVideo = YES;
-    self.mCamera.audioEncodingTarget = self.mMovieWriter;
-}
-
-
+#pragma mark - Action
 ///改变颜色滤镜效果
 - (void)changeLookupFilter {
 
@@ -101,23 +75,16 @@
 
     view.hidden = NO;
 
-    [UIView animateWithDuration:0.15f delay:0.0f options:UIViewAnimationOptionCurveEaseInOut animations:^{
+    [UIView animateWithDuration:0.2 delay:0.0 options:UIViewAnimationOptionCurveEaseInOut animations:^{
         view.layer.transform = CATransform3DMakeScale(0.5, 0.5, 1.0);
     } completion:^(BOOL complete) {
-        double delayInSeconds = 0.5f;
+        double delayInSeconds = 0.5;
         dispatch_time_t popTime = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(delayInSeconds * NSEC_PER_SEC));
         dispatch_after(popTime, dispatch_get_main_queue(), ^(void) {
-                           view.hidden = YES;
-                           view.transform = CGAffineTransformIdentity;
-                       });
+           view.hidden = YES;
+           view.transform = CGAffineTransformIdentity;
+        });
     }];
-}
-
-///计算点的位置
-- (CGPoint)captureDevicePointForPoint:(CGPoint)point {
-    CGPoint point1;
-    point1 = CGPointMake(point.x / kSCREEN_WIDTH, point.y / kSCREEN_HEIGHT);
-    return point1;
 }
 
 ///双击手势
@@ -139,10 +106,9 @@
     recognizer.scale = 1.0;
 }
 
-//拍照
 - (void)clickPictureBtn {
     NSLog(@"拍照");
-    [self.mCamera capturePhotoAsImageProcessedUpToFilter:self.mBrightFilter withCompletionHandler:^(UIImage *processedImage, NSError *error) {        
+    [self.mCamera capturePhotoAsImageProcessedUpToFilter:self.mBrightFilter withCompletionHandler:^(UIImage *processedImage, NSError *error) {
         if (error) {
             NSLog(@"拍照失败");
             return;
@@ -151,7 +117,6 @@
     }];
 }
 
-//视频
 - (void)clickVideoBtn {
     
     self.videoBtn.selected = !self.videoBtn.selected;
@@ -174,13 +139,49 @@
             [weakSelf setupMovieWriter];
             
             UISaveVideoAtPathToSavedPhotosAlbum(self.mOutputURL.path, nil, nil, nil);
-        
         }];
     }
-    
 }
 
--(GPUImageStillCamera *)mCamera {
+#pragma mark - Utility
+///计算点的位置
+- (CGPoint)captureDevicePointForPoint:(CGPoint)point {
+    CGPoint point1;
+    point1 = CGPointMake(point.x / kSCREEN_WIDTH, point.y / kSCREEN_HEIGHT);
+    return point1;
+}
+
+#pragma mark - Private Method
+- (void)setupUI {
+    [self.view addSubview:self.mGPUImageView];
+    [self.view addSubview:self.videoBtn];
+    [self.view addSubview:self.pictureBtn];
+    [self.view addSubview:self.focusView];
+}
+
+- (void)setupCamera {
+
+    self.mBeautyFilter = [[GPUImageBeautifyFilter alloc]init];
+    self.mBrightFilter = [[GPUImageBrightnessFilter alloc]init];
+    self.mBrightFilter.brightness = 0.01;
+    
+    [self.mCamera addTarget:self.mBeautyFilter];
+    [self.mBeautyFilter addTarget:self.mBrightFilter];
+    [self.mBrightFilter addTarget:self.mGPUImageView];
+        
+    [self setupMovieWriter];
+
+    [self.mCamera startCameraCapture];
+}
+
+- (void)setupMovieWriter {
+    self.mMovieWriter = [[GPUImageMovieWriter alloc] initWithMovieURL:self.mOutputURL size:CGSizeMake(1080.0, 1920.0)];
+    self.mMovieWriter.encodingLiveVideo = YES;
+    self.mCamera.audioEncodingTarget = self.mMovieWriter;
+}
+
+#pragma mark - Property
+- (GPUImageStillCamera *)mCamera {
     if (_mCamera == nil) {
         _mCamera = [[GPUImageStillCamera alloc]initWithSessionPreset:AVCaptureSessionPreset1920x1080 cameraPosition:AVCaptureDevicePositionBack];
         _mCamera.horizontallyMirrorFrontFacingCamera = YES;

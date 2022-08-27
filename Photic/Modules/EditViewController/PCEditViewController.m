@@ -44,18 +44,24 @@
 
 - (void)playbackFinished:(NSNotification *)notification {
     NSLog(@"视频播放完成通知");
-
+    [self.mPlayerItem seekToTime:kCMTimeZero];
+    [self.mPlayer play];
 }
 
 #pragma mark - Private Method
 - (void)playVideo {
     self.mGPUMovie = [[GPUImageMovie alloc] initWithPlayerItem:self.mPlayerItem];
     self.mGPUMovie.playAtActualSpeed = YES;
+    self.mGPUMovie.shouldRepeat = YES;
     [self.mGPUMovie addTarget:self.mGPUImageView];
     [self.mGPUMovie startProcessing];
 
     self.mPlayer = [[AVPlayer alloc] init];
     [self.mPlayer replaceCurrentItemWithPlayerItem:self.mPlayerItem];
+    if (self.playbackTimeObserver == nil) {
+        [self addPlaybackTimeObserver];
+    }
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:self.mPlayer.currentItem];
     [self.mPlayer play];
 }
 
@@ -87,8 +93,8 @@
 - (void)addPlaybackTimeObserver {
     __weak typeof(self) weakSelf = self;
     self.playbackTimeObserver = [self.mPlayer addPeriodicTimeObserverForInterval:CMTimeMake(1, 100) queue:NULL usingBlock:^(CMTime time) {
-        
-        
+        CGFloat curTime = CMTimeGetSeconds(time);
+        NSLog(@"curTime == %lf",curTime);
     }];
 }
 
@@ -105,8 +111,10 @@
     NSURL *outputURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@.mp4", kDefaultVideoPrefixPath, [self getCurrentTime]]];
     [PCImageToVideo createVideoWithImage:selectImage outputURL:outputURL completeBlock:^(BOOL success) {
         if (success) {
-            self.mPlayerItem = [[AVPlayerItem alloc] initWithURL:outputURL];
-            [self playVideo];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                self.mPlayerItem = [[AVPlayerItem alloc] initWithURL:outputURL];
+                [self playVideo];
+            });
         }
     }];
 }

@@ -66,4 +66,7 @@ extern NSString *const kGPUImageColorSwizzlingFragmentShaderString;
 - (void)processAudioBuffer:(CMSampleBufferRef)audioBuffer;
 - (void)enableSynchronizationCallbacks;
 
+// change
+- (void)setNewVideoSize:(CGSize)newSize;
+
 @end

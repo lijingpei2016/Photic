@@ -7,6 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16115D6628BF8CB2002375D4 /* FilterNameAndType.plist in Resources */ = {isa = PBXBuildFile; fileRef = 16115D6528BF8CB2002375D4 /* FilterNameAndType.plist */; };
+		16115D7628BF8D20002375D4 /* meiwei.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D6828BF8D20002375D4 /* meiwei.png */; };
+		16115D7728BF8D20002375D4 /* kisskiss.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D6928BF8D20002375D4 /* kisskiss.png */; };
+		16115D7828BF8D20002375D4 /* jiari.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D6A28BF8D20002375D4 /* jiari.png */; };
+		16115D7928BF8D20002375D4 /* amatorka.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D6B28BF8D20002375D4 /* amatorka.png */; };
+		16115D7A28BF8D20002375D4 /* tianmei.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D6C28BF8D20002375D4 /* tianmei.png */; };
+		16115D7B28BF8D20002375D4 /* chulian.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D6D28BF8D20002375D4 /* chulian.png */; };
+		16115D7C28BF8D20002375D4 /* origin.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D6E28BF8D20002375D4 /* origin.png */; };
+		16115D7D28BF8D20002375D4 /* miss_etikate.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D6F28BF8D20002375D4 /* miss_etikate.png */; };
+		16115D7E28BF8D20002375D4 /* yangqi.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D7028BF8D20002375D4 /* yangqi.png */; };
+		16115D7F28BF8D20002375D4 /* sweety.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D7128BF8D20002375D4 /* sweety.png */; };
+		16115D8028BF8D20002375D4 /* clean.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D7228BF8D20002375D4 /* clean.png */; };
+		16115D8128BF8D20002375D4 /* jugeng.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D7328BF8D20002375D4 /* jugeng.png */; };
+		16115D8228BF8D20002375D4 /* xiaosenlin.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D7428BF8D20002375D4 /* xiaosenlin.png */; };
+		16115D8328BF8D20002375D4 /* makalong.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D7528BF8D20002375D4 /* makalong.png */; };
+		165607F028BDD6CA00FE4A89 /* PCCameraMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165607EF28BDD6CA00FE4A89 /* PCCameraMainView.m */; };
 		16AAEB5D28B8706500D4EAE1 /* PCEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AAEB5C28B8706500D4EAE1 /* PCEditViewController.m */; };
 		16AAEB6128B8A6E300D4EAE1 /* PCVideoCropItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AAEB6028B8A6E300D4EAE1 /* PCVideoCropItem.m */; };
 		16AAEB6528B8ABF700D4EAE1 /* PCImageToVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AAEB6428B8ABF700D4EAE1 /* PCImageToVideo.m */; };
@@ -210,6 +226,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		16115D6528BF8CB2002375D4 /* FilterNameAndType.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = FilterNameAndType.plist; sourceTree = "<group>"; };
+		16115D6828BF8D20002375D4 /* meiwei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meiwei.png; sourceTree = "<group>"; };
+		16115D6928BF8D20002375D4 /* kisskiss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kisskiss.png; sourceTree = "<group>"; };
+		16115D6A28BF8D20002375D4 /* jiari.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jiari.png; sourceTree = "<group>"; };
+		16115D6B28BF8D20002375D4 /* amatorka.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = amatorka.png; sourceTree = "<group>"; };
+		16115D6C28BF8D20002375D4 /* tianmei.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tianmei.png; sourceTree = "<group>"; };
+		16115D6D28BF8D20002375D4 /* chulian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chulian.png; sourceTree = "<group>"; };
+		16115D6E28BF8D20002375D4 /* origin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = origin.png; sourceTree = "<group>"; };
+		16115D6F28BF8D20002375D4 /* miss_etikate.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = miss_etikate.png; sourceTree = "<group>"; };
+		16115D7028BF8D20002375D4 /* yangqi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yangqi.png; sourceTree = "<group>"; };
+		16115D7128BF8D20002375D4 /* sweety.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sweety.png; sourceTree = "<group>"; };
+		16115D7228BF8D20002375D4 /* clean.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clean.png; sourceTree = "<group>"; };
+		16115D7328BF8D20002375D4 /* jugeng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jugeng.png; sourceTree = "<group>"; };
+		16115D7428BF8D20002375D4 /* xiaosenlin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiaosenlin.png; sourceTree = "<group>"; };
+		16115D7528BF8D20002375D4 /* makalong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makalong.png; sourceTree = "<group>"; };
+		165607EE28BDD6CA00FE4A89 /* PCCameraMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCameraMainView.h; sourceTree = "<group>"; };
+		165607EF28BDD6CA00FE4A89 /* PCCameraMainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCameraMainView.m; sourceTree = "<group>"; };
 		16AAEB5B28B8706500D4EAE1 /* PCEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCEditViewController.h; sourceTree = "<group>"; };
 		16AAEB5C28B8706500D4EAE1 /* PCEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCEditViewController.m; sourceTree = "<group>"; };
 		16AAEB5F28B8A6E300D4EAE1 /* PCVideoCropItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCVideoCropItem.h; sourceTree = "<group>"; };
@@ -613,6 +646,27 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		16115D6728BF8D20002375D4 /* Lookup */ = {
+			isa = PBXGroup;
+			children = (
+				16115D6828BF8D20002375D4 /* meiwei.png */,
+				16115D6928BF8D20002375D4 /* kisskiss.png */,
+				16115D6A28BF8D20002375D4 /* jiari.png */,
+				16115D6B28BF8D20002375D4 /* amatorka.png */,
+				16115D6C28BF8D20002375D4 /* tianmei.png */,
+				16115D6D28BF8D20002375D4 /* chulian.png */,
+				16115D6E28BF8D20002375D4 /* origin.png */,
+				16115D6F28BF8D20002375D4 /* miss_etikate.png */,
+				16115D7028BF8D20002375D4 /* yangqi.png */,
+				16115D7128BF8D20002375D4 /* sweety.png */,
+				16115D7228BF8D20002375D4 /* clean.png */,
+				16115D7328BF8D20002375D4 /* jugeng.png */,
+				16115D7428BF8D20002375D4 /* xiaosenlin.png */,
+				16115D7528BF8D20002375D4 /* makalong.png */,
+			);
+			path = Lookup;
+			sourceTree = "<group>";
+		};
 		16AAEB5A28B86FE400D4EAE1 /* EditViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -640,6 +694,35 @@
 				16AAEB6628B8AC3B00D4EAE1 /* UIImage+ResizeSize.m */,
 			);
 			path = ImageToVideo;
+			sourceTree = "<group>";
+		};
+		16BCA80B28BDC0DF008C7DF7 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				16115D6728BF8D20002375D4 /* Lookup */,
+				16115D6528BF8CB2002375D4 /* FilterNameAndType.plist */,
+				16BFFF4128B360FD000A1FE6 /* GPUImageBeautifyFilter.h */,
+				16BFFF4028B360FD000A1FE6 /* GPUImageBeautifyFilter.m */,
+			);
+			path = Filter;
+			sourceTree = "<group>";
+		};
+		16BCA80C28BDC0E8008C7DF7 /* VC */ = {
+			isa = PBXGroup;
+			children = (
+				16BFFD3228B333E0000A1FE6 /* PCCameraViewController.h */,
+				16BFFD3328B333E0000A1FE6 /* PCCameraViewController.m */,
+			);
+			path = VC;
+			sourceTree = "<group>";
+		};
+		16BCA80D28BDC0F3008C7DF7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				165607EE28BDD6CA00FE4A89 /* PCCameraMainView.h */,
+				165607EF28BDD6CA00FE4A89 /* PCCameraMainView.m */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		16BFFCF028B33013000A1FE6 = {
@@ -696,10 +779,9 @@
 		16BFFD3128B3339A000A1FE6 /* CameraViewController */ = {
 			isa = PBXGroup;
 			children = (
-				16BFFF4128B360FD000A1FE6 /* GPUImageBeautifyFilter.h */,
-				16BFFF4028B360FD000A1FE6 /* GPUImageBeautifyFilter.m */,
-				16BFFD3228B333E0000A1FE6 /* PCCameraViewController.h */,
-				16BFFD3328B333E0000A1FE6 /* PCCameraViewController.m */,
+				16BCA80D28BDC0F3008C7DF7 /* View */,
+				16BCA80C28BDC0E8008C7DF7 /* VC */,
+				16BCA80B28BDC0DF008C7DF7 /* Filter */,
 			);
 			path = CameraViewController;
 			sourceTree = "<group>";
@@ -1232,11 +1314,26 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16115D7B28BF8D20002375D4 /* chulian.png in Resources */,
+				16115D8228BF8D20002375D4 /* xiaosenlin.png in Resources */,
 				16BFFD0928B33016000A1FE6 /* Assets.xcassets in Resources */,
+				16115D7828BF8D20002375D4 /* jiari.png in Resources */,
 				16BFFE9628B35F02000A1FE6 /* lookup_soft_elegance_1.png in Resources */,
 				16BFFE9728B35F02000A1FE6 /* lookup.png in Resources */,
+				16115D8128BF8D20002375D4 /* jugeng.png in Resources */,
+				16115D7D28BF8D20002375D4 /* miss_etikate.png in Resources */,
+				16115D7728BF8D20002375D4 /* kisskiss.png in Resources */,
+				16115D8328BF8D20002375D4 /* makalong.png in Resources */,
+				16115D7628BF8D20002375D4 /* meiwei.png in Resources */,
 				16BFFE9828B35F02000A1FE6 /* lookup_amatorka.png in Resources */,
+				16115D7A28BF8D20002375D4 /* tianmei.png in Resources */,
+				16115D8028BF8D20002375D4 /* clean.png in Resources */,
+				16115D7928BF8D20002375D4 /* amatorka.png in Resources */,
+				16115D7E28BF8D20002375D4 /* yangqi.png in Resources */,
+				16115D7F28BF8D20002375D4 /* sweety.png in Resources */,
 				16BFFD0728B33013000A1FE6 /* Main.storyboard in Resources */,
+				16115D6628BF8CB2002375D4 /* FilterNameAndType.plist in Resources */,
+				16115D7C28BF8D20002375D4 /* origin.png in Resources */,
 				16BFFE9528B35F02000A1FE6 /* lookup_soft_elegance_2.png in Resources */,
 				16BFFE9928B35F02000A1FE6 /* lookup_miss_etikate.png in Resources */,
 			);
@@ -1308,6 +1405,7 @@
 				16BFFF3B28B35F03000A1FE6 /* GPUImageLightenBlendFilter.m in Sources */,
 				16BFFED928B35F03000A1FE6 /* GPUImageRGBClosingFilter.m in Sources */,
 				16BFFD0428B33013000A1FE6 /* ViewController.m in Sources */,
+				165607F028BDD6CA00FE4A89 /* PCCameraMainView.m in Sources */,
 				16BFFF1F28B35F03000A1FE6 /* GPUImageGlassSphereFilter.m in Sources */,
 				16BFFEE828B35F03000A1FE6 /* GPUImageColorDodgeBlendFilter.m in Sources */,
 				16BFFF3D28B35F03000A1FE6 /* GPUImageDarkenBlendFilter.m in Sources */,

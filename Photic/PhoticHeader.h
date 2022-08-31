@@ -31,10 +31,20 @@
 #define kWIDTH_750RATE(value)      ((value)*([[UIScreen mainScreen] bounds].size.width / 750.0))
 
 //码率
-#define kVideoBitRatePreset 3.6 //7.2 10s、1080p、30帧视频的比特率大概为15000kbps，大小为18MB-19MB左右
+#define kVideoBitRatePreset 7.2 //7.2 10s、1080p、30帧视频的比特率大概为15000kbps，大小为18MB-19MB左右
 
 #define kDefaultVideoPrefixPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 
 #define CLog(format, ...) LogInternal(kLevelInfo, "photic", __FILENAME__, __LINE__, __FUNCTION__, @"]\n", format, ##__VA_ARGS__)
 
 #endif
+
+
+//比例枚举
+#define PCScale916 (1)
+#define PCScale169 (2)
+#define PCScale11  (3)
+#define PCScale43  (4)
+#define PCScale34  (5)
+
+

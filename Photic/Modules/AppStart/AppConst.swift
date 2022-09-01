@@ -18,7 +18,7 @@ let safeTop = UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0
 let safeBottom = UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0
 
 // 导航栏高度（不包含状态栏）
-let NavBarHeight = 44.0
+let NavBarHeight: CGFloat = 44.0
 // 状态栏高度
 let StatusBarH = UIApplication.shared.statusBarFrame.height
 // 导航栏高度（包含状态栏）

@@ -9,9 +9,6 @@ import UIKit
 import SnapKit
 
 class MainEditView: UIView {
-    let headerH = 44.0
-    let bottomH = 44.0
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -23,29 +20,30 @@ class MainEditView: UIView {
     }
     
     func initSubViews() {
-        let previewH = ScreenHeight - safeTop - safeBottom - headerH - bottomH
-
         let header = EditViewHeader()
+        header.backgroundColor = .blue
         addSubview(header)
         
         let footer = EditViewFooter()
+        footer.backgroundColor = .red
         addSubview(footer)
         
         let preview = EditPreview()
+        preview.backgroundColor = .black
         addSubview(preview)
         
-        let controlContainer = EditControlContainer()
+        let controlContainer = ControlContainer()
+        controlContainer.backgroundColor = .gray
         addSubview(controlContainer)
         
         header.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
-            make.height.equalTo(headerH)
+            make.height.equalTo(editViewHeaderH)
         }
         
         footer.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
-            make.height.equalTo(bottomH)
-            make.bottom.equalTo(safeBottom)
+            make.left.bottom.right.equalToSuperview()
+            make.height.equalTo(editViewFooterH)
         }
         
         preview.snp.makeConstraints { make in

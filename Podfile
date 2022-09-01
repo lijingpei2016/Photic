@@ -4,6 +4,6 @@ platform :ios, '11.0'
 
 target 'Photic' do
   pod 'MBProgressHUD'     
-  pod 'Masonry'            
+  pod 'SnapKit'
   pod 'TZImagePickerController'
 end

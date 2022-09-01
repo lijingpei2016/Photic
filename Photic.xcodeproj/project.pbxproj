@@ -205,6 +205,15 @@
 		16BFFF3C28B35F03000A1FE6 /* GPUImageCGAColorspaceFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BFFE8E28B35F02000A1FE6 /* GPUImageCGAColorspaceFilter.m */; };
 		16BFFF3D28B35F03000A1FE6 /* GPUImageDarkenBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BFFE9228B35F02000A1FE6 /* GPUImageDarkenBlendFilter.m */; };
 		16BFFF4228B360FD000A1FE6 /* GPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BFFF4028B360FD000A1FE6 /* GPUImageBeautifyFilter.m */; };
+		8D0AAE4B28BB5F0B00CC71FE /* MainEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE4A28BB5F0B00CC71FE /* MainEditView.swift */; };
+		8D0AAE4D28BB5F5A00CC71FE /* EditViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE4C28BB5F5A00CC71FE /* EditViewHeader.swift */; };
+		8D0AAE4F28BB5F7E00CC71FE /* EditViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE4E28BB5F7E00CC71FE /* EditViewFooter.swift */; };
+		8D0AAE5128BB60BA00CC71FE /* EditPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5028BB60BA00CC71FE /* EditPreview.swift */; };
+		8D0AAE5328BB619E00CC71FE /* ControlContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5228BB619E00CC71FE /* ControlContainer.swift */; };
+		8D0AAE5628BB65DF00CC71FE /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5528BB65DF00CC71FE /* AppConst.swift */; };
+		8D0AAE5928BB6A7100CC71FE /* ControlToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5828BB6A7100CC71FE /* ControlToolBar.swift */; };
+		8D0AAE5B28BB6A9D00CC71FE /* TimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5A28BB6A9D00CC71FE /* TimeLine.swift */; };
+		8D0AAE5D28BB6B2800CC71FE /* ControlTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5C28BB6B2800CC71FE /* ControlTrackView.swift */; };
 		E277B6235A031FCF11A91015 /* libPods-Photic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 498659CB7C38B9ABA68370B1 /* libPods-Photic.a */; };
 /* End PBXBuildFile section */
 
@@ -607,6 +616,16 @@
 		16BFFF4028B360FD000A1FE6 /* GPUImageBeautifyFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUImageBeautifyFilter.m; sourceTree = "<group>"; };
 		16BFFF4128B360FD000A1FE6 /* GPUImageBeautifyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageBeautifyFilter.h; sourceTree = "<group>"; };
 		498659CB7C38B9ABA68370B1 /* libPods-Photic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Photic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8D0AAE4728BB5ED900CC71FE /* Photic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Photic-Bridging-Header.h"; sourceTree = "<group>"; };
+		8D0AAE4A28BB5F0B00CC71FE /* MainEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEditView.swift; sourceTree = "<group>"; };
+		8D0AAE4C28BB5F5A00CC71FE /* EditViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewHeader.swift; sourceTree = "<group>"; };
+		8D0AAE4E28BB5F7E00CC71FE /* EditViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewFooter.swift; sourceTree = "<group>"; };
+		8D0AAE5028BB60BA00CC71FE /* EditPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPreview.swift; sourceTree = "<group>"; };
+		8D0AAE5228BB619E00CC71FE /* ControlContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlContainer.swift; sourceTree = "<group>"; };
+		8D0AAE5528BB65DF00CC71FE /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
+		8D0AAE5828BB6A7100CC71FE /* ControlToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlToolBar.swift; sourceTree = "<group>"; };
+		8D0AAE5A28BB6A9D00CC71FE /* TimeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLine.swift; sourceTree = "<group>"; };
+		8D0AAE5C28BB6B2800CC71FE /* ControlTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlTrackView.swift; sourceTree = "<group>"; };
 		92B2037C4C1657A1358A7C75 /* Pods-Photic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photic.debug.xcconfig"; path = "Target Support Files/Pods-Photic/Pods-Photic.debug.xcconfig"; sourceTree = "<group>"; };
 		C73DB27EB7B60AEB696D325B /* Pods-Photic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photic.release.xcconfig"; path = "Target Support Files/Pods-Photic/Pods-Photic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -672,6 +691,7 @@
 			children = (
 				16AAEB5B28B8706500D4EAE1 /* PCEditViewController.h */,
 				16AAEB5C28B8706500D4EAE1 /* PCEditViewController.m */,
+				8D0AAE4628BB5EA400CC71FE /* View */,
 			);
 			path = EditViewController;
 			sourceTree = "<group>";
@@ -752,6 +772,7 @@
 			children = (
 				16BFFD3628B33416000A1FE6 /* Modules */,
 				16BFFD0828B33016000A1FE6 /* Assets.xcassets */,
+				8D0AAE4728BB5ED900CC71FE /* Photic-Bridging-Header.h */,
 				16BFFD0D28B33016000A1FE6 /* Info.plist */,
 				16BFFD3C28B33743000A1FE6 /* PhoticHeader.h */,
 			);
@@ -802,6 +823,7 @@
 		16BFFD3628B33416000A1FE6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8D0AAE5428BB658F00CC71FE /* AppStart */,
 				16BFFD3528B33401000A1FE6 /* Main */,
 				16BFFD3D28B35EED000A1FE6 /* Trilateral */,
 				16BFFD3128B3339A000A1FE6 /* CameraViewController */,
@@ -1202,6 +1224,37 @@
 			path = Framework;
 			sourceTree = "<group>";
 		};
+		8D0AAE4628BB5EA400CC71FE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8D0AAE4A28BB5F0B00CC71FE /* MainEditView.swift */,
+				8D0AAE4C28BB5F5A00CC71FE /* EditViewHeader.swift */,
+				8D0AAE4E28BB5F7E00CC71FE /* EditViewFooter.swift */,
+				8D0AAE5028BB60BA00CC71FE /* EditPreview.swift */,
+				8D0AAE5728BB6A1100CC71FE /* Container */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8D0AAE5428BB658F00CC71FE /* AppStart */ = {
+			isa = PBXGroup;
+			children = (
+				8D0AAE5528BB65DF00CC71FE /* AppConst.swift */,
+			);
+			path = AppStart;
+			sourceTree = "<group>";
+		};
+		8D0AAE5728BB6A1100CC71FE /* Container */ = {
+			isa = PBXGroup;
+			children = (
+				8D0AAE5228BB619E00CC71FE /* ControlContainer.swift */,
+				8D0AAE5828BB6A7100CC71FE /* ControlToolBar.swift */,
+				8D0AAE5C28BB6B2800CC71FE /* ControlTrackView.swift */,
+				8D0AAE5A28BB6A9D00CC71FE /* TimeLine.swift */,
+			);
+			path = Container;
+			sourceTree = "<group>";
+		};
 		F45FDC826B025DD3F1B65F4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1278,6 +1331,7 @@
 				TargetAttributes = {
 					16BFFCF828B33013000A1FE6 = {
 						CreatedOnToolsVersion = 12.5.1;
+						LastSwiftMigration = 1340;
 					};
 					16BFFD1328B33017000A1FE6 = {
 						CreatedOnToolsVersion = 12.5.1;
@@ -1442,14 +1496,17 @@
 				16BFFEB128B35F03000A1FE6 /* GPUImageCannyEdgeDetectionFilter.m in Sources */,
 				16BFFEF828B35F03000A1FE6 /* GPUImagePoissonBlendFilter.m in Sources */,
 				16BFFF2728B35F03000A1FE6 /* GPUImageAddBlendFilter.m in Sources */,
+				8D0AAE5B28BB6A9D00CC71FE /* TimeLine.swift in Sources */,
 				16BFFECF28B35F03000A1FE6 /* GPUImageErosionFilter.m in Sources */,
 				16BFFF0E28B35F03000A1FE6 /* GPUImageThresholdSketchFilter.m in Sources */,
 				16BFFF3128B35F03000A1FE6 /* GPUImageExposureFilter.m in Sources */,
 				16BFFED528B35F03000A1FE6 /* GPUImagePixellateFilter.m in Sources */,
+				8D0AAE5928BB6A7100CC71FE /* ControlToolBar.swift in Sources */,
 				16AAEB6128B8A6E300D4EAE1 /* PCVideoCropItem.m in Sources */,
 				16BFFEC328B35F03000A1FE6 /* GPUImageAlphaBlendFilter.m in Sources */,
 				16BFFF1328B35F03000A1FE6 /* GPUImageLowPassFilter.m in Sources */,
 				16BFFF1028B35F03000A1FE6 /* GPUImageWhiteBalanceFilter.m in Sources */,
+				8D0AAE4D28BB5F5A00CC71FE /* EditViewHeader.swift in Sources */,
 				16BFFEED28B35F03000A1FE6 /* GPUImageRGBFilter.m in Sources */,
 				16BFFEFE28B35F03000A1FE6 /* GPUImageSoftLightBlendFilter.m in Sources */,
 				16BFFEEC28B35F03000A1FE6 /* GPUImageSourceOverBlendFilter.m in Sources */,
@@ -1465,6 +1522,7 @@
 				16BFFF1428B35F03000A1FE6 /* GPUImageMonochromeFilter.m in Sources */,
 				16BFFED328B35F03000A1FE6 /* GPUImageOpacityFilter.m in Sources */,
 				16BFFEC128B35F03000A1FE6 /* GPUImageHistogramGenerator.m in Sources */,
+				8D0AAE4F28BB5F7E00CC71FE /* EditViewFooter.swift in Sources */,
 				16BFFF1D28B35F03000A1FE6 /* GPUImageScreenBlendFilter.m in Sources */,
 				16BFFECA28B35F03000A1FE6 /* GPUImageZoomBlurFilter.m in Sources */,
 				16AAEB6528B8ABF700D4EAE1 /* PCImageToVideo.m in Sources */,
@@ -1511,13 +1569,17 @@
 				16BFFEA528B35F03000A1FE6 /* GPUImageTwoPassFilter.m in Sources */,
 				16BFFEEB28B35F03000A1FE6 /* GPUImageBoxBlurFilter.m in Sources */,
 				16BFFEB228B35F03000A1FE6 /* GPUImageFASTCornerDetectionFilter.m in Sources */,
+				8D0AAE5128BB60BA00CC71FE /* EditPreview.swift in Sources */,
 				16BFFEE128B35F03000A1FE6 /* GPUImageOutput.m in Sources */,
 				16BFFEAC28B35F03000A1FE6 /* GPUImageEmbossFilter.m in Sources */,
 				16BFFF2C28B35F03000A1FE6 /* GPUImageCrosshatchFilter.m in Sources */,
 				16BFFEA328B35F03000A1FE6 /* GPUImageHighPassFilter.m in Sources */,
 				16BFFEAE28B35F03000A1FE6 /* GPUImageGrayscaleFilter.m in Sources */,
+				8D0AAE5D28BB6B2800CC71FE /* ControlTrackView.swift in Sources */,
+				8D0AAE4B28BB5F0B00CC71FE /* MainEditView.swift in Sources */,
 				16BFFF3A28B35F03000A1FE6 /* GPUImageStillCamera.m in Sources */,
 				16BFFE9A28B35F03000A1FE6 /* GPUImageColorBurnBlendFilter.m in Sources */,
+				8D0AAE5328BB619E00CC71FE /* ControlContainer.swift in Sources */,
 				16BFFF2528B35F03000A1FE6 /* GPUImageHueBlendFilter.m in Sources */,
 				16BFFEC928B35F03000A1FE6 /* GPUImageMultiplyBlendFilter.m in Sources */,
 				16BFFF1E28B35F03000A1FE6 /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
@@ -1529,6 +1591,7 @@
 				16BFFF2F28B35F03000A1FE6 /* GPUImageSingleComponentGaussianBlurFilter.m in Sources */,
 				16BFFEA828B35F03000A1FE6 /* GPUImageWeakPixelInclusionFilter.m in Sources */,
 				16BFFED828B35F03000A1FE6 /* GPUImageSphereRefractionFilter.m in Sources */,
+				8D0AAE5628BB65DF00CC71FE /* AppConst.swift in Sources */,
 				16BFFEC828B35F03000A1FE6 /* GPUImageHarrisCornerDetectionFilter.m in Sources */,
 				16BFFE9B28B35F03000A1FE6 /* GPUImageTwoPassTextureSamplingFilter.m in Sources */,
 				16BFFEFA28B35F03000A1FE6 /* GPUImageGaussianSelectiveBlurFilter.m in Sources */,
@@ -1740,8 +1803,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N92TEW36P2;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = F4R94ZX7MA;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Photic/PhoticHeader.h";
 				INFOPLIST_FILE = Photic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1749,11 +1814,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LJP.Photic;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gzinf.LJP.Photic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "gzinf Dev PP";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Photic/Photic-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -1764,6 +1833,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N92TEW36P2;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Photic/PhoticHeader.h";
@@ -1773,11 +1843,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.LJP.Photic;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gzinf.LJP.Photic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "Photic/Photic-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -1785,6 +1857,7 @@
 		16BFFD2C28B33017000A1FE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N92TEW36P2;
@@ -1805,6 +1878,7 @@
 		16BFFD2D28B33017000A1FE6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N92TEW36P2;
@@ -1825,6 +1899,7 @@
 		16BFFD2F28B33017000A1FE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N92TEW36P2;
 				INFOPLIST_FILE = PhoticUITests/Info.plist;
@@ -1843,6 +1918,7 @@
 		16BFFD3028B33017000A1FE6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N92TEW36P2;
 				INFOPLIST_FILE = PhoticUITests/Info.plist;

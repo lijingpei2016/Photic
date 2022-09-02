@@ -26,7 +26,8 @@ typedef enum {
 - (void)focusAtPoint:(CGPoint)point;
 - (void)rotateCamera;
 - (void)setCameraZoomFactor:(CGFloat)zoom;
-
+- (void)leftSlip;
+- (void)rightSlip;
 
 @end
 

@@ -44,7 +44,7 @@
 
 - (void)playbackFinished:(NSNotification *)notification {
     NSLog(@"视频播放完成通知");
-    [self.mPlayerItem seekToTime:kCMTimeZero];
+    [self.mPlayerItem seekToTime:kCMTimeZero completionHandler:nil];
     [self.mPlayer play];
 }
 
@@ -91,7 +91,7 @@
 
 // 添加播放器监听回调
 - (void)addPlaybackTimeObserver {
-    __weak typeof(self) weakSelf = self;
+//    __weak typeof(self) weakSelf = self;
     self.playbackTimeObserver = [self.mPlayer addPeriodicTimeObserverForInterval:CMTimeMake(1, 100) queue:NULL usingBlock:^(CMTime time) {
         CGFloat curTime = CMTimeGetSeconds(time);
         NSLog(@"curTime == %lf",curTime);

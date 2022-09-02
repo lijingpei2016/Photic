@@ -21,6 +21,8 @@
 
 @property (nonatomic, strong) GPUImageLookupFilter *mLookupFilter;
 @property (nonatomic, strong) GPUImagePicture *mLookupImageSource;
+@property (nonatomic, strong) NSMutableArray *mLookupImageArr;
+@property (nonatomic, assign) NSInteger currentLookupImageIndex;
 
 @property (nonatomic, strong) GPUImageMovieWriter *mMovieWriter;
 @property (nonatomic, strong) NSURL *mOutputURL;
@@ -61,12 +63,17 @@
     self.mBeautyFilter = [[GPUImageBeautifyFilter alloc] init];
     self.mBrightFilter = [[GPUImageBrightnessFilter alloc] init];
     self.mBrightFilter.brightness = 0.01;
+    self.mLookupFilter = [[GPUImageLookupFilter alloc]init];
+    self.mLookupFilter.intensity = 0.5;
+    [self setupLookupFilter];
+    [self changeLookupFilter];
     self.mCropFilter = [[GPUImageCropFilter alloc] init];
     self.mCropFilter.cropRegion = CGRectMake(0, 0, 1, 1);
     
     [self.mCamera addTarget:self.mBeautyFilter];
     [self.mBeautyFilter addTarget:self.mBrightFilter];
-    [self.mBrightFilter addTarget:self.mCropFilter];
+    [self.mBrightFilter addTarget:self.mLookupFilter];
+    [self.mLookupFilter addTarget:self.mCropFilter];
     [self.mCropFilter addTarget:self.mGPUImageView];
         
     [self setupMovieWriter];
@@ -78,6 +85,36 @@
     self.mMovieWriter = [[GPUImageMovieWriter alloc] initWithMovieURL:self.mOutputURL size:CGSizeMake(1080.0, 1920.0)];
     self.mMovieWriter.encodingLiveVideo = YES;
     self.mCamera.audioEncodingTarget = self.mMovieWriter;
+}
+
+- (void)setupLookupFilter {
+    self.mLookupImageArr = [[NSMutableArray alloc] init];
+    NSString *file = [[NSBundle mainBundle] pathForResource:@"FilterNameAndType" ofType:@"plist"];
+    NSDictionary *filterDict = [NSDictionary dictionaryWithContentsOfFile:file];
+    NSArray *allFilterArr = filterDict[@"cameraFilter"];
+    for (NSDictionary *tempDict in allFilterArr) {
+        NSString *imageName = tempDict[@"imageName"];
+        [self.mLookupImageArr addObject:imageName];
+    }
+}
+
+///改变颜色滤镜效果
+- (void)changeLookupFilter {
+    NSString *imageName = self.mLookupImageArr[self.currentLookupImageIndex];
+
+    if (_mLookupImageSource) {
+        [self.mLookupImageSource removeAllTargets];
+    }
+
+    self.mLookupImageSource = [[GPUImagePicture alloc] initWithImage:[UIImage imageNamed:imageName]];
+    [self.mLookupImageSource addTarget:self.mLookupFilter atTextureLocation:1];
+
+    @try {
+        [self.mLookupImageSource processImageWithCompletionHandler:^{
+        }];
+    } @catch (NSException *exception) {
+        NSLog(@"crash---> %s, %@", __func__, exception.description);
+    }
 }
 
 #pragma mark - PCCameraMainViewDelegate
@@ -150,6 +187,25 @@
 
 - (void)setCameraZoomFactor:(CGFloat)zoom {
     [self.mCamera setCameraZoomFactor:zoom];
+}
+
+- (void)leftSlip {
+    if (self.currentLookupImageIndex == (self.mLookupImageArr.count - 1)) {
+        self.currentLookupImageIndex = 0;
+    } else {
+        self.currentLookupImageIndex = self.currentLookupImageIndex + 1;
+    }
+
+    [self changeLookupFilter];
+}
+
+- (void)rightSlip {
+    if (self.currentLookupImageIndex == 0) {
+        self.currentLookupImageIndex = (NSInteger)self.mLookupImageArr.count - 1;
+    } else {
+        self.currentLookupImageIndex = self.currentLookupImageIndex - 1;
+    }
+    [self changeLookupFilter];
 }
 
 #pragma mark - Property

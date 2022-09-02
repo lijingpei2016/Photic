@@ -75,16 +75,25 @@
     }
 }
 
-///改变颜色滤镜效果
-- (void)changeLookupFilter {
-
-}
-
 ///左右滑动手势
 - (void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
-
+    self.gpuImageView.userInteractionEnabled = NO;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        self.gpuImageView.userInteractionEnabled = YES;
+    });
+    
+    if (recognizer.direction == UISwipeGestureRecognizerDirectionRight) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(rightSlip)]) {
+            [self.delegate rightSlip];
+        }
+    }
+    
+    if (recognizer.direction == UISwipeGestureRecognizerDirectionLeft) {
+        if (self.delegate && [self.delegate respondsToSelector:@selector(leftSlip)]) {
+            [self.delegate leftSlip];
+        }
+    }
 }
-
 
 - (void)clickOnGPUImageView:(UIGestureRecognizer *)recognizer {
     if (self.delegate && [self.delegate respondsToSelector:@selector(focusAtPoint:)]) {

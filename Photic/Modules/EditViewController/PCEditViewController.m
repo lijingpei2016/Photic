@@ -9,6 +9,7 @@
 #import <TZImagePickerController/TZImagePickerController.h>
 #import "PCImageToVideo.h"
 #import "GPUImage.h"
+#import "Photic-Swift.h"
 
 @interface PCEditViewController ()<TZImagePickerControllerDelegate>
 
@@ -24,6 +25,11 @@
 @implementation PCEditViewController
 
 #pragma mark - Lifecycle
+- (void)loadView {
+    UIView *showView = [[MainEditView alloc]init];
+    self.view = showView;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -38,6 +44,13 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].idleTimerDisabled = YES;
+    self.navigationController.navigationBar.hidden = YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.hidden = NO;
+
 }
 
 #pragma mark - NSNotification

@@ -214,6 +214,9 @@
 		8D0AAE5928BB6A7100CC71FE /* ControlToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5828BB6A7100CC71FE /* ControlToolBar.swift */; };
 		8D0AAE5B28BB6A9D00CC71FE /* TimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5A28BB6A9D00CC71FE /* TimeLine.swift */; };
 		8D0AAE5D28BB6B2800CC71FE /* ControlTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5C28BB6B2800CC71FE /* ControlTrackView.swift */; };
+		8D0AAF0928C4C9E200CC71FE /* AssertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAF0828C4C9E200CC71FE /* AssertHelper.swift */; };
+		8D0AAF0B28C4D39B00CC71FE /* EditAssertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAF0A28C4D39B00CC71FE /* EditAssertViewController.swift */; };
+		8D0AAF0D28C4EE3B00CC71FE /* EditViewObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAF0C28C4EE3B00CC71FE /* EditViewObserver.swift */; };
 		8DFF693228C109BD007AB743 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF693128C109BD007AB743 /* SegmentView.swift */; };
 		8DFF693628C10BB1007AB743 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF693528C10BB1007AB743 /* String+Extension.swift */; };
 		8DFF693B28C10C2C007AB743 /* SegmentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF693A28C10C2C007AB743 /* SegmentViewCell.swift */; };
@@ -630,6 +633,9 @@
 		8D0AAE5828BB6A7100CC71FE /* ControlToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlToolBar.swift; sourceTree = "<group>"; };
 		8D0AAE5A28BB6A9D00CC71FE /* TimeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLine.swift; sourceTree = "<group>"; };
 		8D0AAE5C28BB6B2800CC71FE /* ControlTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlTrackView.swift; sourceTree = "<group>"; };
+		8D0AAF0828C4C9E200CC71FE /* AssertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertHelper.swift; sourceTree = "<group>"; };
+		8D0AAF0A28C4D39B00CC71FE /* EditAssertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAssertViewController.swift; sourceTree = "<group>"; };
+		8D0AAF0C28C4EE3B00CC71FE /* EditViewObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewObserver.swift; sourceTree = "<group>"; };
 		8DFF693128C109BD007AB743 /* SegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
 		8DFF693528C10BB1007AB743 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		8DFF693A28C10C2C007AB743 /* SegmentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewCell.swift; sourceTree = "<group>"; };
@@ -699,6 +705,8 @@
 			children = (
 				16AAEB5B28B8706500D4EAE1 /* PCEditViewController.h */,
 				16AAEB5C28B8706500D4EAE1 /* PCEditViewController.m */,
+				8D0AAF0A28C4D39B00CC71FE /* EditAssertViewController.swift */,
+				8D0AAF0728C4C9C400CC71FE /* Manager */,
 				8D0AAE4628BB5EA400CC71FE /* View */,
 			);
 			path = EditViewController;
@@ -1267,6 +1275,15 @@
 			path = Container;
 			sourceTree = "<group>";
 		};
+		8D0AAF0728C4C9C400CC71FE /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				8D0AAF0828C4C9E200CC71FE /* AssertHelper.swift */,
+				8D0AAF0C28C4EE3B00CC71FE /* EditViewObserver.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		8DFF693328C10B94007AB743 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
@@ -1521,6 +1538,7 @@
 				16BFFEB328B35F03000A1FE6 /* GPUImageHistogramFilter.m in Sources */,
 				16BFFEF028B35F03000A1FE6 /* GPUImageContext.m in Sources */,
 				16BFFF2028B35F03000A1FE6 /* GPUImageMotionBlurFilter.m in Sources */,
+				8D0AAF0928C4C9E200CC71FE /* AssertHelper.swift in Sources */,
 				16BFFEB128B35F03000A1FE6 /* GPUImageCannyEdgeDetectionFilter.m in Sources */,
 				16BFFEF828B35F03000A1FE6 /* GPUImagePoissonBlendFilter.m in Sources */,
 				16BFFF2728B35F03000A1FE6 /* GPUImageAddBlendFilter.m in Sources */,
@@ -1563,6 +1581,7 @@
 				16BFFF0428B35F03000A1FE6 /* GPUImageContrastFilter.m in Sources */,
 				16BFFECE28B35F03000A1FE6 /* GPUImageOpeningFilter.m in Sources */,
 				16BFFEDC28B35F03000A1FE6 /* GLProgram.m in Sources */,
+				8D0AAF0D28C4EE3B00CC71FE /* EditViewObserver.swift in Sources */,
 				16BFFEB728B35F03000A1FE6 /* GPUImageHistogramEqualizationFilter.m in Sources */,
 				16BFFD0F28B33016000A1FE6 /* main.m in Sources */,
 				16BFFEDB28B35F03000A1FE6 /* GPUImageLineGenerator.m in Sources */,
@@ -1661,6 +1680,7 @@
 				16BFFF3028B35F03000A1FE6 /* GPUImageMosaicFilter.m in Sources */,
 				16BFFEF628B35F03000A1FE6 /* GPUImageToneCurveFilter.m in Sources */,
 				16BFFF1528B35F03000A1FE6 /* GPUImageHoughTransformLineDetector.m in Sources */,
+				8D0AAF0B28C4D39B00CC71FE /* EditAssertViewController.swift in Sources */,
 				16BFFED028B35F03000A1FE6 /* GPUImageToonFilter.m in Sources */,
 				16BFFF0128B35F03000A1FE6 /* GPUImageColorBlendFilter.m in Sources */,
 				16BFFE9D28B35F03000A1FE6 /* GPUImageThresholdEdgeDetectionFilter.m in Sources */,

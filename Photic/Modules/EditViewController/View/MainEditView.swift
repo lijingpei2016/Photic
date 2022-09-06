@@ -7,8 +7,36 @@
 
 import UIKit
 import SnapKit
+import AVFoundation
 
 class MainEditView: UIView {
+    var trackViewdidScroll: ((_ scale: Float) -> Void)?
+
+    lazy var header: EditViewHeader = {
+        let header = EditViewHeader()
+        header.backgroundColor = .blue
+        return header
+    }()
+    
+    let footer: EditViewFooter = {
+        let footer = EditViewFooter()
+        footer.backgroundColor = .red
+        return footer
+    }()
+    
+    lazy var preview: EditPreview = {
+        let preview = EditPreview()
+        preview.backgroundColor = .black
+        return preview
+    }()
+    
+    lazy var controlContainer: ControlContainer = {
+        let controlContainer = ControlContainer()
+        controlContainer.backgroundColor = .gray
+        
+        return controlContainer
+    }()
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -20,20 +48,13 @@ class MainEditView: UIView {
     }
     
     func initSubViews() {
-        let header = EditViewHeader()
-        header.backgroundColor = .blue
+        
         addSubview(header)
         
-        let footer = EditViewFooter()
-        footer.backgroundColor = .red
         addSubview(footer)
         
-        let preview = EditPreview()
-        preview.backgroundColor = .black
         addSubview(preview)
         
-        let controlContainer = ControlContainer()
-        controlContainer.backgroundColor = .gray
         addSubview(controlContainer)
         
         header.snp.makeConstraints { make in
@@ -57,5 +78,10 @@ class MainEditView: UIView {
             make.left.right.equalToSuperview()
             make.bottom.equalTo(footer.snp.top)
         }
+    }
+    
+    @objc func updatePreview(playLayer: AVPlayerLayer) {
+        playLayer.frame = preview.bounds
+        preview.layer.addSublayer(playLayer)
     }
 }

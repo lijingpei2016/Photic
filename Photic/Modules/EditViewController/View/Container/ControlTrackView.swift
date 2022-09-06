@@ -9,18 +9,8 @@ import UIKit
 import SnapKit
 
 class ControlTrackView: UIView {
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        
-        initSubViews()
-    }
     
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func initSubViews() {
+    private lazy var content: UIScrollView = {
         let content = UIScrollView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: controlViewH))
         content.showsVerticalScrollIndicator = false
         content.showsHorizontalScrollIndicator = false
@@ -31,10 +21,36 @@ class ControlTrackView: UIView {
             content.contentInsetAdjustmentBehavior = .never
         }
         content.contentInset = controlViewContentInset
+        content.delegate = self
+        return content
+    }()
+    
+    lazy var segmentView: SegmentView = {
+        let segmentView = SegmentView(frame: CGRect(x: 0, y: segmentViewTop, width: 0, height: segmentViewH))
+        segmentView.backgroundColor = .white
+        return segmentView
+    }()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        
+        initSubViews()
+        
+        EditViewObserver.observer.segmentImagesDidChange = { [self] count in
+            self.content.contentOffset = CGPoint(x: -controlViewContentInset.left, y: 0)
+            self.segmentView.frame = CGRect(x: 0, y: segmentViewTop, width: Double(count) * segmentViewH, height: segmentViewH)
+            self.content.contentSize = CGSize(width: Double(Float(count)) * segmentViewH, height: 0)
+        }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func initSubViews() {
+        
         addSubview(content)
         
-        let segmentView = SegmentView(frame: CGRect(x: 0, y: segmentViewTop, width: 100, height: segmentViewH))
-        segmentView.backgroundColor = .white
         content.addSubview(segmentView)
         content.contentSize = CGSize(width: segmentView.frame.width, height: 0)
 
@@ -50,4 +66,14 @@ class ControlTrackView: UIView {
         }
     }
 
+}
+
+extension ControlTrackView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("contentOffset.x --- \(scrollView.contentOffset.x)")
+
+        let scale = abs((scrollView.contentOffset.x + controlViewContentInset.left) / scrollView.contentSize.width)
+        print("scale --- \(scale)")
+        EditViewObserver.observer.trackViewDidScroll?(scale)
+    }
 }

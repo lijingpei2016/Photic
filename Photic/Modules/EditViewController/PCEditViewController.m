@@ -20,25 +20,47 @@
 @property (nonatomic, strong) GPUImageMovie *mGPUMovie;
 @property (nonatomic, strong) id playbackTimeObserver;
 
+@property (nonatomic, strong) MainEditView *mainEditView;
+@property (nonatomic, strong) AssertHelper *assertHelper;
+
 @end
 
 @implementation PCEditViewController
 
 #pragma mark - Lifecycle
-//- (void)loadView {
-//    UIView *showView = [[MainEditView alloc]init];
-//    self.view = showView;
-//}
+- (void)loadView {
+    UIView *showView = [[MainEditView alloc]init];
+    self.view = showView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor blackColor];
-    
+        
     UIBarButtonItem *photosBarButton = [[UIBarButtonItem alloc] initWithTitle:@"添加素材" style:UIBarButtonItemStylePlain target:self action:@selector(showPhotoVC)];
     self.navigationItem.rightBarButtonItems = @[photosBarButton];
     
-    [self.view addSubview:self.mGPUImageView];
+//    [self.view addSubview:self.mGPUImageView];
+    [self setupEditView];
+}
+
+- (void)setupEditView {
+    MainEditView *mainEditView = [[MainEditView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    [self.view addSubview:mainEditView];
+    _mainEditView = mainEditView;
+    
+    [EditViewObserver observer].trackViewDidScroll = ^(CGFloat scale) {
+        if (self.assertHelper.getAssertSeconds == 0) {
+            return;
+        }
+        
+        NSLog(@"seek time --- %f", self.assertHelper.getAssertSeconds * scale);
+        
+        CMTime time = [self.assertHelper timeForAssertWithSeconds:self.assertHelper.getAssertSeconds * scale];
+        CMTimeShow(time);
+        [self.assertHelper seekTo:time];
+    };
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -77,6 +99,16 @@
     }
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackFinished:) name:AVPlayerItemDidPlayToEndTimeNotification object:self.mPlayer.currentItem];
     [self.mPlayer play];
+}
+
+- (void)updateEditview {
+    AVPlayerLayer *playLayer = [self.assertHelper getPreviewLayer];
+    [self.mainEditView updatePreviewWithPlayLayer:playLayer];
+    
+    [self.assertHelper generatorImagesWithCompletion:^(NSArray<UIImage *> * _Nonnull images ) {
+        EditViewObserver.observer.generatorImageCompletion(images);
+        EditViewObserver.observer.segmentImagesDidChange(images.count);
+    }];
 }
 
 #pragma mark - Public Method
@@ -134,24 +166,34 @@
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingVideo:(UIImage *)coverImage sourceAssets:(PHAsset *)asset {
     NSLog(@"选择了视频");
 
-    PHVideoRequestOptions *options = [[PHVideoRequestOptions alloc] init];
-    options.version = PHVideoRequestOptionsVersionOriginal;
-    options.deliveryMode = PHVideoRequestOptionsDeliveryModeAutomatic;
-    options.networkAccessAllowed = YES;
-
+//    PHVideoRequestOptions *options = [[PHVideoRequestOptions alloc] init];
+//    options.version = PHVideoRequestOptionsVersionOriginal;
+//    options.deliveryMode = PHVideoRequestOptionsDeliveryModeAutomatic;
+//    options.networkAccessAllowed = YES;
+//
+//    __weak typeof(self) weakSelf = self;
+//    [[PHImageManager defaultManager] requestAVAssetForVideo:asset options:options resultHandler:^(AVAsset *avasset, AVAudioMix *audioMix, NSDictionary *info) {
+//        AVURLAsset *videoAsset = (AVURLAsset *)avasset;
+//
+//        if (videoAsset == nil) {
+//            return;
+//        }
+//
+//        NSLog(@"videoAsset.URL == %@",videoAsset.URL);
+//
+//        AVURLAsset *asset = [AVURLAsset URLAssetWithURL:videoAsset.URL options:@{ AVURLAssetPreferPreciseDurationAndTimingKey: @YES }];
+//        weakSelf.mPlayerItem = [[AVPlayerItem alloc] initWithAsset:asset];
+//        [weakSelf playVideo];
+//    }];
+    
+    PHVideoRequestOptions *options = [[PHVideoRequestOptions alloc]init];
     __weak typeof(self) weakSelf = self;
-    [[PHImageManager defaultManager] requestAVAssetForVideo:asset options:options resultHandler:^(AVAsset *avasset, AVAudioMix *audioMix, NSDictionary *info) {
-        AVURLAsset *videoAsset = (AVURLAsset *)avasset;
-
-        if (videoAsset == nil) {
-            return;
-        }
-        
-        NSLog(@"videoAsset.URL == %@",videoAsset.URL);
-        
-        AVURLAsset *asset = [AVURLAsset URLAssetWithURL:videoAsset.URL options:@{ AVURLAssetPreferPreciseDurationAndTimingKey: @YES }];
-        weakSelf.mPlayerItem = [[AVPlayerItem alloc] initWithAsset:asset];
-        [weakSelf playVideo];
+    [[PHImageManager defaultManager] requestAVAssetForVideo:asset options:nil resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
+        __weak typeof(weakSelf) strongSelf = weakSelf;
+        dispatch_async(dispatch_get_main_queue(), ^{
+            strongSelf.assertHelper = [[AssertHelper alloc] initWithAssert:asset];
+            [strongSelf updateEditview];
+        });
     }];
 }
 

@@ -25,10 +25,10 @@
 @implementation PCEditViewController
 
 #pragma mark - Lifecycle
-- (void)loadView {
-    UIView *showView = [[MainEditView alloc]init];
-    self.view = showView;
-}
+//- (void)loadView {
+//    UIView *showView = [[MainEditView alloc]init];
+//    self.view = showView;
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,13 +44,12 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].idleTimerDisabled = YES;
-    self.navigationController.navigationBar.hidden = YES;
+//    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     self.navigationController.navigationBar.hidden = NO;
-
 }
 
 #pragma mark - NSNotification
@@ -67,7 +66,9 @@
     self.mGPUMovie.playAtActualSpeed = YES;
     self.mGPUMovie.shouldRepeat = YES;
     [self.mGPUMovie addTarget:self.mGPUImageView];
-    [self.mGPUMovie startProcessing];
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.mGPUMovie startProcessing];
+    });
 
     self.mPlayer = [[AVPlayer alloc] init];
     [self.mPlayer replaceCurrentItemWithPlayerItem:self.mPlayerItem];
@@ -106,8 +107,8 @@
 - (void)addPlaybackTimeObserver {
 //    __weak typeof(self) weakSelf = self;
     self.playbackTimeObserver = [self.mPlayer addPeriodicTimeObserverForInterval:CMTimeMake(1, 100) queue:NULL usingBlock:^(CMTime time) {
-        CGFloat curTime = CMTimeGetSeconds(time);
-        NSLog(@"curTime == %lf",curTime);
+//        CGFloat curTime = CMTimeGetSeconds(time);
+//        NSLog(@"curTime == %lf",curTime);
     }];
 }
 
@@ -124,17 +125,34 @@
     NSURL *outputURL = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/%@.mp4", kDefaultVideoPrefixPath, [self getCurrentTime]]];
     [PCImageToVideo createVideoWithImage:selectImage outputURL:outputURL completeBlock:^(BOOL success) {
         if (success) {
-            dispatch_async(dispatch_get_main_queue(), ^{
-                self.mPlayerItem = [[AVPlayerItem alloc] initWithURL:outputURL];
-                [self playVideo];
-            });
+            self.mPlayerItem = [[AVPlayerItem alloc] initWithURL:outputURL];
+            [self playVideo];
         }
     }];
 }
 
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingVideo:(UIImage *)coverImage sourceAssets:(PHAsset *)asset {
-    //查看视频是否大于3秒
+    NSLog(@"选择了视频");
 
+    PHVideoRequestOptions *options = [[PHVideoRequestOptions alloc] init];
+    options.version = PHVideoRequestOptionsVersionOriginal;
+    options.deliveryMode = PHVideoRequestOptionsDeliveryModeAutomatic;
+    options.networkAccessAllowed = YES;
+
+    __weak typeof(self) weakSelf = self;
+    [[PHImageManager defaultManager] requestAVAssetForVideo:asset options:options resultHandler:^(AVAsset *avasset, AVAudioMix *audioMix, NSDictionary *info) {
+        AVURLAsset *videoAsset = (AVURLAsset *)avasset;
+
+        if (videoAsset == nil) {
+            return;
+        }
+        
+        NSLog(@"videoAsset.URL == %@",videoAsset.URL);
+        
+        AVURLAsset *asset = [AVURLAsset URLAssetWithURL:videoAsset.URL options:@{ AVURLAssetPreferPreciseDurationAndTimingKey: @YES }];
+        weakSelf.mPlayerItem = [[AVPlayerItem alloc] initWithAsset:asset];
+        [weakSelf playVideo];
+    }];
 }
 
 

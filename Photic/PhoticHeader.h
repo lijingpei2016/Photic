@@ -47,4 +47,8 @@
 #define PCScale43  (4)
 #define PCScale34  (5)
 
+// 视频
+#define degreesToRadians(x) (M_PI * x / 180.0f)
+
+
 

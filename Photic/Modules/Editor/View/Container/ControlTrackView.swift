@@ -11,7 +11,7 @@ import SnapKit
 class ControlTrackView: UIView {
     
     private lazy var content: UIScrollView = {
-        let content = UIScrollView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: controlViewH))
+        let content = UIScrollView(frame: CGRect(x: 0, y: 0, width: ScreenWidth, height: controlTrackViewH))
         content.showsVerticalScrollIndicator = false
         content.showsHorizontalScrollIndicator = false
         content.alwaysBounceHorizontal = true
@@ -25,8 +25,8 @@ class ControlTrackView: UIView {
         return content
     }()
     
-    lazy var segmentView: SegmentView = {
-        let segmentView = SegmentView(frame: CGRect(x: 0, y: segmentViewTop, width: 0, height: segmentViewH))
+    lazy var segmentView: VideoSegmentView = {
+        let segmentView = VideoSegmentView(frame: CGRect(x: 0, y: segmentViewTop, width: 0, height: segmentViewH))
         segmentView.backgroundColor = .white
         return segmentView
     }()
@@ -36,11 +36,11 @@ class ControlTrackView: UIView {
         
         initSubViews()
         
-        EditViewObserver.observer.segmentImagesDidChange = { [self] count in
-            self.content.contentOffset = CGPoint(x: -controlViewContentInset.left, y: 0)
-            self.segmentView.frame = CGRect(x: 0, y: segmentViewTop, width: Double(count) * segmentViewH, height: segmentViewH)
-            self.content.contentSize = CGSize(width: Double(Float(count)) * segmentViewH, height: 0)
-        }
+//        EditViewObserver.observer.segmentImagesDidChange = { [self] count in
+//            self.content.contentOffset = CGPoint(x: -controlViewContentInset.left, y: 0)
+//            self.segmentView.frame = CGRect(x: 0, y: segmentViewTop, width: Double(count) * segmentViewH, height: segmentViewH)
+//            self.content.contentSize = CGSize(width: Double(Float(count)) * segmentViewH, height: 0)
+//        }
     }
     
     required init?(coder: NSCoder) {
@@ -59,7 +59,7 @@ class ControlTrackView: UIView {
         addSubview(centerLine)
 
         centerLine.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.centerX.equalToSuperview()
             make.top.equalTo(centerLineTop)
             make.width.equalTo(2)
             make.height.equalTo(centerLineH)
@@ -74,6 +74,6 @@ extension ControlTrackView: UIScrollViewDelegate {
 
         let scale = abs((scrollView.contentOffset.x + controlViewContentInset.left) / scrollView.contentSize.width)
         print("scale --- \(scale)")
-        EditViewObserver.observer.trackViewDidScroll?(scale)
+//        EditViewObserver.observer.trackViewDidScroll?(scale)
     }
 }

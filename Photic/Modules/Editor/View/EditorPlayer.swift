@@ -7,6 +7,6 @@
 
 import UIKit
 
-class EditPreview: UIView {
+class EditorPlayer: UIView {
 
 }

@@ -1,13 +1,13 @@
 //
-//  EditViewHeader.swift
+//  MediaTimelineRuler.swift
 //  Photic
 //
-//  Created by lanht on 2022/8/28.
+//  Created by lanht on 2022/10/6.
 //
 
 import UIKit
 
-class EditViewHeader: UIView {
+class MediaTimelineRuler: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

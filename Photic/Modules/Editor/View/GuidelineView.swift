@@ -1,13 +1,13 @@
 //
-//  ControlToolBar.swift
+//  GuidelineView.swift
 //  Photic
 //
-//  Created by lanht on 2022/8/28.
+//  Created by lanht on 2022/10/5.
 //
 
 import UIKit
 
-class ControlToolBar: UIView {
+class GuidelineView: UIView {
 
     /*
     // Only override draw() if you perform custom drawing.

@@ -20,18 +20,17 @@
 @property (nonatomic, strong) GPUImageMovie *mGPUMovie;
 @property (nonatomic, strong) id playbackTimeObserver;
 
-@property (nonatomic, strong) MainEditView *mainEditView;
-@property (nonatomic, strong) AssertHelper *assertHelper;
+//@property (nonatomic, strong) MainEditView *mainEditView;
 
 @end
 
 @implementation PCEditViewController
 
 #pragma mark - Lifecycle
-- (void)loadView {
-    UIView *showView = [[MainEditView alloc]init];
-    self.view = showView;
-}
+//- (void)loadView {
+//    UIView *showView = [[MainEditView alloc]init];
+//    self.view = showView;
+//}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -42,25 +41,7 @@
     self.navigationItem.rightBarButtonItems = @[photosBarButton];
     
 //    [self.view addSubview:self.mGPUImageView];
-    [self setupEditView];
-}
-
-- (void)setupEditView {
-    MainEditView *mainEditView = [[MainEditView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-    [self.view addSubview:mainEditView];
-    _mainEditView = mainEditView;
-    
-    [EditViewObserver observer].trackViewDidScroll = ^(CGFloat scale) {
-        if (self.assertHelper.getAssertSeconds == 0) {
-            return;
-        }
-        
-        NSLog(@"seek time --- %f", self.assertHelper.getAssertSeconds * scale);
-        
-        CMTime time = [self.assertHelper timeForAssertWithSeconds:self.assertHelper.getAssertSeconds * scale];
-        CMTimeShow(time);
-        [self.assertHelper seekTo:time];
-    };
+//    [self setupEditView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -102,13 +83,19 @@
 }
 
 - (void)updateEditview {
-    AVPlayerLayer *playLayer = [self.assertHelper getPreviewLayer];
-    [self.mainEditView updatePreviewWithPlayLayer:playLayer];
+//    AVPlayerLayer *playLayer = [self.assertHelper getPreviewLayer];
+//    [self.mainEditView updatePreviewWithPlayLayer:playLayer];
     
-    [self.assertHelper generatorImagesWithCompletion:^(NSArray<UIImage *> * _Nonnull images ) {
-        EditViewObserver.observer.generatorImageCompletion(images);
-        EditViewObserver.observer.segmentImagesDidChange(images.count);
-    }];
+//    [self.assertHelper generatorImagesWithCompletion:^(NSArray<UIImage *> * _Nonnull images ) {
+//        EditViewObserver.observer.generatorImageCompletion(images);
+//        EditViewObserver.observer.segmentImagesDidChange(images.count);
+//    }];
+}
+
+- (void)didSelectAsset:(AVAsset *)asset {
+    EditAssetViewController *assetVc = [[EditAssetViewController alloc]initWithAsset: asset];
+    assetVc.modalPresentationStyle = UIModalPresentationFullScreen;
+    [self.navigationController presentViewController:assetVc animated:YES completion:nil];
 }
 
 #pragma mark - Public Method
@@ -191,8 +178,10 @@
     [[PHImageManager defaultManager] requestAVAssetForVideo:asset options:nil resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
         __weak typeof(weakSelf) strongSelf = weakSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
-            strongSelf.assertHelper = [[AssertHelper alloc] initWithAssert:asset];
-            [strongSelf updateEditview];
+//            strongSelf.assertHelper = [[AssertHelper alloc] initWithAssert:asset];
+//            [strongSelf updateEditview];
+            
+            [strongSelf didSelectAsset: asset];
         });
     }];
 }

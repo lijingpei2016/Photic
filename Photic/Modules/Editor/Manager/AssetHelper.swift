@@ -8,7 +8,7 @@
 import UIKit
 import AVFoundation
 
-class AssertHelper: NSObject {
+class AssetHelper: NSObject {
     
     var assert: AVAsset
     
@@ -56,13 +56,13 @@ class AssertHelper: NSObject {
         return Float64(self.assert.duration.value) / Float64(self.assert.duration.timescale)
     }
     
-    @objc func generatorImages(completion: ((_ images: Array<UIImage>) -> Void)?) {
-        guard let track = self.assert.tracks(withMediaType: .video).first else {
+    @objc static func generatorImages(from avAsset: AVAsset,  completion: ((_ images: Array<UIImage>) -> Void)?) {
+        guard let track = avAsset.tracks(withMediaType: .video).first else {
             return
         }
         
         let fps = Int32(track.nominalFrameRate)
-        let totalTimes = Int(Int32(self.assert.duration.value) / self.assert.duration.timescale)
+        let totalTimes = Int(Int32(avAsset.duration.value) / avAsset.duration.timescale)
         var times = Array<NSValue>()
         
         for i in 0..<totalTimes {
@@ -72,7 +72,7 @@ class AssertHelper: NSObject {
             times.append(value)
         }
 
-        let genetator = AVAssetImageGenerator(asset: self.assert)
+        let genetator = AVAssetImageGenerator(asset: avAsset)
         genetator.maximumSize = CGSize(width: 100, height: 100)
         genetator.appliesPreferredTrackTransform = true
         

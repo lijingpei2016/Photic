@@ -209,22 +209,35 @@
 		16BFFF3C28B35F03000A1FE6 /* GPUImageCGAColorspaceFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BFFE8E28B35F02000A1FE6 /* GPUImageCGAColorspaceFilter.m */; };
 		16BFFF3D28B35F03000A1FE6 /* GPUImageDarkenBlendFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BFFE9228B35F02000A1FE6 /* GPUImageDarkenBlendFilter.m */; };
 		16BFFF4228B360FD000A1FE6 /* GPUImageBeautifyFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 16BFFF4028B360FD000A1FE6 /* GPUImageBeautifyFilter.m */; };
-		8D0AAE4B28BB5F0B00CC71FE /* MainEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE4A28BB5F0B00CC71FE /* MainEditView.swift */; };
-		8D0AAE4D28BB5F5A00CC71FE /* EditViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE4C28BB5F5A00CC71FE /* EditViewHeader.swift */; };
-		8D0AAE4F28BB5F7E00CC71FE /* EditViewFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE4E28BB5F7E00CC71FE /* EditViewFooter.swift */; };
-		8D0AAE5128BB60BA00CC71FE /* EditPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5028BB60BA00CC71FE /* EditPreview.swift */; };
-		8D0AAE5328BB619E00CC71FE /* ControlContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5228BB619E00CC71FE /* ControlContainer.swift */; };
+		8D0AAE4B28BB5F0B00CC71FE /* EditorRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE4A28BB5F0B00CC71FE /* EditorRootView.swift */; };
+		8D0AAE4F28BB5F7E00CC71FE /* EditorComponentMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE4E28BB5F7E00CC71FE /* EditorComponentMenuView.swift */; };
+		8D0AAE5128BB60BA00CC71FE /* EditorPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5028BB60BA00CC71FE /* EditorPlayer.swift */; };
 		8D0AAE5628BB65DF00CC71FE /* AppConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5528BB65DF00CC71FE /* AppConst.swift */; };
-		8D0AAE5928BB6A7100CC71FE /* ControlToolBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5828BB6A7100CC71FE /* ControlToolBar.swift */; };
-		8D0AAE5B28BB6A9D00CC71FE /* TimeLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5A28BB6A9D00CC71FE /* TimeLine.swift */; };
+		8D0AAE5928BB6A7100CC71FE /* EditorControlBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5828BB6A7100CC71FE /* EditorControlBar.swift */; };
 		8D0AAE5D28BB6B2800CC71FE /* ControlTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAE5C28BB6B2800CC71FE /* ControlTrackView.swift */; };
-		8D0AAF0928C4C9E200CC71FE /* AssertHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAF0828C4C9E200CC71FE /* AssertHelper.swift */; };
-		8D0AAF0B28C4D39B00CC71FE /* EditAssertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAF0A28C4D39B00CC71FE /* EditAssertViewController.swift */; };
-		8D0AAF0D28C4EE3B00CC71FE /* EditViewObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAF0C28C4EE3B00CC71FE /* EditViewObserver.swift */; };
-		8DFF693228C109BD007AB743 /* SegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF693128C109BD007AB743 /* SegmentView.swift */; };
+		8D0AAF0928C4C9E200CC71FE /* AssetHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAF0828C4C9E200CC71FE /* AssetHelper.swift */; };
+		8D0AAF0B28C4D39B00CC71FE /* EditAssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAF0A28C4D39B00CC71FE /* EditAssetViewController.swift */; };
+		8D0AAF0D28C4EE3B00CC71FE /* EditorObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAF0C28C4EE3B00CC71FE /* EditorObserver.swift */; };
+		8D1D5D9E28EAE3EF001E6BCD /* EditorComponentMenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1D5D9D28EAE3EF001E6BCD /* EditorComponentMenuViewCell.swift */; };
+		8D48FCD328ED2B18002C5268 /* ResponseSubviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCD228ED2B18002C5268 /* ResponseSubviewsView.swift */; };
+		8D48FCD728ED2E5A002C5268 /* PlayerLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCD628ED2E5A002C5268 /* PlayerLayoutView.swift */; };
+		8D48FCD928ED2F90002C5268 /* MediaTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCD828ED2F90002C5268 /* MediaTimeline.swift */; };
+		8D48FCDB28EDA935002C5268 /* GuidelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCDA28EDA935002C5268 /* GuidelineView.swift */; };
+		8D48FCDD28EDAFF8002C5268 /* EditorPlayHead.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCDC28EDAFF8002C5268 /* EditorPlayHead.swift */; };
+		8D48FCDF28EE8D46002C5268 /* MediaTimelineContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCDE28EE8D46002C5268 /* MediaTimelineContainer.swift */; };
+		8D48FCE128EE9315002C5268 /* MediaTimelineRuler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCE028EE9315002C5268 /* MediaTimelineRuler.swift */; };
+		8D48FCE328EE9338002C5268 /* VideoTrackPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCE228EE9338002C5268 /* VideoTrackPreview.swift */; };
+		8D48FCE528EEA6DC002C5268 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCE428EEA6DC002C5268 /* UIColor+Extension.swift */; };
+		8D48FCE728F01DEF002C5268 /* VideoAudioWaveTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCE628F01DEF002C5268 /* VideoAudioWaveTrackView.swift */; };
+		8D48FCE928F01F4D002C5268 /* VideoThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCE828F01F4D002C5268 /* VideoThumbnailView.swift */; };
+		8D48FCEB28F0250B002C5268 /* SegmentClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCEA28F0250B002C5268 /* SegmentClipView.swift */; };
+		8D48FCED28F02B58002C5268 /* VideoThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCEC28F02B58002C5268 /* VideoThumbnailCell.swift */; };
+		8D48FCEF28F05E63002C5268 /* EditorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCEE28F05E63002C5268 /* EditorManager.swift */; };
+		8D48FCF228F05F41002C5268 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCF128F05F41002C5268 /* Segment.swift */; };
+		8DFF693228C109BD007AB743 /* VideoSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF693128C109BD007AB743 /* VideoSegmentView.swift */; };
 		8DFF693628C10BB1007AB743 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF693528C10BB1007AB743 /* String+Extension.swift */; };
 		8DFF693B28C10C2C007AB743 /* SegmentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF693A28C10C2C007AB743 /* SegmentViewCell.swift */; };
-		8DFF693D28C11781007AB743 /* EditViewLayoutConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF693C28C11781007AB743 /* EditViewLayoutConst.swift */; };
+		8DFF693D28C11781007AB743 /* EditorConst.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF693C28C11781007AB743 /* EditorConst.swift */; };
 		E277B6235A031FCF11A91015 /* libPods-Photic.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 498659CB7C38B9ABA68370B1 /* libPods-Photic.a */; };
 /* End PBXBuildFile section */
 
@@ -636,22 +649,35 @@
 		16BFFF4128B360FD000A1FE6 /* GPUImageBeautifyFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUImageBeautifyFilter.h; sourceTree = "<group>"; };
 		498659CB7C38B9ABA68370B1 /* libPods-Photic.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Photic.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D0AAE4728BB5ED900CC71FE /* Photic-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Photic-Bridging-Header.h"; sourceTree = "<group>"; };
-		8D0AAE4A28BB5F0B00CC71FE /* MainEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainEditView.swift; sourceTree = "<group>"; };
-		8D0AAE4C28BB5F5A00CC71FE /* EditViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewHeader.swift; sourceTree = "<group>"; };
-		8D0AAE4E28BB5F7E00CC71FE /* EditViewFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewFooter.swift; sourceTree = "<group>"; };
-		8D0AAE5028BB60BA00CC71FE /* EditPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPreview.swift; sourceTree = "<group>"; };
-		8D0AAE5228BB619E00CC71FE /* ControlContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlContainer.swift; sourceTree = "<group>"; };
+		8D0AAE4A28BB5F0B00CC71FE /* EditorRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorRootView.swift; sourceTree = "<group>"; };
+		8D0AAE4E28BB5F7E00CC71FE /* EditorComponentMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorComponentMenuView.swift; sourceTree = "<group>"; };
+		8D0AAE5028BB60BA00CC71FE /* EditorPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorPlayer.swift; sourceTree = "<group>"; };
 		8D0AAE5528BB65DF00CC71FE /* AppConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConst.swift; sourceTree = "<group>"; };
-		8D0AAE5828BB6A7100CC71FE /* ControlToolBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlToolBar.swift; sourceTree = "<group>"; };
-		8D0AAE5A28BB6A9D00CC71FE /* TimeLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLine.swift; sourceTree = "<group>"; };
+		8D0AAE5828BB6A7100CC71FE /* EditorControlBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorControlBar.swift; sourceTree = "<group>"; };
 		8D0AAE5C28BB6B2800CC71FE /* ControlTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlTrackView.swift; sourceTree = "<group>"; };
-		8D0AAF0828C4C9E200CC71FE /* AssertHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertHelper.swift; sourceTree = "<group>"; };
-		8D0AAF0A28C4D39B00CC71FE /* EditAssertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAssertViewController.swift; sourceTree = "<group>"; };
-		8D0AAF0C28C4EE3B00CC71FE /* EditViewObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewObserver.swift; sourceTree = "<group>"; };
-		8DFF693128C109BD007AB743 /* SegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentView.swift; sourceTree = "<group>"; };
+		8D0AAF0828C4C9E200CC71FE /* AssetHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetHelper.swift; sourceTree = "<group>"; };
+		8D0AAF0A28C4D39B00CC71FE /* EditAssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAssetViewController.swift; sourceTree = "<group>"; };
+		8D0AAF0C28C4EE3B00CC71FE /* EditorObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorObserver.swift; sourceTree = "<group>"; };
+		8D1D5D9D28EAE3EF001E6BCD /* EditorComponentMenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorComponentMenuViewCell.swift; sourceTree = "<group>"; };
+		8D48FCD228ED2B18002C5268 /* ResponseSubviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSubviewsView.swift; sourceTree = "<group>"; };
+		8D48FCD628ED2E5A002C5268 /* PlayerLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerLayoutView.swift; sourceTree = "<group>"; };
+		8D48FCD828ED2F90002C5268 /* MediaTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTimeline.swift; sourceTree = "<group>"; };
+		8D48FCDA28EDA935002C5268 /* GuidelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuidelineView.swift; sourceTree = "<group>"; };
+		8D48FCDC28EDAFF8002C5268 /* EditorPlayHead.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorPlayHead.swift; sourceTree = "<group>"; };
+		8D48FCDE28EE8D46002C5268 /* MediaTimelineContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTimelineContainer.swift; sourceTree = "<group>"; };
+		8D48FCE028EE9315002C5268 /* MediaTimelineRuler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTimelineRuler.swift; sourceTree = "<group>"; };
+		8D48FCE228EE9338002C5268 /* VideoTrackPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoTrackPreview.swift; sourceTree = "<group>"; };
+		8D48FCE428EEA6DC002C5268 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		8D48FCE628F01DEF002C5268 /* VideoAudioWaveTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoAudioWaveTrackView.swift; sourceTree = "<group>"; };
+		8D48FCE828F01F4D002C5268 /* VideoThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailView.swift; sourceTree = "<group>"; };
+		8D48FCEA28F0250B002C5268 /* SegmentClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentClipView.swift; sourceTree = "<group>"; };
+		8D48FCEC28F02B58002C5268 /* VideoThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailCell.swift; sourceTree = "<group>"; };
+		8D48FCEE28F05E63002C5268 /* EditorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorManager.swift; sourceTree = "<group>"; };
+		8D48FCF128F05F41002C5268 /* Segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
+		8DFF693128C109BD007AB743 /* VideoSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSegmentView.swift; sourceTree = "<group>"; };
 		8DFF693528C10BB1007AB743 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		8DFF693A28C10C2C007AB743 /* SegmentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewCell.swift; sourceTree = "<group>"; };
-		8DFF693C28C11781007AB743 /* EditViewLayoutConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditViewLayoutConst.swift; sourceTree = "<group>"; };
+		8DFF693C28C11781007AB743 /* EditorConst.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorConst.swift; sourceTree = "<group>"; };
 		92B2037C4C1657A1358A7C75 /* Pods-Photic.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photic.debug.xcconfig"; path = "Target Support Files/Pods-Photic/Pods-Photic.debug.xcconfig"; sourceTree = "<group>"; };
 		C73DB27EB7B60AEB696D325B /* Pods-Photic.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Photic.release.xcconfig"; path = "Target Support Files/Pods-Photic/Pods-Photic.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -717,9 +743,6 @@
 			children = (
 				16AAEB5B28B8706500D4EAE1 /* PCEditViewController.h */,
 				16AAEB5C28B8706500D4EAE1 /* PCEditViewController.m */,
-				8D0AAF0A28C4D39B00CC71FE /* EditAssertViewController.swift */,
-				8D0AAF0728C4C9C400CC71FE /* Manager */,
-				8D0AAE4628BB5EA400CC71FE /* View */,
 			);
 			path = EditViewController;
 			sourceTree = "<group>";
@@ -891,6 +914,7 @@
 		16BFFD3628B33416000A1FE6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				8D48FCD028ED2AA4002C5268 /* Editor */,
 				8DFF693328C10B94007AB743 /* Tool */,
 				8D0AAE5428BB658F00CC71FE /* AppStart */,
 				16BFFD3528B33401000A1FE6 /* Main */,
@@ -1296,11 +1320,14 @@
 		8D0AAE4628BB5EA400CC71FE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8DFF693C28C11781007AB743 /* EditViewLayoutConst.swift */,
-				8D0AAE4A28BB5F0B00CC71FE /* MainEditView.swift */,
-				8D0AAE4C28BB5F5A00CC71FE /* EditViewHeader.swift */,
-				8D0AAE4E28BB5F7E00CC71FE /* EditViewFooter.swift */,
-				8D0AAE5028BB60BA00CC71FE /* EditPreview.swift */,
+				8D48FCD228ED2B18002C5268 /* ResponseSubviewsView.swift */,
+				8D0AAE4A28BB5F0B00CC71FE /* EditorRootView.swift */,
+				8D0AAE4E28BB5F7E00CC71FE /* EditorComponentMenuView.swift */,
+				8D1D5D9D28EAE3EF001E6BCD /* EditorComponentMenuViewCell.swift */,
+				8D0AAE5028BB60BA00CC71FE /* EditorPlayer.swift */,
+				8D48FCD628ED2E5A002C5268 /* PlayerLayoutView.swift */,
+				8D0AAE5828BB6A7100CC71FE /* EditorControlBar.swift */,
+				8D48FCDA28EDA935002C5268 /* GuidelineView.swift */,
 				8D0AAE5728BB6A1100CC71FE /* Container */,
 			);
 			path = View;
@@ -1317,12 +1344,18 @@
 		8D0AAE5728BB6A1100CC71FE /* Container */ = {
 			isa = PBXGroup;
 			children = (
-				8D0AAE5228BB619E00CC71FE /* ControlContainer.swift */,
-				8D0AAE5828BB6A7100CC71FE /* ControlToolBar.swift */,
-				8D0AAE5C28BB6B2800CC71FE /* ControlTrackView.swift */,
-				8DFF693128C109BD007AB743 /* SegmentView.swift */,
+				8D48FCD828ED2F90002C5268 /* MediaTimeline.swift */,
+				8D48FCDE28EE8D46002C5268 /* MediaTimelineContainer.swift */,
+				8D48FCE228EE9338002C5268 /* VideoTrackPreview.swift */,
+				8DFF693128C109BD007AB743 /* VideoSegmentView.swift */,
+				8D48FCE828F01F4D002C5268 /* VideoThumbnailView.swift */,
+				8D48FCEC28F02B58002C5268 /* VideoThumbnailCell.swift */,
+				8D48FCEA28F0250B002C5268 /* SegmentClipView.swift */,
+				8D48FCE628F01DEF002C5268 /* VideoAudioWaveTrackView.swift */,
 				8DFF693A28C10C2C007AB743 /* SegmentViewCell.swift */,
-				8D0AAE5A28BB6A9D00CC71FE /* TimeLine.swift */,
+				8D48FCDC28EDAFF8002C5268 /* EditorPlayHead.swift */,
+				8D48FCE028EE9315002C5268 /* MediaTimelineRuler.swift */,
+				8D0AAE5C28BB6B2800CC71FE /* ControlTrackView.swift */,
 			);
 			path = Container;
 			sourceTree = "<group>";
@@ -1330,10 +1363,39 @@
 		8D0AAF0728C4C9C400CC71FE /* Manager */ = {
 			isa = PBXGroup;
 			children = (
-				8D0AAF0828C4C9E200CC71FE /* AssertHelper.swift */,
-				8D0AAF0C28C4EE3B00CC71FE /* EditViewObserver.swift */,
+				8D0AAF0828C4C9E200CC71FE /* AssetHelper.swift */,
+				8D0AAF0C28C4EE3B00CC71FE /* EditorObserver.swift */,
+				8DFF693C28C11781007AB743 /* EditorConst.swift */,
+				8D48FCEE28F05E63002C5268 /* EditorManager.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		8D48FCD028ED2AA4002C5268 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				8D48FCF028F05F30002C5268 /* Model */,
+				8D48FCD128ED2ADE002C5268 /* Controller */,
+				8D0AAF0728C4C9C400CC71FE /* Manager */,
+				8D0AAE4628BB5EA400CC71FE /* View */,
+			);
+			path = Editor;
+			sourceTree = "<group>";
+		};
+		8D48FCD128ED2ADE002C5268 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				8D0AAF0A28C4D39B00CC71FE /* EditAssetViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8D48FCF028F05F30002C5268 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8D48FCF128F05F41002C5268 /* Segment.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		8DFF693328C10B94007AB743 /* Tool */ = {
@@ -1348,6 +1410,7 @@
 			isa = PBXGroup;
 			children = (
 				8DFF693528C10BB1007AB743 /* String+Extension.swift */,
+				8D48FCE428EEA6DC002C5268 /* UIColor+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1589,28 +1652,31 @@
 				16BFFF0728B35F03000A1FE6 /* GPUImageRawDataOutput.m in Sources */,
 				16BFFED728B35F03000A1FE6 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
 				16BFFEB328B35F03000A1FE6 /* GPUImageHistogramFilter.m in Sources */,
+				8D48FCE128EE9315002C5268 /* MediaTimelineRuler.swift in Sources */,
 				16BFFEF028B35F03000A1FE6 /* GPUImageContext.m in Sources */,
 				16BFFF2028B35F03000A1FE6 /* GPUImageMotionBlurFilter.m in Sources */,
-				8D0AAF0928C4C9E200CC71FE /* AssertHelper.swift in Sources */,
+				8D0AAF0928C4C9E200CC71FE /* AssetHelper.swift in Sources */,
 				16BFFEB128B35F03000A1FE6 /* GPUImageCannyEdgeDetectionFilter.m in Sources */,
 				16BFFEF828B35F03000A1FE6 /* GPUImagePoissonBlendFilter.m in Sources */,
 				16BFFF2728B35F03000A1FE6 /* GPUImageAddBlendFilter.m in Sources */,
-				8D0AAE5B28BB6A9D00CC71FE /* TimeLine.swift in Sources */,
 				16BFFECF28B35F03000A1FE6 /* GPUImageErosionFilter.m in Sources */,
 				16BFFF0E28B35F03000A1FE6 /* GPUImageThresholdSketchFilter.m in Sources */,
 				16BFFF3128B35F03000A1FE6 /* GPUImageExposureFilter.m in Sources */,
+				8D48FCEB28F0250B002C5268 /* SegmentClipView.swift in Sources */,
 				16BFFED528B35F03000A1FE6 /* GPUImagePixellateFilter.m in Sources */,
-				8D0AAE5928BB6A7100CC71FE /* ControlToolBar.swift in Sources */,
+				8D0AAE5928BB6A7100CC71FE /* EditorControlBar.swift in Sources */,
 				16BFFEC328B35F03000A1FE6 /* GPUImageAlphaBlendFilter.m in Sources */,
 				16BFFF1328B35F03000A1FE6 /* GPUImageLowPassFilter.m in Sources */,
 				16BFFF1028B35F03000A1FE6 /* GPUImageWhiteBalanceFilter.m in Sources */,
-				8D0AAE4D28BB5F5A00CC71FE /* EditViewHeader.swift in Sources */,
 				16BFFEED28B35F03000A1FE6 /* GPUImageRGBFilter.m in Sources */,
+				8D48FCE728F01DEF002C5268 /* VideoAudioWaveTrackView.swift in Sources */,
+				8D48FCE928F01F4D002C5268 /* VideoThumbnailView.swift in Sources */,
 				16BFFEFE28B35F03000A1FE6 /* GPUImageSoftLightBlendFilter.m in Sources */,
 				16BFFEEC28B35F03000A1FE6 /* GPUImageSourceOverBlendFilter.m in Sources */,
 				16BFFCFE28B33013000A1FE6 /* AppDelegate.m in Sources */,
 				16BFFF2A28B35F03000A1FE6 /* GPUImage3x3ConvolutionFilter.m in Sources */,
 				16BFFF2E28B35F03000A1FE6 /* GPUImageKuwaharaFilter.m in Sources */,
+				8D48FCDB28EDA935002C5268 /* GuidelineView.swift in Sources */,
 				16BFFEE228B35F03000A1FE6 /* GPUImageDirectionalSobelEdgeDetectionFilter.m in Sources */,
 				16BFFEE928B35F03000A1FE6 /* GPUImageFramebuffer.m in Sources */,
 				16AAEB6828B8AC3C00D4EAE1 /* UIImage+ResizeSize.m in Sources */,
@@ -1619,21 +1685,27 @@
 				16BFFEC028B35F03000A1FE6 /* GPUImageBilateralFilter.m in Sources */,
 				16BFFF1428B35F03000A1FE6 /* GPUImageMonochromeFilter.m in Sources */,
 				16BFFED328B35F03000A1FE6 /* GPUImageOpacityFilter.m in Sources */,
+				8D48FCED28F02B58002C5268 /* VideoThumbnailCell.swift in Sources */,
 				16BFFEC128B35F03000A1FE6 /* GPUImageHistogramGenerator.m in Sources */,
-				8D0AAE4F28BB5F7E00CC71FE /* EditViewFooter.swift in Sources */,
+				8D0AAE4F28BB5F7E00CC71FE /* EditorComponentMenuView.swift in Sources */,
+				8D48FCEF28F05E63002C5268 /* EditorManager.swift in Sources */,
+				8D48FCF228F05F41002C5268 /* Segment.swift in Sources */,
 				16BFFF1D28B35F03000A1FE6 /* GPUImageScreenBlendFilter.m in Sources */,
 				16BFFECA28B35F03000A1FE6 /* GPUImageZoomBlurFilter.m in Sources */,
 				16AAEB6528B8ABF700D4EAE1 /* PCImageToVideo.m in Sources */,
 				16BFFF0628B35F03000A1FE6 /* GPUImageHalftoneFilter.m in Sources */,
 				16BFFF0A28B35F03000A1FE6 /* GPUImageMovieComposition.m in Sources */,
+				8D48FCD928ED2F90002C5268 /* MediaTimeline.swift in Sources */,
 				16BFFEB528B35F03000A1FE6 /* GPUImagePixellatePositionFilter.m in Sources */,
 				16BFFF0328B35F03000A1FE6 /* GPUImageRGBDilationFilter.m in Sources */,
+				8D48FCD328ED2B18002C5268 /* ResponseSubviewsView.swift in Sources */,
 				16BFFEE728B35F03000A1FE6 /* GPUImageXYDerivativeFilter.m in Sources */,
+				8D48FCE528EEA6DC002C5268 /* UIColor+Extension.swift in Sources */,
 				16BFFEE328B35F03000A1FE6 /* GPUImagePosterizeFilter.m in Sources */,
 				16BFFF0428B35F03000A1FE6 /* GPUImageContrastFilter.m in Sources */,
 				16BFFECE28B35F03000A1FE6 /* GPUImageOpeningFilter.m in Sources */,
 				16BFFEDC28B35F03000A1FE6 /* GLProgram.m in Sources */,
-				8D0AAF0D28C4EE3B00CC71FE /* EditViewObserver.swift in Sources */,
+				8D0AAF0D28C4EE3B00CC71FE /* EditorObserver.swift in Sources */,
 				16BFFEB728B35F03000A1FE6 /* GPUImageHistogramEqualizationFilter.m in Sources */,
 				16BFFD0F28B33016000A1FE6 /* main.m in Sources */,
 				16BFFEDB28B35F03000A1FE6 /* GPUImageLineGenerator.m in Sources */,
@@ -1661,6 +1733,7 @@
 				16BFFEB628B35F03000A1FE6 /* GPUImageVignetteFilter.m in Sources */,
 				16BFFF0028B35F03000A1FE6 /* GPUImageCrosshairGenerator.m in Sources */,
 				16BFFEE028B35F03000A1FE6 /* GPUImageDivideBlendFilter.m in Sources */,
+				8D48FCDF28EE8D46002C5268 /* MediaTimelineContainer.swift in Sources */,
 				16BFFEBD28B35F03000A1FE6 /* GPUImageKuwaharaRadius3Filter.m in Sources */,
 				16BFFF0828B35F03000A1FE6 /* GPUImageSmoothToonFilter.m in Sources */,
 				16BFFEA728B35F03000A1FE6 /* GPUImageColorPackingFilter.m in Sources */,
@@ -1668,21 +1741,21 @@
 				8DFF693628C10BB1007AB743 /* String+Extension.swift in Sources */,
 				16BFFEDD28B35F03000A1FE6 /* GPUImageBrightnessFilter.m in Sources */,
 				16BFFEFB28B35F03000A1FE6 /* GPUImageLuminosity.m in Sources */,
-				8DFF693D28C11781007AB743 /* EditViewLayoutConst.swift in Sources */,
+				8DFF693D28C11781007AB743 /* EditorConst.swift in Sources */,
 				16BFFEA528B35F03000A1FE6 /* GPUImageTwoPassFilter.m in Sources */,
 				16BFFEEB28B35F03000A1FE6 /* GPUImageBoxBlurFilter.m in Sources */,
 				16BFFEB228B35F03000A1FE6 /* GPUImageFASTCornerDetectionFilter.m in Sources */,
-				8D0AAE5128BB60BA00CC71FE /* EditPreview.swift in Sources */,
+				8D0AAE5128BB60BA00CC71FE /* EditorPlayer.swift in Sources */,
 				16BFFEE128B35F03000A1FE6 /* GPUImageOutput.m in Sources */,
 				16BFFEAC28B35F03000A1FE6 /* GPUImageEmbossFilter.m in Sources */,
 				16BFFF2C28B35F03000A1FE6 /* GPUImageCrosshatchFilter.m in Sources */,
 				16BFFEA328B35F03000A1FE6 /* GPUImageHighPassFilter.m in Sources */,
 				16BFFEAE28B35F03000A1FE6 /* GPUImageGrayscaleFilter.m in Sources */,
 				8D0AAE5D28BB6B2800CC71FE /* ControlTrackView.swift in Sources */,
-				8D0AAE4B28BB5F0B00CC71FE /* MainEditView.swift in Sources */,
+				8D0AAE4B28BB5F0B00CC71FE /* EditorRootView.swift in Sources */,
+				8D48FCE328EE9338002C5268 /* VideoTrackPreview.swift in Sources */,
 				16BFFF3A28B35F03000A1FE6 /* GPUImageStillCamera.m in Sources */,
 				16BFFE9A28B35F03000A1FE6 /* GPUImageColorBurnBlendFilter.m in Sources */,
-				8D0AAE5328BB619E00CC71FE /* ControlContainer.swift in Sources */,
 				16BFFF2528B35F03000A1FE6 /* GPUImageHueBlendFilter.m in Sources */,
 				16BFFEC928B35F03000A1FE6 /* GPUImageMultiplyBlendFilter.m in Sources */,
 				16BFFF1E28B35F03000A1FE6 /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
@@ -1700,12 +1773,14 @@
 				16BFFEFA28B35F03000A1FE6 /* GPUImageGaussianSelectiveBlurFilter.m in Sources */,
 				16BFFED428B35F03000A1FE6 /* GPUImageCropFilter.m in Sources */,
 				16BFFEE628B35F03000A1FE6 /* GPUImageFilterPipeline.m in Sources */,
+				8D48FCDD28EDAFF8002C5268 /* EditorPlayHead.swift in Sources */,
 				16BFFEC628B35F03000A1FE6 /* GPUImageOverlayBlendFilter.m in Sources */,
 				16BFFF3928B35F03000A1FE6 /* GPUImageFilter.m in Sources */,
 				16BFFEF128B35F03000A1FE6 /* GPUImageMovieWriter.m in Sources */,
 				16BFFEE428B35F03000A1FE6 /* GPUImageAverageLuminanceThresholdFilter.m in Sources */,
+				8D48FCD728ED2E5A002C5268 /* PlayerLayoutView.swift in Sources */,
 				16BFFEC428B35F03000A1FE6 /* GPUImageExclusionBlendFilter.m in Sources */,
-				8DFF693228C109BD007AB743 /* SegmentView.swift in Sources */,
+				8DFF693228C109BD007AB743 /* VideoSegmentView.swift in Sources */,
 				16BFFF2928B35F03000A1FE6 /* GPUImageDilationFilter.m in Sources */,
 				16BFFF2B28B35F03000A1FE6 /* GPUImageNobleCornerDetectionFilter.m in Sources */,
 				16BFFEA128B35F03000A1FE6 /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
@@ -1733,8 +1808,9 @@
 				16BFFEEE28B35F03000A1FE6 /* GPUImageFramebufferCache.m in Sources */,
 				16BFFF3028B35F03000A1FE6 /* GPUImageMosaicFilter.m in Sources */,
 				16BFFEF628B35F03000A1FE6 /* GPUImageToneCurveFilter.m in Sources */,
+				8D1D5D9E28EAE3EF001E6BCD /* EditorComponentMenuViewCell.swift in Sources */,
 				16BFFF1528B35F03000A1FE6 /* GPUImageHoughTransformLineDetector.m in Sources */,
-				8D0AAF0B28C4D39B00CC71FE /* EditAssertViewController.swift in Sources */,
+				8D0AAF0B28C4D39B00CC71FE /* EditAssetViewController.swift in Sources */,
 				16BFFED028B35F03000A1FE6 /* GPUImageToonFilter.m in Sources */,
 				16BFFF0128B35F03000A1FE6 /* GPUImageColorBlendFilter.m in Sources */,
 				16BAAB8928C6FC5000BB9555 /* PCMovieComposition.m in Sources */,
@@ -1912,9 +1988,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N92TEW36P2;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = F4R94ZX7MA;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Photic/PhoticHeader.h";
 				INFOPLIST_FILE = Photic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1924,7 +2000,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gzinf.LJP.Photic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE_SPECIFIER = "gzinf Dev PP";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -1942,8 +2018,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N92TEW36P2;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = F4R94ZX7MA;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Photic/PhoticHeader.h";
 				INFOPLIST_FILE = Photic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -1953,6 +2030,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gzinf.LJP.Photic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "gzinf Dev PP";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

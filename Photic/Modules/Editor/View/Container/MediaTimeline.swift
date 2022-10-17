@@ -11,6 +11,8 @@ class MediaTimeline: UIScrollView {
 
     let contentViewDefaultW = ScreenWidth + 15
     
+    var dH: CGFloat = 0
+    
     lazy var content: UIView = {
         let content = UIView()
         content.backgroundColor = .black
@@ -65,3 +67,4 @@ class MediaTimeline: UIScrollView {
         }
     }
 }
+

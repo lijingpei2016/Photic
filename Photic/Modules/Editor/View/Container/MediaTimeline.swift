@@ -21,6 +21,9 @@ class MediaTimeline: UIScrollView {
 
     lazy var mediaTimelineContainer: MediaTimelineContainer = {
         let mediaTimelineContainer = MediaTimelineContainer()
+        mediaTimelineContainer.lenthChange = { width in
+            self.updateWidth(width: width)
+        }
         return mediaTimelineContainer
     }()
     
@@ -57,12 +60,20 @@ class MediaTimeline: UIScrollView {
         }
     }
     
+    func updateWidth(width: Float) {
+        print("content.bounds.width = \(content.bounds.width)")
+        let w = width + Float(ScreenWidth)
+        content.snp.updateConstraints { make in
+            make.width.equalTo(w)
+        }
+    }
+    
     @objc func segmentsChange(notifi: Notification) {
         if let segments = notifi.userInfo?["segments"] as? [Segment] {
-            let segW = segments.map({$0.width()}).reduce(0, +)
+            let segW = segments.map({$0.width}).reduce(0, +)
             
             content.snp.updateConstraints { make in
-                make.width.equalTo(Float(ScreenWidth) + segW)
+                make.width.equalTo(Float(ScreenWidth) + Float(segW))
             }
         }
     }

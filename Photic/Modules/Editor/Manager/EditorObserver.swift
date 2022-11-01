@@ -6,19 +6,34 @@
 //
 
 import UIKit
+import AVFoundation
 
 let kSegmentDidChange = "kSegmentDidChange"
 
-class EditorObserver {
-    lazy var notifiCenter = NotificationCenter.default
-
-    var trackViewDidScroll: ((_ scale: CGFloat) -> Void)?
+protocol EditorObserver {
+//    static let shared = EditorObserver()
     
-    var generatorImageCompletion: ((_ images: Array<UIImage>) -> Void)?
+//    private init() {}
+
+//    var trackViewDidScroll: ((_ scale: CGFloat) -> Void)?
         
-    func segmentsDidChange(segments: [Segment]) {
-        DispatchQueue.main.async { [self] in
-            notifiCenter.post(name: NSNotification.Name(kSegmentDidChange), object: nil, userInfo: ["segments": segments])
-        }
-    }
+    func didAddAsset(_ asset: AVAsset)
+    func medialineWidthChangeEnd(ws: [Float])
+    func medialineDidScroll(scale: CGFloat)
+    
+    func play()
+}
+
+extension EditorObserver {
+//    func didAddAsset(_ asset: AVAsset) {
+//        EditorManager.shared.addAsset(asset)
+//    }
+//    
+//    func mediaTlineWidthChangeEnd(ws: [Float]) {
+//        EditorManager.shared.mediaTlineWidthChangeEnd(ws: ws)
+//    }
+//    
+//    func mediaTlineDidScroll(scale: CGFloat) {
+//        
+//    }
 }

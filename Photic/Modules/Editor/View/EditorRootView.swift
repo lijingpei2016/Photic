@@ -36,6 +36,7 @@ class EditRootView: UIView {
     
     lazy var mediaTimeline: MediaTimeline = {
         let mediaTimeline = MediaTimeline()
+        mediaTimeline.delegate = self
         return mediaTimeline
     }()
     
@@ -112,5 +113,12 @@ class EditRootView: UIView {
         
         playLayer.frame = bounds
         editorPlayer.layer.addSublayer(playLayer)
+    }
+}
+
+extension EditRootView: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let scale = abs((scrollView.contentOffset.x) / scrollView.contentSize.width)
+        EditorManager.shared.medialineDidScroll(scale: scale)
     }
 }

@@ -8,65 +8,91 @@
 import UIKit
 import AVFoundation
 
-class AssetHelper: NSObject {
+protocol AssetHelper: AnyObject {
     
-    var assert: AVAsset
+//    var assert: AVAsset
     
-    private lazy var player: AVPlayer = {
-        let item = AVPlayerItem(asset: assert)
+//    private lazy var player: AVPlayer = {
+//        let item = AVPlayerItem(asset: assert)
+//        let player = AVPlayer(playerItem: item)
+//        player.seek(to: .zero)
+//        player.pause()
+//        return player
+//    }()
+    
+//    @objc init(assert: AVAsset) {
+//        self.assert = assert
+//    }
+    
+    func avplayer(from asset: AVAsset) -> AVPlayer
+    func previewLayer(from avplayer: AVPlayer) -> AVPlayerLayer
+    func time(for asset: AVAsset, seconds: Float64) -> CMTime
+    func seconds(for asset: AVAsset) -> Float64
+    func seek(to time: CMTime, player: AVPlayer)
+    func generatorImages(from avAsset: AVAsset, count: Int, completion: ((_ images: Array<UIImage>?) -> Void)?)
+}
+
+extension AssetHelper {
+    func avplayer(from asset: AVAsset) -> AVPlayer {
+        let item = AVPlayerItem(asset: asset)
         let player = AVPlayer(playerItem: item)
         player.seek(to: .zero)
         player.pause()
         return player
-    }()
-    
-    @objc init(assert: AVAsset) {
-        self.assert = assert
     }
     
-    @objc func seek(to time: CMTime) {
-        self.player.seek(to: time, toleranceBefore: CMTime(value: 1, timescale: 1000), toleranceAfter: CMTime(value: 1, timescale: 1000))
-    }
-    
-    @objc func getPreviewLayer() -> AVPlayerLayer? {
-        let layer = AVPlayerLayer(player: player)
+    func previewLayer(from avplayer: AVPlayer) -> AVPlayerLayer {
+        let layer = AVPlayerLayer(player: avplayer)
         return layer
     }
     
-    @objc func play() {
-        player.play()
+    func seek(to time: CMTime, player: AVPlayer) {
+        player.seek(to: time, toleranceBefore: CMTime(value: 1, timescale: 1000), toleranceAfter: CMTime(value: 1, timescale: 1000))
     }
     
-    @objc func timeForAssert(seconds: Float) -> CMTime {
-        guard let track = self.assert.tracks(withMediaType: .video).first else {
+    
+//    @objc func play() {
+//        player.play()
+//    }
+    
+    func time(for asset: AVAsset, seconds: Float64) -> CMTime {
+        guard let track = asset.tracks(withMediaType: .video).first else {
             return .zero
         }
         
         let fps = Int32(track.nominalFrameRate)
-        let time = CMTimeMakeWithSeconds(Float64(seconds), preferredTimescale: fps)
+        let time = CMTimeMakeWithSeconds(seconds, preferredTimescale: fps)
         return time
-        
     }
     
-    @objc func getAssertSeconds() -> Float64 {
-        guard let _ = self.assert.tracks(withMediaType: .video).first else {
+    func seconds(for asset: AVAsset) -> Float64 {
+        guard let _ = asset.tracks(withMediaType: .video).first else {
             return 0
         }
         
-        return Float64(self.assert.duration.value) / Float64(self.assert.duration.timescale)
+        return Float64(asset.duration.value) / Float64(asset.duration.timescale)
     }
     
-    @objc static func generatorImages(from avAsset: AVAsset,  completion: ((_ images: Array<UIImage>) -> Void)?) {
+    func generatorImages(from avAsset: AVAsset, count: Int = 0, completion: ((_ images: Array<UIImage>?) -> Void)?) {
         guard let track = avAsset.tracks(withMediaType: .video).first else {
             return
         }
         
         let fps = Int32(track.nominalFrameRate)
-        let totalTimes = Int(Int32(avAsset.duration.value) / avAsset.duration.timescale)
-        var times = Array<NSValue>()
+        let seconds = ceil((Double(avAsset.duration.value) / Double(avAsset.duration.timescale)))
+        var imgCount = Int(seconds)
         
-        for i in 0..<totalTimes {
-            let time = CMTimeMakeWithSeconds(Float64(i), preferredTimescale: fps)
+        print("imgCount == \(imgCount)")
+        var times = Array<NSValue>()
+        if count != 0 {
+            imgCount = count
+        }
+        
+        let interval = seconds / Double(imgCount)
+        
+        for i in 0..<imgCount {
+            let t = Double(i) * interval
+            let time = CMTimeMakeWithSeconds(Float64(t), preferredTimescale: fps)
             CMTimeShow(time)
             let value = NSValue(time: time)
             times.append(value)
@@ -94,17 +120,22 @@ class AssetHelper: NSObject {
                         DispatchQueue.main.async {
                             completion?(images)
                         }
+                    } else {
+                        DispatchQueue.main.async {
+                            completion?(nil)
+                        }
                     }
                     
                 case .failed:
-                    ()
+                    DispatchQueue.main.async {
+                        completion?(nil)
+                    }
                 case .cancelled:
-                    ()
-                @unknown default:
-                    ()
+                    DispatchQueue.main.async {
+                        completion?(nil)
+                    }
                 }
             }
         }
-        
     }
 }

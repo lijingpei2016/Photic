@@ -13,8 +13,14 @@ class Segment: NSObject {
     lazy var thumbnails = [UIImage]()
     var offsetX = 0
     var asset: AVAsset?
-    
-    func width() -> Float {
-        return Float(thumbnails.count * thumbnailW)
-    }
+    var seconds: Float = 0
+//    var buildWith: Float {
+//        get {
+//            return seconds * Float(thumbnailW)
+//        }
+//    }
+    var width: Float = 0.0
+//    func width() -> Float {
+//        return Float(thumbnails.count) * Float(thumbnailW)
+//    }
 }

@@ -11,7 +11,7 @@ import AVFoundation
 
 class EditAssetViewController: UIViewController {
 
-    var assertHelper: AssetHelper
+//    var assertHelper: AssetHelper
     var asset: AVAsset
     
     lazy var top: UIView = {
@@ -31,6 +31,7 @@ class EditAssetViewController: UIViewController {
         responseSubviewsView.backgroundColor = UIColor(hex: "#181818")
         responseSubviewsView.close = {[weak self] in
             self?.dismiss(animated: true)
+            EditorManager.shared.clearSource()
         }
         return responseSubviewsView
     }()
@@ -40,9 +41,38 @@ class EditAssetViewController: UIViewController {
         return editorRootView
     }()
     
+    lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.itemSize = CGSize(width: 50, height: 50)
+        layout.minimumLineSpacing = 6
+        
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.register(EditorComponentMenuViewCell.self, forCellWithReuseIdentifier: String(describing: EditorComponentMenuViewCell.self))
+        return collectionView
+    }()
+    
+    lazy var editOptions: [EditItem] = {
+        let editOptions = [EditItem]()
+        let clip = EditItem(option: .clip, name: "剪辑", image: "clip")
+        let music = EditItem(option: .music, name: "音频", image: "music")
+        let text = EditItem(option: .text, name: "文本", image: "text")
+        let stickers = EditItem(option: .stickers, name: "贴纸", image: "stickers")
+        let pictureIn = EditItem(option: .pictureIn, name: "画中画", image: "pictureIn")
+        let specialEffect = EditItem(option: .specialEffect, name: "特效", image: "specialEffects")
+        let filter = EditItem(option: .filter, name: "滤镜", image: "filter")
+        return [clip, music, text, stickers, pictureIn, specialEffect, filter]
+    }()
+    
     @objc init(asset: AVAsset) {
         self.asset = asset
-        assertHelper = AssetHelper(assert: asset)
+        
+//        assertHelper = AssetHelper(assert: asset)
+        EditorManager.shared.clear()
+        EditorManager.shared.addAsset(asset)
+        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -56,7 +86,6 @@ class EditAssetViewController: UIViewController {
         initViews()
         
         updatePlayer()
-        updatePreview()
     }
     
     func initViews() {
@@ -64,6 +93,7 @@ class EditAssetViewController: UIViewController {
         view.addSubview(responseSubviewsView)
         view.addSubview(editorRootView)
         view.addSubview(bottom)
+        bottom.addSubview(collectionView)
         
         top.snp.makeConstraints { make in
             make.top.left.right.equalToSuperview()
@@ -85,35 +115,56 @@ class EditAssetViewController: UIViewController {
             make.left.right.bottom.equalToSuperview()
             make.height.equalTo(editorBottomH)
         }
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.left.right.equalToSuperview()
+            make.height.equalTo(60)
+        }
     }
 
     func updatePlayer() {
-        if let playerLayer = assertHelper.getPreviewLayer() {
+        if let playerLayer = EditorManager.shared.previewLayer() {
             editorRootView.updatePlayer(playLayer: playerLayer)
         }
     }
     
-    func updatePreview() {
-        EditorManager.shared.addAsset(self.asset)
+    func showMenuView() {
+        let menuView = EditorComponentMenuView()
+        self.view.addSubview(menuView)
+        
+        menuView.snp.makeConstraints { make in
+            make.left.right.bottom.equalToSuperview()
+            make.height.equalTo(editorMenuViewH)
+        }
     }
 }
 
-//- (void)setupEditView {
-//    MainEditView *mainEditView = [[MainEditView alloc]initWithFrame:[UIScreen mainScreen].bounds];
-//    [self.view addSubview:mainEditView];
-//    _mainEditView = mainEditView;
-//
-//    [EditViewObserver observer].trackViewDidScroll = ^(CGFloat scale) {
-//        if (self.assertHelper.getAssertSeconds == 0) {
-//            return;
-//        }
-//
-//        NSLog(@"seek time --- %f", self.assertHelper.getAssertSeconds * scale);
-//
-//        CMTime time = [self.assertHelper timeForAssertWithSeconds:self.assertHelper.getAssertSeconds * scale];
-//        CMTimeShow(time);
-//        [self.assertHelper seekTo:time];
-//    };
-//}
+extension EditAssetViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return editOptions.count
+
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell: EditorComponentMenuViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EditorComponentMenuViewCell.self), for: indexPath) as! EditorComponentMenuViewCell
+//        cell.titleLabel.text = editOptions[indexPath.row].rawValue
+        let item = editOptions[indexPath.row]
+        cell.titleLabel.text = item.name
+        cell.icon.image = UIImage(named: item.image)
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let item = editOptions[indexPath.row]
+        switch item.option {
+        case .clip:
+            showMenuView()
+            
+        default:
+            ()
+
+        }
+    }
+}
 
 

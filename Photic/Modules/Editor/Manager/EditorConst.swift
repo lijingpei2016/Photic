@@ -28,6 +28,7 @@ let centerLineH = 90
 
 //----
 let editorBackgroundColor = UIColor(hex: "#181818")
+let editorMenuViewH = 104
 
 let editorTopViewH = safeTop
 let editorBottomH = 94.0
@@ -35,4 +36,4 @@ let editorResponseSubviewsViewH = 50.0
 let editorControlBarH = 40.0
 
 let playLayoutViewH = 349.0
-let thumbnailW = 50
+let thumbnailW = 50.0

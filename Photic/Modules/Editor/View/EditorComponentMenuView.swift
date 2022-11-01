@@ -6,14 +6,33 @@
 //
 
 import UIKit
+import SnapKit
 
-enum EditOption: String {
+enum ClipOption: String {
     case clip = "分割"
     case delete = "删除"
 }
 
 class EditorComponentMenuView: UIView {
-    lazy var options = [EditOption.clip, EditOption.delete]
+    lazy var options = [ClipOption.clip, ClipOption.delete]
+    
+    lazy var backBgView: UIView = {
+        let backBgView = UIView()
+        
+        let backBtn = UIButton()
+        backBtn.backgroundColor = UIColor(hex: "#1AFFFF")
+        backBtn.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+        backBgView.addSubview(backBtn)
+        
+        backBtn.snp.makeConstraints { make in
+            make.top.equalTo(8)
+            make.left.equalTo(10)
+            make.width.equalTo(32)
+            make.height.equalTo(54)
+            make.right.equalToSuperview()
+        }
+        return backBgView
+    }()
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -22,9 +41,10 @@ class EditorComponentMenuView: UIView {
         layout.minimumLineSpacing = 0
         
         let collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(EditViewFooterCell.self, forCellWithReuseIdentifier: String(describing: EditViewFooterCell.self))
+        collectionView.register(EditorComponentMenuViewCell.self, forCellWithReuseIdentifier: String(describing: EditorComponentMenuViewCell.self))
         return collectionView
     }()
     
@@ -39,12 +59,23 @@ class EditorComponentMenuView: UIView {
     }
     
     func initView() {
+        self.backgroundColor = UIColor(hex: "#181818")
+        self.addSubview(backBgView)
         self.addSubview(collectionView)
         
+        backBgView.snp.makeConstraints { make in
+            make.top.bottom.leading.equalToSuperview()
+        }
+        
         collectionView.snp.makeConstraints { make in
-            make.top.left.right.equalToSuperview()
+            make.left.equalTo(backBgView.snp.right)
+            make.top.right.equalToSuperview()
             make.bottom.equalToSuperview().offset(-safeBottom)
         }
+    }
+    
+    @objc func backAction() {
+        removeFromSuperview()
     }
     
 }
@@ -56,13 +87,13 @@ extension EditorComponentMenuView: UICollectionViewDelegate, UICollectionViewDat
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: EditViewFooterCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EditViewFooterCell.self), for: indexPath) as! EditViewFooterCell
+        let cell: EditorComponentMenuViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EditorComponentMenuViewCell.self), for: indexPath) as! EditorComponentMenuViewCell
         cell.titleLabel.text = options[indexPath.row].rawValue
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let option: EditOption = options[indexPath.row]
+        let option: ClipOption = options[indexPath.row]
 //        switch option {
 //        case .clip:
 //            

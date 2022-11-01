@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class EditViewFooterCell: UICollectionViewCell {
+class EditorComponentMenuViewCell: UICollectionViewCell {
     lazy var icon: UIImageView = {
         let icon = UIImageView()
         icon.contentMode = .scaleAspectFill
@@ -38,7 +38,7 @@ class EditViewFooterCell: UICollectionViewCell {
         contentView.addSubview(titleLabel)
         
         icon.snp.makeConstraints { make in
-            make.top.centerX.equalToSuperview()
+            make.center.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints { make in

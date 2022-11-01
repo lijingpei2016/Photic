@@ -10,6 +10,10 @@ import UIKit
 class MediaTimelineContainer: UIView {
     let trackPreviewDefaultH = 105
     
+    var firstZoomPoint = CGPoint.zero
+    var secondZoomPoint = CGPoint.zero
+    var lastLength: Float = 0.0
+    
     lazy var trackPreview: VideoTrackPreview = {
         let trackPreview = VideoTrackPreview()
         
@@ -21,6 +25,8 @@ class MediaTimelineContainer: UIView {
         
         return timelineRuler
     }()
+    
+    var lenthChange: ((_ width: Float) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -54,50 +60,39 @@ class MediaTimelineContainer: UIView {
     }
     
     @objc func pinchAction(pinchGes: UIPinchGestureRecognizer) {
-        print(pinchGes.state)
-        print(pinchGes.scale)
-        print(pinchGes.velocity)
-        
+        print("pinchGes.scale = \(pinchGes.scale)")
+
         // 滑动开始 记录一下当前cell的高度
         if pinchGes.state == .began {
+            print("pinchGes.state == .began")
+            lastLength = Float(pinchGes.view?.bounds.width ?? 0.0)
+            
+        } else if pinchGes.state == .changed {
+            print("pinchGes.state == .changed")
 
-        }
-        
-        // 滑动过程中 动态修改cell的宽度
-        if (pinchGes.numberOfTouches) == 2 && (pinchGes.state == .changed){
-            //计算当前捏合后cell的应该宽度
-//            let tempHeight = cellLastHeight * pinchGes.scale
-//            
-//            if tempHeight != cellLastHeight && tempHeight >= 10 && tempHeight <= 30{
-//                // 🔥计算捏合中心，根据中心点，确定放大位置
-//                let pOne = pinchGes.location(ofTouch: 0, in: self)
-//                let pTwo = pinchGes.location(ofTouch: 1, in: self)
-//                let center = CGPoint.init(x: (pOne.x+pTwo.x)/2, y: (pOne.y+pTwo.y)/2)
-//                
-//                
-//                // 🔥小学知识用到了 具体计算方式在文章中有讲
-//                // 变化之前
-//                let y1 = CGFloat(indexPath!.row) * KLineVM.sharedInstance.cellHeight;
-//                let o1 = self.contentOffset.y;
-//                let h1 = KLineVM.sharedInstance.cellHeight * 0.5;
-//                
-//                // 变化之后
-//                let y2 = CGFloat(indexPath!.row) * tempHeight;
-//                let h2 = tempHeight * 0.5;
-//                
-//                let o2 = y2 + h2 - y1 + o1 - h1;
-//                
-//                KLineVM.sharedInstance.cellHeight = tempHeight
-//                self.reloadData()
-//                // 修改偏移量 使中心点一直处于中心 注意设置 estimatedRowHeight、estimatedSectionHeaderHeight、estimatedSectionFooterHeight来保证contentOffset可用
-//                self.contentOffset = CGPoint.init(x: 0, y: o2)
-//    
-//            }
-        }
-        
-        if pinchGes.state == .ended ||  pinchGes.state == .recognized{
+            widthChange(scale: Float(pinchGes.scale))
+            pinchGes.scale = 1
 
+        } else {
+            print("pinchGes.state == .end")
+
+            widthChangeEnd()
         }
         
+    }
+    
+    func widthChange(scale: Float) {
+
+        trackPreview.reLayoutSegments(scale: scale)
+        
+        lenthChange?(Float(trackPreview.totalW))
+    }
+    
+    func widthChangeEnd() {
+        trackPreview.segmentWidthChangeEnd()
+    }
+    
+    func length(from point1: CGPoint, to point2: CGPoint) -> Float {
+        return hypotf(Float(abs(point1.x - point2.x)), Float(abs(point1.y - point2.y)))
     }
 }

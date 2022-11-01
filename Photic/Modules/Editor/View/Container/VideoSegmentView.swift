@@ -35,7 +35,7 @@ class VideoSegmentView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-
+        
     }
     
     func initSubViews() {
@@ -56,8 +56,17 @@ class VideoSegmentView: UIView {
     
     func updateThumbnailView(_ thumbnails: [UIImage]) {
         videoThumbnailView.snp.updateConstraints { make in
-            make.width.equalTo(thumbnails.count * thumbnailW)
+            make.width.equalTo(Float(thumbnails.count) * Float(thumbnailW))
         }
         videoThumbnailView.updateContent(thumbnails: thumbnails)
+    }
+    
+    func widthChange(width: CGFloat) {
+        videoThumbnailView.snp.updateConstraints { make in
+            make.width.equalTo(width - 2)
+        }
+        
+        let count = ceil((width - 2) / thumbnailW)
+        videoThumbnailView.increaseCell(count: Int(count))
     }
 }

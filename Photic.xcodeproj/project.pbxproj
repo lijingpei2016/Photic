@@ -219,6 +219,7 @@
 		8D0AAF0B28C4D39B00CC71FE /* EditAssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAF0A28C4D39B00CC71FE /* EditAssetViewController.swift */; };
 		8D0AAF0D28C4EE3B00CC71FE /* EditorObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAF0C28C4EE3B00CC71FE /* EditorObserver.swift */; };
 		8D1D5D9E28EAE3EF001E6BCD /* EditorComponentMenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1D5D9D28EAE3EF001E6BCD /* EditorComponentMenuViewCell.swift */; };
+		8D432AFC290FF36C00E1D336 /* EditItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D432AFB290FF36C00E1D336 /* EditItem.swift */; };
 		8D48FCD328ED2B18002C5268 /* ResponseSubviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCD228ED2B18002C5268 /* ResponseSubviewsView.swift */; };
 		8D48FCD728ED2E5A002C5268 /* PlayerLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCD628ED2E5A002C5268 /* PlayerLayoutView.swift */; };
 		8D48FCD928ED2F90002C5268 /* MediaTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCD828ED2F90002C5268 /* MediaTimeline.swift */; };
@@ -234,6 +235,7 @@
 		8D48FCED28F02B58002C5268 /* VideoThumbnailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCEC28F02B58002C5268 /* VideoThumbnailCell.swift */; };
 		8D48FCEF28F05E63002C5268 /* EditorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCEE28F05E63002C5268 /* EditorManager.swift */; };
 		8D48FCF228F05F41002C5268 /* Segment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCF128F05F41002C5268 /* Segment.swift */; };
+		8D8D719529083488008F63D7 /* EditorPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D8D719429083487008F63D7 /* EditorPublisher.swift */; };
 		8DFF693228C109BD007AB743 /* VideoSegmentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF693128C109BD007AB743 /* VideoSegmentView.swift */; };
 		8DFF693628C10BB1007AB743 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF693528C10BB1007AB743 /* String+Extension.swift */; };
 		8DFF693B28C10C2C007AB743 /* SegmentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DFF693A28C10C2C007AB743 /* SegmentViewCell.swift */; };
@@ -659,6 +661,7 @@
 		8D0AAF0A28C4D39B00CC71FE /* EditAssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAssetViewController.swift; sourceTree = "<group>"; };
 		8D0AAF0C28C4EE3B00CC71FE /* EditorObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorObserver.swift; sourceTree = "<group>"; };
 		8D1D5D9D28EAE3EF001E6BCD /* EditorComponentMenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorComponentMenuViewCell.swift; sourceTree = "<group>"; };
+		8D432AFB290FF36C00E1D336 /* EditItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItem.swift; sourceTree = "<group>"; };
 		8D48FCD228ED2B18002C5268 /* ResponseSubviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSubviewsView.swift; sourceTree = "<group>"; };
 		8D48FCD628ED2E5A002C5268 /* PlayerLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerLayoutView.swift; sourceTree = "<group>"; };
 		8D48FCD828ED2F90002C5268 /* MediaTimeline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaTimeline.swift; sourceTree = "<group>"; };
@@ -674,6 +677,7 @@
 		8D48FCEC28F02B58002C5268 /* VideoThumbnailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailCell.swift; sourceTree = "<group>"; };
 		8D48FCEE28F05E63002C5268 /* EditorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorManager.swift; sourceTree = "<group>"; };
 		8D48FCF128F05F41002C5268 /* Segment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Segment.swift; sourceTree = "<group>"; };
+		8D8D719429083487008F63D7 /* EditorPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorPublisher.swift; sourceTree = "<group>"; };
 		8DFF693128C109BD007AB743 /* VideoSegmentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSegmentView.swift; sourceTree = "<group>"; };
 		8DFF693528C10BB1007AB743 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		8DFF693A28C10C2C007AB743 /* SegmentViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegmentViewCell.swift; sourceTree = "<group>"; };
@@ -1363,9 +1367,10 @@
 		8D0AAF0728C4C9C400CC71FE /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				8DFF693C28C11781007AB743 /* EditorConst.swift */,
 				8D0AAF0828C4C9E200CC71FE /* AssetHelper.swift */,
 				8D0AAF0C28C4EE3B00CC71FE /* EditorObserver.swift */,
-				8DFF693C28C11781007AB743 /* EditorConst.swift */,
+				8D8D719429083487008F63D7 /* EditorPublisher.swift */,
 				8D48FCEE28F05E63002C5268 /* EditorManager.swift */,
 			);
 			path = Manager;
@@ -1394,6 +1399,7 @@
 			isa = PBXGroup;
 			children = (
 				8D48FCF128F05F41002C5268 /* Segment.swift */,
+				8D432AFB290FF36C00E1D336 /* EditItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1680,6 +1686,7 @@
 				16BFFEE228B35F03000A1FE6 /* GPUImageDirectionalSobelEdgeDetectionFilter.m in Sources */,
 				16BFFEE928B35F03000A1FE6 /* GPUImageFramebuffer.m in Sources */,
 				16AAEB6828B8AC3C00D4EAE1 /* UIImage+ResizeSize.m in Sources */,
+				8D432AFC290FF36C00E1D336 /* EditItem.swift in Sources */,
 				16BFFF0928B35F03000A1FE6 /* GPUImageVoronoiConsumerFilter.m in Sources */,
 				16BFFEEA28B35F03000A1FE6 /* GPUImageLaplacianFilter.m in Sources */,
 				16BFFEC028B35F03000A1FE6 /* GPUImageBilateralFilter.m in Sources */,
@@ -1813,6 +1820,7 @@
 				8D0AAF0B28C4D39B00CC71FE /* EditAssetViewController.swift in Sources */,
 				16BFFED028B35F03000A1FE6 /* GPUImageToonFilter.m in Sources */,
 				16BFFF0128B35F03000A1FE6 /* GPUImageColorBlendFilter.m in Sources */,
+				8D8D719529083488008F63D7 /* EditorPublisher.swift in Sources */,
 				16BAAB8928C6FC5000BB9555 /* PCMovieComposition.m in Sources */,
 				16BFFE9D28B35F03000A1FE6 /* GPUImageThresholdEdgeDetectionFilter.m in Sources */,
 				16BFFF3728B35F03000A1FE6 /* GPUImageBulgeDistortionFilter.m in Sources */,

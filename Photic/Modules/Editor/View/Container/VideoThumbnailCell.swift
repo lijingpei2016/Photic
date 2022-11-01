@@ -18,6 +18,7 @@ class VideoThumbnailCell: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        self.clipsToBounds = true
         initSubView()
     }
     

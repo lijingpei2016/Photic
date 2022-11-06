@@ -8,8 +8,6 @@
 import UIKit
 import AVFoundation
 
-let kSegmentDidChange = "kSegmentDidChange"
-
 protocol EditorObserver {
 //    static let shared = EditorObserver()
     
@@ -22,6 +20,8 @@ protocol EditorObserver {
     func medialineDidScroll(scale: CGFloat)
     
     func play()
+    func pause()
+    
 }
 
 extension EditorObserver {

@@ -17,7 +17,7 @@ class EditorComponentMenuViewCell: UICollectionViewCell {
     
     lazy var titleLabel: UILabel = {
         let titleLabel = UILabel()
-        titleLabel.font = UIFont.systemFont(ofSize: 12)
+        titleLabel.font = UIFont.systemFont(ofSize: 10)
         titleLabel.textColor = .white
         titleLabel.textAlignment = .center
         return titleLabel
@@ -38,7 +38,8 @@ class EditorComponentMenuViewCell: UICollectionViewCell {
         contentView.addSubview(titleLabel)
         
         icon.snp.makeConstraints { make in
-            make.center.equalToSuperview()
+            make.top.equalTo(13)
+            make.centerX.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints { make in

@@ -219,6 +219,7 @@
 		8D0AAF0B28C4D39B00CC71FE /* EditAssetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAF0A28C4D39B00CC71FE /* EditAssetViewController.swift */; };
 		8D0AAF0D28C4EE3B00CC71FE /* EditorObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D0AAF0C28C4EE3B00CC71FE /* EditorObserver.swift */; };
 		8D1D5D9E28EAE3EF001E6BCD /* EditorComponentMenuViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D1D5D9D28EAE3EF001E6BCD /* EditorComponentMenuViewCell.swift */; };
+		8D236086291670CB008A7B9A /* EditItemBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D236085291670CB008A7B9A /* EditItemBuilder.swift */; };
 		8D432AFC290FF36C00E1D336 /* EditItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D432AFB290FF36C00E1D336 /* EditItem.swift */; };
 		8D48FCD328ED2B18002C5268 /* ResponseSubviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCD228ED2B18002C5268 /* ResponseSubviewsView.swift */; };
 		8D48FCD728ED2E5A002C5268 /* PlayerLayoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D48FCD628ED2E5A002C5268 /* PlayerLayoutView.swift */; };
@@ -661,6 +662,7 @@
 		8D0AAF0A28C4D39B00CC71FE /* EditAssetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAssetViewController.swift; sourceTree = "<group>"; };
 		8D0AAF0C28C4EE3B00CC71FE /* EditorObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorObserver.swift; sourceTree = "<group>"; };
 		8D1D5D9D28EAE3EF001E6BCD /* EditorComponentMenuViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorComponentMenuViewCell.swift; sourceTree = "<group>"; };
+		8D236085291670CB008A7B9A /* EditItemBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItemBuilder.swift; sourceTree = "<group>"; };
 		8D432AFB290FF36C00E1D336 /* EditItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditItem.swift; sourceTree = "<group>"; };
 		8D48FCD228ED2B18002C5268 /* ResponseSubviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSubviewsView.swift; sourceTree = "<group>"; };
 		8D48FCD628ED2E5A002C5268 /* PlayerLayoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerLayoutView.swift; sourceTree = "<group>"; };
@@ -1400,6 +1402,7 @@
 			children = (
 				8D48FCF128F05F41002C5268 /* Segment.swift */,
 				8D432AFB290FF36C00E1D336 /* EditItem.swift */,
+				8D236085291670CB008A7B9A /* EditItemBuilder.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1656,6 +1659,7 @@
 				16BFFEEF28B35F03000A1FE6 /* GPUImageTiltShiftFilter.m in Sources */,
 				16BFFF3C28B35F03000A1FE6 /* GPUImageCGAColorspaceFilter.m in Sources */,
 				16BFFF0728B35F03000A1FE6 /* GPUImageRawDataOutput.m in Sources */,
+				8D236086291670CB008A7B9A /* EditItemBuilder.swift in Sources */,
 				16BFFED728B35F03000A1FE6 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
 				16BFFEB328B35F03000A1FE6 /* GPUImageHistogramFilter.m in Sources */,
 				8D48FCE128EE9315002C5268 /* MediaTimelineRuler.swift in Sources */,
@@ -1998,6 +2002,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = F4R94ZX7MA;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Photic/PhoticHeader.h";
 				INFOPLIST_FILE = Photic/Info.plist;

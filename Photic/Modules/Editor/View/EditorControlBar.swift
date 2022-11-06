@@ -32,6 +32,54 @@ class EditorControlBar: UIView {
         return playBtn
     }()
     
+    lazy var stackView: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        stackView.spacing = 10
+        stackView.distribution = .fill
+        
+        stackView.addArrangedSubview(undoBtn)
+        stackView.addArrangedSubview(redoBtn)
+        stackView.addArrangedSubview(fullScreenBtn)
+        return stackView
+    }()
+    
+    lazy var undoBtn: UIButton = {
+        let undoBtn = UIButton(type: .custom)
+        undoBtn.setImage(UIImage(named: "undo_disable"), for: .disabled)
+        undoBtn.setImage(UIImage(named: "undo"), for: .normal)
+        undoBtn.addTarget(self, action: #selector(undoAction), for: .touchUpInside)
+        undoBtn.isEnabled = false
+        return undoBtn
+    }()
+    
+    lazy var redoBtn: UIButton = {
+        let redoBtn = UIButton(type: .custom)
+        redoBtn.setImage(UIImage(named: "redo_disable"), for: .disabled)
+        redoBtn.setImage(UIImage(named: "redo"), for: .normal)
+        redoBtn.addTarget(self, action: #selector(redoAction), for: .touchUpInside)
+        redoBtn.isEnabled = false
+        return redoBtn
+    }()
+    
+    lazy var fullScreenBtn: UIButton = {
+        let fullScreenBtn = UIButton(type: .custom)
+        fullScreenBtn.setImage(UIImage(named: "full_screen"), for: .normal)
+        fullScreenBtn.addTarget(self, action: #selector(redoAction), for: .touchUpInside)
+        return fullScreenBtn
+    }()
+    
+    var playBlock: (() -> Void)?
+    
+    var pauseBlock: (() -> Void)?
+    
+    var isPlaying: Bool = false {
+        didSet {
+            playBtn.setImage(UIImage(named: (isPlaying ? "pause" : "play")), for: .normal)
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -46,6 +94,7 @@ class EditorControlBar: UIView {
         addSubview(playTimeLabel)
         addSubview(totalTimeLabel)
         addSubview(playBtn)
+        addSubview(stackView)
         
         playTimeLabel.snp.makeConstraints { make in
             make.left.equalTo(12)
@@ -60,10 +109,45 @@ class EditorControlBar: UIView {
         playBtn.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
             make.center.equalToSuperview()
+            make.width.equalTo(50)
+        }
+        
+        stackView.snp.makeConstraints { make in
+            make.right.equalTo(-6)
+            make.top.bottom.equalToSuperview()
+        }
+        
+        undoBtn.snp.makeConstraints { make in
+            make.width.height.equalTo(25)
+        }
+        
+        redoBtn.snp.makeConstraints { make in
+            make.width.height.equalTo(undoBtn)
+        }
+        
+        fullScreenBtn.snp.makeConstraints { make in
+            make.width.height.equalTo(undoBtn)
         }
     }
     
+    func playBtnSetPause() {
+        self.isPlaying = false
+    }
+    
     @objc func playAction() {
-        EditObserver.shared.play()
+        isPlaying ? pauseBlock?() : playBlock?()
+        self.isPlaying = !self.isPlaying
+    }
+    
+    @objc func undoAction() {
+        
+    }
+    
+    @objc func redoAction() {
+        
+    }
+    
+    @objc func fullScreenAction() {
+        
     }
 }

@@ -26,7 +26,25 @@ class MediaTimelineContainer: UIView {
         return timelineRuler
     }()
     
+    lazy var muteButton: UIButton = {
+        let muteButton = UIButton(type: .custom)
+        muteButton.setTitle("关闭原声", for: .normal)
+        muteButton.setTitleColor(.white, for: .normal)
+        muteButton.titleLabel?.font = UIFont.systemFont(ofSize: 12)
+        return muteButton
+    }()
+    
+    lazy var openCoverEditorButton: UIButton = {
+        let openCoverEditorButton = UIButton(type: .custom)
+        openCoverEditorButton.setTitle("设置\n封面", for: .normal)
+        openCoverEditorButton.setTitleColor(.white, for: .normal)
+        openCoverEditorButton.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        openCoverEditorButton.titleLabel?.numberOfLines = 0
+        return openCoverEditorButton
+    }()
+    
     var lenthChange: ((_ width: Float) -> Void)?
+    
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -43,6 +61,8 @@ class MediaTimelineContainer: UIView {
         
         addSubview(timelineRuler)
         addSubview(trackPreview)
+        addSubview(muteButton)
+        addSubview(openCoverEditorButton)
         
         timelineRuler.snp.makeConstraints { make in
             make.height.equalTo(24)
@@ -57,6 +77,27 @@ class MediaTimelineContainer: UIView {
             make.right.equalTo(-hMargin)
             make.height.equalTo(trackPreviewDefaultH)
         }
+        
+        openCoverEditorButton.snp.makeConstraints { make in
+            make.top.equalTo(trackPreview).offset(15)
+            make.right.equalTo(trackPreview.snp.left).offset(-30)
+            make.width.height.equalTo(50)
+        }
+        
+        muteButton.snp.makeConstraints { make in
+            make.centerY.equalTo(openCoverEditorButton)
+            make.right.equalTo(openCoverEditorButton.snp.left).offset(-10)
+            make.width.equalTo(55)
+            make.height.equalTo(40)
+        }
+    }
+    
+    @objc func muteBtnAction() {
+        
+    }
+    
+    @objc func coverBtnAction() {
+        
     }
     
     @objc func pinchAction(pinchGes: UIPinchGestureRecognizer) {

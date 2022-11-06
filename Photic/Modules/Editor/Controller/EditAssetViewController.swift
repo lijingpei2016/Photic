@@ -56,13 +56,13 @@ class EditAssetViewController: UIViewController {
     
     lazy var editOptions: [EditItem] = {
         let editOptions = [EditItem]()
-        let clip = EditItem(option: .clip, name: "剪辑", image: "clip")
-        let music = EditItem(option: .music, name: "音频", image: "music")
-        let text = EditItem(option: .text, name: "文本", image: "text")
-        let stickers = EditItem(option: .stickers, name: "贴纸", image: "stickers")
-        let pictureIn = EditItem(option: .pictureIn, name: "画中画", image: "pictureIn")
-        let specialEffect = EditItem(option: .specialEffect, name: "特效", image: "specialEffects")
-        let filter = EditItem(option: .filter, name: "滤镜", image: "filter")
+        let clip = EditItem(option: .clip, image: "clip")
+        let music = EditItem(option: .music, image: "music")
+        let text = EditItem(option: .text, image: "text")
+        let stickers = EditItem(option: .stickers, image: "stickers")
+        let pictureIn = EditItem(option: .pictureIn, image: "pictureIn")
+        let specialEffect = EditItem(option: .specialEffect, image: "specialEffects")
+        let filter = EditItem(option: .filter, image: "filter")
         return [clip, music, text, stickers, pictureIn, specialEffect, filter]
     }()
     
@@ -129,7 +129,8 @@ class EditAssetViewController: UIViewController {
     }
     
     func showMenuView() {
-        let menuView = EditorComponentMenuView()
+        let clipItems = EditItemBuilder.builderClipItem()
+        let menuView = EditorComponentMenuView(frame: .zero, menus: clipItems)
         self.view.addSubview(menuView)
         
         menuView.snp.makeConstraints { make in
@@ -149,7 +150,7 @@ extension EditAssetViewController: UICollectionViewDelegate, UICollectionViewDat
         let cell: EditorComponentMenuViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EditorComponentMenuViewCell.self), for: indexPath) as! EditorComponentMenuViewCell
 //        cell.titleLabel.text = editOptions[indexPath.row].rawValue
         let item = editOptions[indexPath.row]
-        cell.titleLabel.text = item.name
+        cell.titleLabel.text = item.option.rawValue
         cell.icon.image = UIImage(named: item.image)
         return cell
     }

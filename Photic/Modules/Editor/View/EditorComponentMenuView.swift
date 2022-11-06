@@ -14,14 +14,16 @@ enum ClipOption: String {
 }
 
 class EditorComponentMenuView: UIView {
-    lazy var options = [ClipOption.clip, ClipOption.delete]
-    
+//    lazy var options = [ClipOption.clip, ClipOption.delete]
+    let menus: [EditMenuItem]
     lazy var backBgView: UIView = {
         let backBgView = UIView()
         
-        let backBtn = UIButton()
-        backBtn.backgroundColor = UIColor(hex: "#1AFFFF")
+        let backBtn = UIButton(type: .custom)
+        backBtn.setImage(UIImage(named: "back"), for: .normal)
+        backBtn.backgroundColor = .lightGray
         backBtn.addTarget(self, action: #selector(backAction), for: .touchUpInside)
+        backBtn.layer.cornerRadius = 3
         backBgView.addSubview(backBtn)
         
         backBtn.snp.makeConstraints { make in
@@ -37,8 +39,8 @@ class EditorComponentMenuView: UIView {
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 90, height: editViewFooterH - safeBottom)
-        layout.minimumLineSpacing = 0
+        layout.itemSize = CGSize(width: 50, height: 70)
+        layout.minimumLineSpacing = 9
         
         let collectionView = UICollectionView(frame: self.bounds, collectionViewLayout: layout)
         collectionView.backgroundColor = .clear
@@ -48,7 +50,8 @@ class EditorComponentMenuView: UIView {
         return collectionView
     }()
     
-    override init(frame: CGRect) {
+    init(frame: CGRect, menus: [EditMenuItem]) {
+        self.menus = menus
         super.init(frame: frame)
         
         initView()
@@ -82,18 +85,20 @@ class EditorComponentMenuView: UIView {
 
 extension EditorComponentMenuView: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return options.count
+        return menus.count
 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: EditorComponentMenuViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EditorComponentMenuViewCell.self), for: indexPath) as! EditorComponentMenuViewCell
-        cell.titleLabel.text = options[indexPath.row].rawValue
+        let item = menus[indexPath.row]
+        cell.titleLabel.text = item.option.rawValue
+        cell.icon.image = UIImage(named: item.image)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let option: ClipOption = options[indexPath.row]
+        let item = menus[indexPath.row]
 //        switch option {
 //        case .clip:
 //            

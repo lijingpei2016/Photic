@@ -8,13 +8,29 @@
 import UIKit
 
 protocol EditorPublisher {
-    func segmentsDidChange(segments: [Segment])
+
 }
 
+let kSegmentDidChange = "kSegmentDidChange"
+let kPlayerProgressDidChange = "kPlayerProgressDidChange"
+let kPlayerPlayDidPause = "kPlayerPlayDidEnd"
+
 extension EditorPublisher {
-    func segmentsDidChange(segments: [Segment]) {
+    func publishSegmentsDidChange(segments: [Segment]) {
         DispatchQueue.main.async { 
             NotificationCenter.default.post(name: NSNotification.Name(kSegmentDidChange), object: nil, userInfo: ["segments": segments])
+        }
+    }
+    
+    func publishPlayerChangeProgress(_ progress: Float) {
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: NSNotification.Name(kPlayerProgressDidChange), object: nil, userInfo: ["progress": progress])
+        }
+    }
+    
+    func publishPlayerPlayPause() {
+        DispatchQueue.main.async {
+            NotificationCenter.default.post(name: NSNotification.Name(kPlayerPlayDidPause), object: nil, userInfo: nil)
         }
     }
 }

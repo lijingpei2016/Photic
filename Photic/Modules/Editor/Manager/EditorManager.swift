@@ -23,6 +23,10 @@ class EditorManager {
     
     var avplaver: AVPlayer?
     
+    var isPlaying = false
+    
+    var timeObserver: Any?
+    
     private init() {
         
     }
@@ -80,7 +84,7 @@ class EditorManager {
     }
     
     func rebuildSegment() {
-        segmentsDidChange(segments: self.segments)
+        publishSegmentsDidChange(segments: self.segments)
     }
     
     func newSegment() {
@@ -122,6 +126,9 @@ extension EditorManager: EditorObserver {
     }
     
     func medialineDidScroll(scale: CGFloat) {
+//        DispatchQueue.main.async {
+//            self.avplaver?.pause()
+//        }
         seek(to: Float(scale))
     }
     
@@ -145,6 +152,35 @@ extension EditorManager: EditorObserver {
     }
     
     func play() {
+        timeObserver = avplaver?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 0.01, preferredTimescale: 1000), queue: nil, using: { [self] time in
+            let progress = CMTimeGetSeconds(avplaver!.currentItem!.currentTime()) / CMTimeGetSeconds(avplaver!.currentItem!.duration)
+            publishPlayerChangeProgress(Float(progress))
+            if progress >= 1 {
+                pause()
+            }
+        })
+        
+        if self.avplaver?.currentItem?.currentTime() == self.avplaver?.currentItem?.duration {
+            self.avplaver?.seek(to: .zero)
+        }
+        
+        DispatchQueue.main.async {
+            self.avplaver?.play()
+            self.isPlaying = true
+        }
+    }
+    
+    func pause() {
+        if let observer = self.timeObserver {
+            avplaver?.removeTimeObserver(observer)
+            self.timeObserver = nil
+        }
+        
+        publishPlayerPlayPause()
+        DispatchQueue.main.async {
+            self.avplaver?.pause()
+            self.isPlaying = false
+        }
         
     }
 }

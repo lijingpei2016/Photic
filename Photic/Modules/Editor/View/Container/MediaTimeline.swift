@@ -32,7 +32,8 @@ class MediaTimeline: UIScrollView {
         
         initViews()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(segmentsChange), name: NSNotification.Name(kSegmentDidChange), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(segmentsChange), name: Notification.Name(kSegmentDidChange), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(playerProgressChange), name: Notification.Name(kPlayerProgressDidChange), object: nil)
 
     }
     
@@ -75,6 +76,15 @@ class MediaTimeline: UIScrollView {
             content.snp.updateConstraints { make in
                 make.width.equalTo(Float(ScreenWidth) + Float(segW))
             }
+        }
+    }
+    
+    @objc func playerProgressChange(notifi: Notification) {
+        if let progress = notifi.userInfo?["progress"] as? Float {
+            let x = (mediaTimelineContainer.bounds.width - self.bounds.width) * CGFloat(progress)
+            self.contentOffset = CGPoint(x: x, y: 0)
+            
+
         }
     }
 }

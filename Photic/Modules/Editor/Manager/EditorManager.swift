@@ -44,11 +44,22 @@ class EditorManager {
     }
     
     func generatorAvPlayer() {
-        guard let asset = assets.first else {
+        if (assets.count == 0) {
             return
+        }else if (assets.count == 1) {
+            guard let asset = assets.first else {
+                return
+            }
+            avplaver = avplayer(from: asset)
+        }else {
+            //合成
+            let builderAVAssets = NSArray(array: assets)
+            let playerItem = PCAssetBuilder.builderAVAssets(builderAVAssets as! [AVAsset])
+            avplaver = AVPlayer(playerItem: playerItem)
+            avplaver?.seek(to: .zero)
+            avplaver?.pause()
         }
         
-        avplaver = avplayer(from: asset)
     }
     
     func generatorSegments() {
@@ -126,9 +137,6 @@ extension EditorManager: EditorObserver {
     }
     
     func medialineDidScroll(scale: CGFloat) {
-//        DispatchQueue.main.async {
-//            self.avplaver?.pause()
-//        }
         seek(to: Float(scale))
     }
     

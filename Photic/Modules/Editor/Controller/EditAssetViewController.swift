@@ -11,7 +11,6 @@ import AVFoundation
 
 class EditAssetViewController: UIViewController {
 
-//    var assertHelper: AssetHelper
     var asset: AVAsset
     
     lazy var top: UIView = {
@@ -38,6 +37,7 @@ class EditAssetViewController: UIViewController {
         
     lazy var editorRootView: EditRootView = {
         let editorRootView = EditRootView()
+        editorRootView.delegate = self;
         return editorRootView
     }()
     
@@ -68,11 +68,8 @@ class EditAssetViewController: UIViewController {
     
     @objc init(asset: AVAsset) {
         self.asset = asset
-        
-//        assertHelper = AssetHelper(assert: asset)
         EditorManager.shared.clear()
         EditorManager.shared.addAsset(asset)
-        
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -148,7 +145,6 @@ extension EditAssetViewController: UICollectionViewDelegate, UICollectionViewDat
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: EditorComponentMenuViewCell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: EditorComponentMenuViewCell.self), for: indexPath) as! EditorComponentMenuViewCell
-//        cell.titleLabel.text = editOptions[indexPath.row].rawValue
         let item = editOptions[indexPath.row]
         cell.titleLabel.text = item.option.rawValue
         cell.icon.image = UIImage(named: item.image)
@@ -166,6 +162,40 @@ extension EditAssetViewController: UICollectionViewDelegate, UICollectionViewDat
 
         }
     }
+}
+
+
+extension EditAssetViewController: EditRootViewDelegate {
+    func showPhotoVC() {
+        //每次只选一张
+        let pickerVC = TZImagePickerController.init(maxImagesCount: 1, delegate: self)
+        pickerVC?.allowTakeVideo = false
+        pickerVC?.allowCameraLocation = false
+        pickerVC?.allowTakeVideo = false
+        pickerVC?.allowPickingVideo = true
+        self.present(pickerVC!, animated: true)
+    }
+}
+
+extension EditAssetViewController: TZImagePickerControllerDelegate {
+    
+    func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingPhotos photos: [UIImage]!, sourceAssets assets: [Any]!, isSelectOriginalPhoto: Bool) {
+        //如果是图片，则转成3秒的图片
+        
+
+    }
+    
+    func imagePickerController(_ picker: TZImagePickerController!, didFinishPickingVideo coverImage: UIImage!, sourceAssets asset: PHAsset!) {
+        if let asset {
+            PHImageManager.default().requestAVAsset(forVideo: asset, options: nil, resultHandler: { asset, audioMix, info in
+                DispatchQueue.main.async {
+                    EditorManager.shared.addAsset(asset!)
+                    self.updatePlayer()
+                }
+            })
+        }
+    }
+
 }
 
 

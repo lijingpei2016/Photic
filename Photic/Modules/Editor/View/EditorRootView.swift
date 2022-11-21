@@ -9,7 +9,13 @@ import UIKit
 import SnapKit
 import AVFoundation
 
+protocol EditRootViewDelegate: NSObjectProtocol {
+    func showPhotoVC()
+}
+
 class EditRootView: UIView {
+    var delegate: EditRootViewDelegate?
+    
     var trackViewdidScroll: ((_ scale: Float) -> Void)?
     
     lazy var timer: Timer = {
@@ -80,6 +86,7 @@ class EditRootView: UIView {
         importBtn.setTitleColor(UIColor.black, for: .normal)
         importBtn.backgroundColor = .white
         importBtn.layer.cornerRadius = 3
+        importBtn.addTarget(self, action: #selector(clickImportBtn), for: .touchUpInside)
         return importBtn
     }()
     
@@ -185,6 +192,12 @@ class EditRootView: UIView {
     @objc func playerPause() {
         controlBar.playBtnSetPause()
     }
+    
+    
+    @objc func clickImportBtn(){
+        self.delegate?.showPhotoVC()
+    }
+    
 }
 
 extension EditRootView: UIScrollViewDelegate {

@@ -22,6 +22,7 @@
 		16115D8128BF8D20002375D4 /* jugeng.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D7328BF8D20002375D4 /* jugeng.png */; };
 		16115D8228BF8D20002375D4 /* xiaosenlin.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D7428BF8D20002375D4 /* xiaosenlin.png */; };
 		16115D8328BF8D20002375D4 /* makalong.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D7528BF8D20002375D4 /* makalong.png */; };
+		1635F076292BC8BF00F9DADC /* PCAssetBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1635F075292BC8BF00F9DADC /* PCAssetBuilder.m */; };
 		165607F028BDD6CA00FE4A89 /* PCCameraMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165607EF28BDD6CA00FE4A89 /* PCCameraMainView.m */; };
 		16AAEB5D28B8706500D4EAE1 /* PCEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AAEB5C28B8706500D4EAE1 /* PCEditViewController.m */; };
 		16AAEB6528B8ABF700D4EAE1 /* PCImageToVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AAEB6428B8ABF700D4EAE1 /* PCImageToVideo.m */; };
@@ -277,6 +278,8 @@
 		16115D7328BF8D20002375D4 /* jugeng.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jugeng.png; sourceTree = "<group>"; };
 		16115D7428BF8D20002375D4 /* xiaosenlin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiaosenlin.png; sourceTree = "<group>"; };
 		16115D7528BF8D20002375D4 /* makalong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makalong.png; sourceTree = "<group>"; };
+		1635F074292BC8BF00F9DADC /* PCAssetBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCAssetBuilder.h; sourceTree = "<group>"; };
+		1635F075292BC8BF00F9DADC /* PCAssetBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCAssetBuilder.m; sourceTree = "<group>"; };
 		165607EE28BDD6CA00FE4A89 /* PCCameraMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCameraMainView.h; sourceTree = "<group>"; };
 		165607EF28BDD6CA00FE4A89 /* PCCameraMainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCameraMainView.m; sourceTree = "<group>"; };
 		16AAEB5B28B8706500D4EAE1 /* PCEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCEditViewController.h; sourceTree = "<group>"; };
@@ -791,6 +794,8 @@
 			children = (
 				16BAAB7F28C6F9C600BB9555 /* PCVideoThumbnailHandel.h */,
 				16BAAB8028C6F9C600BB9555 /* PCVideoThumbnailHandel.m */,
+				1635F074292BC8BF00F9DADC /* PCAssetBuilder.h */,
+				1635F075292BC8BF00F9DADC /* PCAssetBuilder.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -1797,6 +1802,7 @@
 				16BFFEA128B35F03000A1FE6 /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				16BFFEDF28B35F03000A1FE6 /* GPUImageStretchDistortionFilter.m in Sources */,
 				16BFFF1828B35F03000A1FE6 /* GPUImageDirectionalNonMaximumSuppressionFilter.m in Sources */,
+				1635F076292BC8BF00F9DADC /* PCAssetBuilder.m in Sources */,
 				16BFFEDE28B35F03000A1FE6 /* GPUImageDifferenceBlendFilter.m in Sources */,
 				16BFFECB28B35F03000A1FE6 /* GPUImageHardLightBlendFilter.m in Sources */,
 				16BFFED128B35F03000A1FE6 /* GPUImageDissolveBlendFilter.m in Sources */,
@@ -2000,10 +2006,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = F4R94ZX7MA;
+				DEVELOPMENT_TEAM = N92TEW36P2;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Photic/PhoticHeader.h";
 				INFOPLIST_FILE = Photic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -2013,7 +2019,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gzinf.LJP.Photic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "gzinf Dev PP";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -2031,9 +2037,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Manual;
-				DEVELOPMENT_TEAM = F4R94ZX7MA;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N92TEW36P2;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Photic/PhoticHeader.h";
 				INFOPLIST_FILE = Photic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -2043,7 +2049,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.gzinf.LJP.Photic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "gzinf Dev PP";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;

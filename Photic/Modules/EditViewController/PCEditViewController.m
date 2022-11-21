@@ -20,34 +20,23 @@
 @property (nonatomic, strong) GPUImageMovie *mGPUMovie;
 @property (nonatomic, strong) id playbackTimeObserver;
 
-//@property (nonatomic, strong) MainEditView *mainEditView;
-
 @end
 
 @implementation PCEditViewController
 
 #pragma mark - Lifecycle
-//- (void)loadView {
-//    UIView *showView = [[MainEditView alloc]init];
-//    self.view = showView;
-//}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
     self.view.backgroundColor = [UIColor blackColor];
-        
     UIBarButtonItem *photosBarButton = [[UIBarButtonItem alloc] initWithTitle:@"添加素材" style:UIBarButtonItemStylePlain target:self action:@selector(showPhotoVC)];
     self.navigationItem.rightBarButtonItems = @[photosBarButton];
-    
-//    [self.view addSubview:self.mGPUImageView];
-//    [self setupEditView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [UIApplication sharedApplication].idleTimerDisabled = YES;
-//    self.navigationController.navigationBar.hidden = YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -83,13 +72,7 @@
 }
 
 - (void)updateEditview {
-//    AVPlayerLayer *playLayer = [self.assertHelper getPreviewLayer];
-//    [self.mainEditView updatePreviewWithPlayLayer:playLayer];
-    
-//    [self.assertHelper generatorImagesWithCompletion:^(NSArray<UIImage *> * _Nonnull images ) {
-//        EditViewObserver.observer.generatorImageCompletion(images);
-//        EditViewObserver.observer.segmentImagesDidChange(images.count);
-//    }];
+
 }
 
 - (void)didSelectAsset:(AVAsset *)asset {
@@ -124,10 +107,8 @@
 
 // 添加播放器监听回调
 - (void)addPlaybackTimeObserver {
-//    __weak typeof(self) weakSelf = self;
     self.playbackTimeObserver = [self.mPlayer addPeriodicTimeObserverForInterval:CMTimeMake(1, 100) queue:NULL usingBlock:^(CMTime time) {
-//        CGFloat curTime = CMTimeGetSeconds(time);
-//        NSLog(@"curTime == %lf",curTime);
+
     }];
 }
 
@@ -152,36 +133,12 @@
 
 - (void)imagePickerController:(TZImagePickerController *)picker didFinishPickingVideo:(UIImage *)coverImage sourceAssets:(PHAsset *)asset {
     NSLog(@"选择了视频");
-
-//    PHVideoRequestOptions *options = [[PHVideoRequestOptions alloc] init];
-//    options.version = PHVideoRequestOptionsVersionOriginal;
-//    options.deliveryMode = PHVideoRequestOptionsDeliveryModeAutomatic;
-//    options.networkAccessAllowed = YES;
-//
-//    __weak typeof(self) weakSelf = self;
-//    [[PHImageManager defaultManager] requestAVAssetForVideo:asset options:options resultHandler:^(AVAsset *avasset, AVAudioMix *audioMix, NSDictionary *info) {
-//        AVURLAsset *videoAsset = (AVURLAsset *)avasset;
-//
-//        if (videoAsset == nil) {
-//            return;
-//        }
-//
-//        NSLog(@"videoAsset.URL == %@",videoAsset.URL);
-//
-//        AVURLAsset *asset = [AVURLAsset URLAssetWithURL:videoAsset.URL options:@{ AVURLAssetPreferPreciseDurationAndTimingKey: @YES }];
-//        weakSelf.mPlayerItem = [[AVPlayerItem alloc] initWithAsset:asset];
-//        [weakSelf playVideo];
-//    }];
     
-    PHVideoRequestOptions *options = [[PHVideoRequestOptions alloc]init];
     __weak typeof(self) weakSelf = self;
     [[PHImageManager defaultManager] requestAVAssetForVideo:asset options:nil resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
         __weak typeof(weakSelf) strongSelf = weakSelf;
         dispatch_async(dispatch_get_main_queue(), ^{
-//            strongSelf.assertHelper = [[AssertHelper alloc] initWithAssert:asset];
-//            [strongSelf updateEditview];
-            
-            [strongSelf didSelectAsset: asset];
+            [strongSelf didSelectAsset:asset];
         });
     }];
 }

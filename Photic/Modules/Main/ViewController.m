@@ -28,8 +28,8 @@ static NSString * const cellName = @"cellName";
     
     NSLog(@"hello，photic");
     
-    self.demoList = @[@"镜头", @"相册"];
-    self.demoPageNameList = @[@"PCCameraViewController", @"PCEditViewController"];
+    self.demoList = @[@"镜头", @"相册", @"三分滤镜"];
+    self.demoPageNameList = @[@"PCCameraViewController", @"PCEditViewController", @"PC3PointFilterViewController"];
     
     [self.view addSubview:self.tableView];
     

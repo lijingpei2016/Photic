@@ -127,6 +127,9 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
     BOOL addedAudioInputsDueToEncodingTarget;
 }
 
+@property (nonatomic, strong) dispatch_queue_t captureQueue;
+
+
 - (void)updateOrientationSendToTargets;
 - (void)convertYUVToRGBOutput;
 
@@ -173,12 +176,8 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
     internalRotation = kGPUImageNoRotation;
     captureAsYUV = YES;
     _preferredConversion = kColorConversion709;
-
-//    if (@available(iOS 8.0, *)) {
-//        self.videoStabilizationMode = AVCaptureVideoStabilizationModeOff;
-//    } else {
-//        //低于版本，不做处理
-//    }
+    
+    _captureQueue = dispatch_queue_create("com.Photic.videoCapture", DISPATCH_QUEUE_SERIAL);
 
     // Grab the back-facing or front-facing camera
     _inputCamera = nil;
@@ -395,7 +394,10 @@ NSString *const kGPUImageYUVVideoRangeConversionForLAFragmentShaderString = SHAD
 {
     if (![_captureSession isRunning]) {
         startingCaptureTime = [NSDate date];
-        [_captureSession startRunning];
+        typeof(self) __weak weakSelf = self;
+        dispatch_async(_captureQueue, ^{
+            [weakSelf.captureSession startRunning];
+        });
     }
 }
 

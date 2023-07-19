@@ -32,6 +32,8 @@
     self.view.backgroundColor = [UIColor blackColor];
     UIBarButtonItem *photosBarButton = [[UIBarButtonItem alloc] initWithTitle:@"添加素材" style:UIBarButtonItemStylePlain target:self action:@selector(showPhotoVC)];
     self.navigationItem.rightBarButtonItems = @[photosBarButton];
+    
+    [self.view addSubview:self.mGPUImageView];
 }
 
 - (void)viewWillAppear:(BOOL)animated {

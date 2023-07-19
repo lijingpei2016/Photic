@@ -19,6 +19,12 @@
 #define kFont(font) [UIFont systemFontOfSize:font]
 #define kBFont(font) [UIFont boldSystemFontOfSize:font]
 
+//log
+#ifdef DEBUG
+#define PCLog(fmt, ...) NSLog((@"%s " fmt), __PRETTY_FUNCTION__, ##__VA_ARGS__);
+#else
+#define PCLog(...)
+#endif
 
 //UI相关
 #define kSCREEN_BOUNDS       ([[UIScreen mainScreen] bounds])
@@ -35,20 +41,18 @@
 
 #define kDefaultVideoPrefixPath [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject]
 
-#define CLog(format, ...) LogInternal(kLevelInfo, "photic", __FILENAME__, __LINE__, __FUNCTION__, @"]\n", format, ##__VA_ARGS__)
-
 #endif
 
-
-//比例枚举
 #define PCScale916 (1)
 #define PCScale169 (2)
 #define PCScale11  (3)
 #define PCScale43  (4)
 #define PCScale34  (5)
 
-// 视频
+// 视频相关
 #define degreesToRadians(x) (M_PI * x / 180.0f)
+
+
 
 
 

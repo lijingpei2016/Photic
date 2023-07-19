@@ -23,7 +23,18 @@
 		16115D8228BF8D20002375D4 /* xiaosenlin.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D7428BF8D20002375D4 /* xiaosenlin.png */; };
 		16115D8328BF8D20002375D4 /* makalong.png in Resources */ = {isa = PBXBuildFile; fileRef = 16115D7528BF8D20002375D4 /* makalong.png */; };
 		1635F076292BC8BF00F9DADC /* PCAssetBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = 1635F075292BC8BF00F9DADC /* PCAssetBuilder.m */; };
+		164CA20A2A678810007F3BEE /* PC3PointFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 164CA2092A678810007F3BEE /* PC3PointFilterViewController.m */; };
+		164CA20E2A678BFC007F3BEE /* GPU3x3GridFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 164CA20D2A678BFC007F3BEE /* GPU3x3GridFilter.m */; };
+		164CA2212A67B442007F3BEE /* megviifacepp_model in Resources */ = {isa = PBXBuildFile; fileRef = 164CA2192A67B442007F3BEE /* megviifacepp_model */; };
+		164CA2652A67BCC7007F3BEE /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 164CA2642A67BCC7007F3BEE /* libc++.tbd */; };
+		164CA2692A67C078007F3BEE /* PCThinFaceAndBigEyeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 164CA2682A67C078007F3BEE /* PCThinFaceAndBigEyeViewController.m */; };
 		165607F028BDD6CA00FE4A89 /* PCCameraMainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 165607EF28BDD6CA00FE4A89 /* PCCameraMainView.m */; };
+		168C8C9B2A69231400F25CC1 /* GPUFaceDetectionDrawPointFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 168C8C9A2A69231400F25CC1 /* GPUFaceDetectionDrawPointFilter.m */; };
+		168C8CA32A692D0700F25CC1 /* MGFacePPKernel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 168C8CA02A692D0700F25CC1 /* MGFacePPKernel.framework */; };
+		168C8CA42A692D0700F25CC1 /* MGFacePPMultiBase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 168C8CA12A692D0700F25CC1 /* MGFacePPMultiBase.framework */; };
+		168C8CA52A692D0700F25CC1 /* MGFacePPFaceDetect.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 168C8CA22A692D0700F25CC1 /* MGFacePPFaceDetect.framework */; };
+		168C8CA82A69362200F25CC1 /* GPUThinFaceAndBigEyeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 168C8CA72A69362200F25CC1 /* GPUThinFaceAndBigEyeFilter.m */; };
+		168C8CAB2A69387800F25CC1 /* PCFacePPTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 168C8CAA2A69387800F25CC1 /* PCFacePPTool.m */; };
 		16AAEB5D28B8706500D4EAE1 /* PCEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AAEB5C28B8706500D4EAE1 /* PCEditViewController.m */; };
 		16AAEB6528B8ABF700D4EAE1 /* PCImageToVideo.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AAEB6428B8ABF700D4EAE1 /* PCImageToVideo.m */; };
 		16AAEB6828B8AC3C00D4EAE1 /* UIImage+ResizeSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 16AAEB6628B8AC3B00D4EAE1 /* UIImage+ResizeSize.m */; };
@@ -280,8 +291,25 @@
 		16115D7528BF8D20002375D4 /* makalong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = makalong.png; sourceTree = "<group>"; };
 		1635F074292BC8BF00F9DADC /* PCAssetBuilder.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCAssetBuilder.h; sourceTree = "<group>"; };
 		1635F075292BC8BF00F9DADC /* PCAssetBuilder.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCAssetBuilder.m; sourceTree = "<group>"; };
+		164CA2082A678810007F3BEE /* PC3PointFilterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PC3PointFilterViewController.h; sourceTree = "<group>"; };
+		164CA2092A678810007F3BEE /* PC3PointFilterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PC3PointFilterViewController.m; sourceTree = "<group>"; };
+		164CA20C2A678BFC007F3BEE /* GPU3x3GridFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPU3x3GridFilter.h; sourceTree = "<group>"; };
+		164CA20D2A678BFC007F3BEE /* GPU3x3GridFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPU3x3GridFilter.m; sourceTree = "<group>"; };
+		164CA2192A67B442007F3BEE /* megviifacepp_model */ = {isa = PBXFileReference; lastKnownFileType = file; path = megviifacepp_model; sourceTree = "<group>"; };
+		164CA2642A67BCC7007F3BEE /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		164CA2672A67C078007F3BEE /* PCThinFaceAndBigEyeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCThinFaceAndBigEyeViewController.h; sourceTree = "<group>"; };
+		164CA2682A67C078007F3BEE /* PCThinFaceAndBigEyeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCThinFaceAndBigEyeViewController.m; sourceTree = "<group>"; };
 		165607EE28BDD6CA00FE4A89 /* PCCameraMainView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCCameraMainView.h; sourceTree = "<group>"; };
 		165607EF28BDD6CA00FE4A89 /* PCCameraMainView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCCameraMainView.m; sourceTree = "<group>"; };
+		168C8C992A69231400F25CC1 /* GPUFaceDetectionDrawPointFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUFaceDetectionDrawPointFilter.h; sourceTree = "<group>"; };
+		168C8C9A2A69231400F25CC1 /* GPUFaceDetectionDrawPointFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPUFaceDetectionDrawPointFilter.m; sourceTree = "<group>"; };
+		168C8CA02A692D0700F25CC1 /* MGFacePPKernel.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MGFacePPKernel.framework; sourceTree = "<group>"; };
+		168C8CA12A692D0700F25CC1 /* MGFacePPMultiBase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MGFacePPMultiBase.framework; sourceTree = "<group>"; };
+		168C8CA22A692D0700F25CC1 /* MGFacePPFaceDetect.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MGFacePPFaceDetect.framework; sourceTree = "<group>"; };
+		168C8CA62A69362200F25CC1 /* GPUThinFaceAndBigEyeFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GPUThinFaceAndBigEyeFilter.h; sourceTree = "<group>"; };
+		168C8CA72A69362200F25CC1 /* GPUThinFaceAndBigEyeFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GPUThinFaceAndBigEyeFilter.m; sourceTree = "<group>"; };
+		168C8CA92A69387800F25CC1 /* PCFacePPTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCFacePPTool.h; sourceTree = "<group>"; };
+		168C8CAA2A69387800F25CC1 /* PCFacePPTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCFacePPTool.m; sourceTree = "<group>"; };
 		16AAEB5B28B8706500D4EAE1 /* PCEditViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCEditViewController.h; sourceTree = "<group>"; };
 		16AAEB5C28B8706500D4EAE1 /* PCEditViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PCEditViewController.m; sourceTree = "<group>"; };
 		16AAEB6328B8ABF700D4EAE1 /* PCImageToVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PCImageToVideo.h; sourceTree = "<group>"; };
@@ -696,7 +724,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				168C8CA42A692D0700F25CC1 /* MGFacePPMultiBase.framework in Frameworks */,
+				168C8CA52A692D0700F25CC1 /* MGFacePPFaceDetect.framework in Frameworks */,
 				E277B6235A031FCF11A91015 /* libPods-Photic.a in Frameworks */,
+				168C8CA32A692D0700F25CC1 /* MGFacePPKernel.framework in Frameworks */,
+				164CA2652A67BCC7007F3BEE /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -745,6 +777,85 @@
 				16115D7528BF8D20002375D4 /* makalong.png */,
 			);
 			path = Lookup;
+			sourceTree = "<group>";
+		};
+		164CA2062A6787BB007F3BEE /* 3PointFilterViewController */ = {
+			isa = PBXGroup;
+			children = (
+				164CA2082A678810007F3BEE /* PC3PointFilterViewController.h */,
+				164CA2092A678810007F3BEE /* PC3PointFilterViewController.m */,
+			);
+			path = 3PointFilterViewController;
+			sourceTree = "<group>";
+		};
+		164CA2072A6787CB007F3BEE /* SubController */ = {
+			isa = PBXGroup;
+			children = (
+				164CA2662A67C058007F3BEE /* FaceDetectionViewController */,
+				8D48FCD028ED2AA4002C5268 /* Editor */,
+				164CA2062A6787BB007F3BEE /* 3PointFilterViewController */,
+				16BFFD3128B3339A000A1FE6 /* CameraViewController */,
+				16AAEB5A28B86FE400D4EAE1 /* EditViewController */,
+			);
+			path = SubController;
+			sourceTree = "<group>";
+		};
+		164CA20B2A678BB2007F3BEE /* CustomFilter  */ = {
+			isa = PBXGroup;
+			children = (
+				164CA20C2A678BFC007F3BEE /* GPU3x3GridFilter.h */,
+				164CA20D2A678BFC007F3BEE /* GPU3x3GridFilter.m */,
+				168C8CA62A69362200F25CC1 /* GPUThinFaceAndBigEyeFilter.h */,
+				168C8CA72A69362200F25CC1 /* GPUThinFaceAndBigEyeFilter.m */,
+				168C8C992A69231400F25CC1 /* GPUFaceDetectionDrawPointFilter.h */,
+				168C8C9A2A69231400F25CC1 /* GPUFaceDetectionDrawPointFilter.m */,
+			);
+			path = "CustomFilter ";
+			sourceTree = "<group>";
+		};
+		164CA20F2A67B423007F3BEE /* FacePP */ = {
+			isa = PBXGroup;
+			children = (
+				168C8C9F2A692D0700F25CC1 /* libs */,
+				164CA2182A67B442007F3BEE /* model */,
+			);
+			path = FacePP;
+			sourceTree = "<group>";
+		};
+		164CA2182A67B442007F3BEE /* model */ = {
+			isa = PBXGroup;
+			children = (
+				164CA2192A67B442007F3BEE /* megviifacepp_model */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		164CA2662A67C058007F3BEE /* FaceDetectionViewController */ = {
+			isa = PBXGroup;
+			children = (
+				164CA2672A67C078007F3BEE /* PCThinFaceAndBigEyeViewController.h */,
+				164CA2682A67C078007F3BEE /* PCThinFaceAndBigEyeViewController.m */,
+			);
+			path = FaceDetectionViewController;
+			sourceTree = "<group>";
+		};
+		168C8C9F2A692D0700F25CC1 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				168C8CA02A692D0700F25CC1 /* MGFacePPKernel.framework */,
+				168C8CA12A692D0700F25CC1 /* MGFacePPMultiBase.framework */,
+				168C8CA22A692D0700F25CC1 /* MGFacePPFaceDetect.framework */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		168C8CAC2A69387C00F25CC1 /* FacePP */ = {
+			isa = PBXGroup;
+			children = (
+				168C8CA92A69387800F25CC1 /* PCFacePPTool.h */,
+				168C8CAA2A69387800F25CC1 /* PCFacePPTool.m */,
+			);
+			path = FacePP;
 			sourceTree = "<group>";
 		};
 		16AAEB5A28B86FE400D4EAE1 /* EditViewController */ = {
@@ -925,15 +1036,14 @@
 		16BFFD3628B33416000A1FE6 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				8D48FCD028ED2AA4002C5268 /* Editor */,
-				8DFF693328C10B94007AB743 /* Tool */,
 				8D0AAE5428BB658F00CC71FE /* AppStart */,
-				16BFFD3528B33401000A1FE6 /* Main */,
-				16BFFD3D28B35EED000A1FE6 /* Trilateral */,
-				16BFFD3128B3339A000A1FE6 /* CameraViewController */,
-				16AAEB5A28B86FE400D4EAE1 /* EditViewController */,
-				16AAEB5E28B89E8F00D4EAE1 /* VideoEdit */,
+				164CA20B2A678BB2007F3BEE /* CustomFilter  */,
 				16AAEB6228B8ABD600D4EAE1 /* ImageToVideo */,
+				16BFFD3528B33401000A1FE6 /* Main */,
+				164CA2072A6787CB007F3BEE /* SubController */,
+				8DFF693328C10B94007AB743 /* Tool */,
+				16BFFD3D28B35EED000A1FE6 /* Trilateral */,
+				16AAEB5E28B89E8F00D4EAE1 /* VideoEdit */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -941,6 +1051,7 @@
 		16BFFD3D28B35EED000A1FE6 /* Trilateral */ = {
 			isa = PBXGroup;
 			children = (
+				164CA20F2A67B423007F3BEE /* FacePP */,
 				16BFFD3E28B35F00000A1FE6 /* GPUImage */,
 			);
 			path = Trilateral;
@@ -978,326 +1089,326 @@
 		16BFFD4628B35F00000A1FE6 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				16BFFD4728B35F00000A1FE6 /* GPUImageBuffer.h */,
-				16BFFD4828B35F00000A1FE6 /* GPUImageColorBurnBlendFilter.m */,
-				16BFFD4928B35F00000A1FE6 /* GPUImageTwoPassTextureSamplingFilter.m */,
-				16BFFD4A28B35F00000A1FE6 /* GPUImageUnsharpMaskFilter.m */,
-				16BFFD4B28B35F00000A1FE6 /* GPUImageShiTomasiFeatureDetectionFilter.h */,
-				16BFFD4C28B35F00000A1FE6 /* GPUImageThreeInputFilter.h */,
-				16BFFD4D28B35F00000A1FE6 /* GPUImageSmoothToonFilter.h */,
-				16BFFD4E28B35F00000A1FE6 /* GPUImageVoronoiConsumerFilter.h */,
-				16BFFD4F28B35F00000A1FE6 /* GPUImageThresholdEdgeDetectionFilter.m */,
-				16BFFD5028B35F00000A1FE6 /* GPUImageMovieComposition.h */,
-				16BFFD5128B35F00000A1FE6 /* GPUImageChromaKeyFilter.m */,
-				16BFFD5228B35F00000A1FE6 /* GPUImageRawDataOutput.h */,
-				16BFFD5328B35F00000A1FE6 /* GPUImageLuminanceThresholdFilter.m */,
-				16BFFD5428B35F00000A1FE6 /* GPUImageContrastFilter.h */,
-				16BFFD5528B35F00000A1FE6 /* GPUImageFilterGroup.m */,
-				16BFFD5628B35F00000A1FE6 /* GPUImageHalftoneFilter.h */,
-				16BFFD5728B35F00000A1FE6 /* GPUImageHazeFilter.h */,
-				16BFFD5828B35F00000A1FE6 /* GPUImageParallelCoordinateLineTransformFilter.m */,
-				16BFFD5928B35F00000A1FE6 /* GPUImageSobelEdgeDetectionFilter.m */,
-				16BFFD5A28B35F00000A1FE6 /* GPUImageRGBDilationFilter.h */,
-				16BFFD5B28B35F00000A1FE6 /* GPUImageHighPassFilter.m */,
-				16BFFD5C28B35F00000A1FE6 /* GPUImageSoftEleganceFilter.m */,
-				16BFFD5D28B35F00000A1FE6 /* GPUImageCrosshairGenerator.h */,
-				16BFFD5E28B35F00000A1FE6 /* GPUImageTwoPassFilter.m */,
-				16BFFD5F28B35F00000A1FE6 /* GPUImageAverageColor.h */,
-				16BFFD6028B35F00000A1FE6 /* GPUImageColorBlendFilter.h */,
-				16BFFD6128B35F00000A1FE6 /* GPUImageGaussianBlurPositionFilter.m */,
-				16BFFD6228B35F00000A1FE6 /* GPUImageSubtractBlendFilter.h */,
-				16BFFD6328B35F00000A1FE6 /* GPUImageMaskFilter.h */,
-				16BFFD6428B35F00000A1FE6 /* GPUImageSwirlFilter.h */,
-				16BFFD6528B35F00000A1FE6 /* GPUImageSoftLightBlendFilter.h */,
-				16BFFD6628B35F00000A1FE6 /* GPUImageColorPackingFilter.m */,
-				16BFFD6728B35F00000A1FE6 /* GPUImageLuminosity.h */,
-				16BFFD6828B35F00000A1FE6 /* GPUImageWeakPixelInclusionFilter.m */,
-				16BFFD6928B35F00000A1FE6 /* GPUImageUIElement.m */,
-				16BFFD6A28B35F00000A1FE6 /* GPUImageNonMaximumSuppressionFilter.m */,
-				16BFFD6B28B35F00000A1FE6 /* GPUImageGaussianSelectiveBlurFilter.h */,
-				16BFFD6C28B35F00000A1FE6 /* GPUImageSharpenFilter.h */,
-				16BFFD6D28B35F00000A1FE6 /* GPUImageTwoInputFilter.m */,
-				16BFFD6E28B35F00000A1FE6 /* GPUImagePoissonBlendFilter.h */,
-				16BFFD6F28B35F00000A1FE6 /* GPUImageEmbossFilter.m */,
-				16BFFD7028B35F00000A1FE6 /* GPUImageColorInvertFilter.m */,
-				16BFFD7128B35F00000A1FE6 /* GPUImageGrayscaleFilter.m */,
-				16BFFD7228B35F00000A1FE6 /* GPUImageMotionBlurFilter.h */,
-				16BFFD7328B35F00000A1FE6 /* GPUImageGlassSphereFilter.h */,
-				16BFFD7428B35F00000A1FE6 /* GPUImageMovie.m */,
-				16BFFD7528B35F00000A1FE6 /* GPUImageLevelsFilter.m */,
-				16BFFD7628B35F00000A1FE6 /* GPUImageCannyEdgeDetectionFilter.m */,
-				16BFFD7728B35F00000A1FE6 /* GPUImageScreenBlendFilter.h */,
-				16BFFD7828B35F00000A1FE6 /* GPUImageTwoInputCrossTextureSamplingFilter.h */,
-				16BFFD7928B35F00000A1FE6 /* GPUImageFASTCornerDetectionFilter.m */,
-				16BFFD7A28B35F00000A1FE6 /* GPUImagePinchDistortionFilter.h */,
-				16BFFD7B28B35F00000A1FE6 /* GPUImageHistogramFilter.m */,
-				16BFFD7C28B35F00000A1FE6 /* GPUImageMissEtikateFilter.m */,
-				16BFFD7D28B35F00000A1FE6 /* GPUImageMedianFilter.h */,
-				16BFFD7E28B35F00000A1FE6 /* GPUImagePixellatePositionFilter.m */,
-				16BFFD7F28B35F00000A1FE6 /* GPUImageLinearBurnBlendFilter.h */,
-				16BFFD8028B35F00000A1FE6 /* GPUImageLocalBinaryPatternFilter.h */,
-				16BFFD8128B35F00000A1FE6 /* GPUImageVignetteFilter.m */,
-				16BFFD8228B35F00000A1FE6 /* GPUImageHistogramEqualizationFilter.m */,
-				16BFFD8328B35F00000A1FE6 /* GPUImageDirectionalNonMaximumSuppressionFilter.h */,
-				16BFFD8428B35F00000A1FE6 /* GPUImageSketchFilter.m */,
-				16BFFD8528B35F00000A1FE6 /* GPUImageiOSBlurFilter.m */,
-				16BFFD8628B35F00000A1FE6 /* GPUImageJFAVoronoiFilter.m */,
-				16BFFD8728B35F00000A1FE6 /* GPUImageClosingFilter.h */,
-				16BFFD8828B35F00000A1FE6 /* GPUImageTransformFilter.m */,
-				16BFFD8928B35F00000A1FE6 /* GPUImageMotionDetector.h */,
-				16BFFD8A28B35F00000A1FE6 /* GPUImageHueFilter.m */,
-				16BFFD8B28B35F00000A1FE6 /* GPUImageKuwaharaRadius3Filter.m */,
-				16BFFD8C28B35F00000A1FE6 /* GPUImageAmatorkaFilter.m */,
-				16BFFD8D28B35F00000A1FE6 /* GPUImageMonochromeFilter.h */,
-				16BFFD8E28B35F00000A1FE6 /* GPUImageThresholdedNonMaximumSuppressionFilter.m */,
-				16BFFD8F28B35F00000A1FE6 /* GPUImageHoughTransformLineDetector.h */,
-				16BFFD9028B35F00000A1FE6 /* GPUImageBilateralFilter.m */,
-				16BFFD9128B35F00000A1FE6 /* GPUImageRGBErosionFilter.h */,
-				16BFFD9228B35F00000A1FE6 /* GPUImageLowPassFilter.h */,
-				16BFFD9328B35F00000A1FE6 /* GPUImageRGBOpeningFilter.h */,
-				16BFFD9428B35F00000A1FE6 /* GPUImageHistogramGenerator.m */,
-				16BFFD9528B35F00000A1FE6 /* GPUImageWhiteBalanceFilter.h */,
-				16BFFD9628B35F00000A1FE6 /* GPUImageRawDataInput.h */,
-				16BFFD9728B35F00000A1FE6 /* GPUImageGammaFilter.m */,
-				16BFFD9828B35F00000A1FE6 /* GPUImageThresholdSketchFilter.h */,
-				16BFFD9928B35F00000A1FE6 /* GPUImageAlphaBlendFilter.m */,
-				16BFFD9A28B35F00000A1FE6 /* GPUImageExclusionBlendFilter.m */,
-				16BFFD9B28B35F00000A1FE6 /* GPUImageMosaicFilter.h */,
-				16BFFD9C28B35F00000A1FE6 /* GPUImageSolidColorGenerator.m */,
-				16BFFD9D28B35F00000A1FE6 /* GPUImageOverlayBlendFilter.m */,
-				16BFFD9E28B35F00000A1FE6 /* GPUImageSingleComponentGaussianBlurFilter.h */,
-				16BFFD9F28B35F00000A1FE6 /* GPUImageKuwaharaFilter.h */,
-				16BFFDA028B35F00000A1FE6 /* GPUImageColorMatrixFilter.m */,
-				16BFFDA128B35F00000A1FE6 /* GPUImageCrosshatchFilter.h */,
-				16BFFDA228B35F00000A1FE6 /* GPUImageNobleCornerDetectionFilter.h */,
-				16BFFDA328B35F00000A1FE6 /* GPUImageHighlightShadowFilter.h */,
-				16BFFDA428B35F00000A1FE6 /* GPUImageHarrisCornerDetectionFilter.m */,
-				16BFFDA528B35F00000A1FE6 /* GPUImageMultiplyBlendFilter.m */,
-				16BFFDA628B35F00000A1FE6 /* GPUImage3x3ConvolutionFilter.h */,
-				16BFFDA728B35F00000A1FE6 /* GPUImageZoomBlurFilter.m */,
-				16BFFDA828B35F00000A1FE6 /* GPUImageHardLightBlendFilter.m */,
-				16BFFDA928B35F00000A1FE6 /* GPUImageNormalBlendFilter.h */,
-				16BFFDAA28B35F00000A1FE6 /* GPUImagePolarPixellateFilter.m */,
-				16BFFDAB28B35F00000A1FE6 /* GPUImageDilationFilter.h */,
-				16BFFDAC28B35F00000A1FE6 /* GPUImageAdaptiveThresholdFilter.m */,
-				16BFFDAD28B35F00000A1FE6 /* GPUImageOpeningFilter.m */,
-				16BFFDAE28B35F00000A1FE6 /* GPUImageErosionFilter.m */,
-				16BFFDAF28B35F00000A1FE6 /* GPUImageAddBlendFilter.h */,
-				16BFFDB028B35F00000A1FE6 /* GPUImageToonFilter.m */,
-				16BFFDB128B35F00000A1FE6 /* GPUImageDissolveBlendFilter.m */,
-				16BFFDB228B35F00000A1FE6 /* GPUImageSaturationFilter.m */,
-				16BFFDB328B35F00000A1FE6 /* GPUImageOpacityFilter.m */,
-				16BFFDB428B35F00000A1FE6 /* GPUImageHSBFilter.h */,
-				16BFFDB528B35F00000A1FE6 /* GPUImageCropFilter.m */,
-				16BFFDB628B35F00000A1FE6 /* GPUImagePixellateFilter.m */,
-				16BFFDB728B35F00000A1FE6 /* GPUImageTextureInput.m */,
-				16BFFDB828B35F00000A1FE6 /* GPUImageHueBlendFilter.h */,
-				16BFFDB928B35F00000A1FE6 /* GPUImagePerlinNoiseFilter.h */,
-				16BFFDBA28B35F00000A1FE6 /* GPUImage3x3TextureSamplingFilter.m */,
-				16BFFDBB28B35F00000A1FE6 /* GPUImageSphereRefractionFilter.m */,
-				16BFFDBC28B35F00000A1FE6 /* GPUImageTextureOutput.h */,
-				16BFFDBD28B35F00000A1FE6 /* GPUImageRGBClosingFilter.m */,
-				16BFFDBE28B35F00000A1FE6 /* GPUImageSepiaFilter.m */,
-				16BFFDBF28B35F00000A1FE6 /* GPUImageLineGenerator.m */,
-				16BFFDC028B35F00000A1FE6 /* GPUImagePrewittEdgeDetectionFilter.h */,
-				16BFFDC128B35F00000A1FE6 /* GPUImageVideoCamera.h */,
-				16BFFDC228B35F00000A1FE6 /* GLProgram.m */,
-				16BFFDC328B35F00000A1FE6 /* GPUImageDarkenBlendFilter.h */,
-				16BFFDC428B35F00000A1FE6 /* GPUImageBrightnessFilter.m */,
-				16BFFDC528B35F00000A1FE6 /* GPUImageDifferenceBlendFilter.m */,
-				16BFFDC628B35F00000A1FE6 /* GPUImageCGAColorspaceFilter.h */,
-				16BFFDC728B35F00000A1FE6 /* GPUImageStretchDistortionFilter.m */,
-				16BFFDC828B35F00000A1FE6 /* GPUImageDivideBlendFilter.m */,
-				16BFFDC928B35F00000A1FE6 /* GPUImageOutput.m */,
-				16BFFDCA28B35F00000A1FE6 /* GPUImageDirectionalSobelEdgeDetectionFilter.m */,
-				16BFFDCB28B35F01000A1FE6 /* GPUImagePosterizeFilter.m */,
-				16BFFDCC28B35F01000A1FE6 /* GPUImageLightenBlendFilter.h */,
-				16BFFDCD28B35F01000A1FE6 /* GPUImageAverageLuminanceThresholdFilter.m */,
-				16BFFDCE28B35F01000A1FE6 /* GPUImageLanczosResamplingFilter.m */,
-				16BFFDCF28B35F01000A1FE6 /* GPUImageStillCamera.h */,
-				16BFFDD028B35F01000A1FE6 /* GPUImageFilterPipeline.m */,
-				16BFFDD128B35F01000A1FE6 /* GPUImageXYDerivativeFilter.m */,
-				16BFFDD228B35F01000A1FE6 /* GPUImageColorDodgeBlendFilter.m */,
-				16BFFDD328B35F01000A1FE6 /* GPUImageFramebuffer.m */,
-				16BFFDD428B35F01000A1FE6 /* GPUImageFilter.h */,
-				16BFFDD528B35F01000A1FE6 /* GPUImageLaplacianFilter.m */,
-				16BFFDD628B35F01000A1FE6 /* GPUImageLookupFilter.h */,
-				16BFFDD728B35F01000A1FE6 /* GPUImageBoxBlurFilter.m */,
-				16BFFDD828B35F01000A1FE6 /* GPUImageSourceOverBlendFilter.m */,
-				16BFFDD928B35F01000A1FE6 /* GPUImageBulgeDistortionFilter.h */,
-				16BFFDDA28B35F01000A1FE6 /* GPUImageRGBFilter.m */,
-				16BFFDDB28B35F01000A1FE6 /* GPUImageFalseColorFilter.h */,
-				16BFFDDC28B35F01000A1FE6 /* GPUImagePolkaDotFilter.h */,
-				16BFFDDD28B35F01000A1FE6 /* GPUImageChromaKeyBlendFilter.h */,
-				16BFFDDE28B35F01000A1FE6 /* GPUImageLuminanceRangeFilter.h */,
-				16BFFDDF28B35F01000A1FE6 /* GPUImageLuminosityBlendFilter.h */,
-				16BFFDE028B35F01000A1FE6 /* GPUImageExposureFilter.h */,
-				16BFFDE128B35F01000A1FE6 /* GPUImageFramebufferCache.m */,
-				16BFFDE228B35F01000A1FE6 /* GPUImageTiltShiftFilter.m */,
-				16BFFDE328B35F01000A1FE6 /* iOS */,
-				16BFFDF028B35F01000A1FE6 /* GPUImageSaturationBlendFilter.m */,
-				16BFFDF128B35F01000A1FE6 /* GPUImageToneCurveFilter.m */,
-				16BFFDF228B35F01000A1FE6 /* GPUImageGaussianBlurFilter.m */,
-				16BFFDF328B35F01000A1FE6 /* GPUImageTwoInputFilter.h */,
-				16BFFDF428B35F01000A1FE6 /* GPUImageColorInvertFilter.h */,
-				16BFFDF528B35F01000A1FE6 /* GPUImagePoissonBlendFilter.m */,
-				16BFFDF628B35F01000A1FE6 /* GPUImageEmbossFilter.h */,
-				16BFFDF728B35F01000A1FE6 /* GPUImageGrayscaleFilter.h */,
-				16BFFDF828B35F01000A1FE6 /* GPUImageNonMaximumSuppressionFilter.h */,
-				16BFFDF928B35F01000A1FE6 /* GPUImageSharpenFilter.m */,
-				16BFFDFA28B35F01000A1FE6 /* GPUImageGaussianSelectiveBlurFilter.m */,
-				16BFFDFB28B35F01000A1FE6 /* GPUImageLuminosity.m */,
-				16BFFDFC28B35F01000A1FE6 /* GPUImageWeakPixelInclusionFilter.h */,
-				16BFFDFD28B35F01000A1FE6 /* GPUImageUIElement.h */,
-				16BFFDFE28B35F01000A1FE6 /* GPUImageColorPackingFilter.h */,
-				16BFFDFF28B35F01000A1FE6 /* GPUImageMaskFilter.m */,
-				16BFFE0028B35F01000A1FE6 /* GPUImageSwirlFilter.m */,
-				16BFFE0128B35F01000A1FE6 /* GPUImageSoftLightBlendFilter.m */,
-				16BFFE0228B35F01000A1FE6 /* GPUImageGaussianBlurPositionFilter.h */,
-				16BFFE0328B35F01000A1FE6 /* GPUImageSubtractBlendFilter.m */,
-				16BFFE0428B35F01000A1FE6 /* GPUImageCrosshairGenerator.m */,
-				16BFFE0528B35F01000A1FE6 /* GPUImageSoftEleganceFilter.h */,
-				16BFFE0628B35F01000A1FE6 /* GPUImageTwoPassFilter.h */,
-				16BFFE0728B35F01000A1FE6 /* GPUImageColorBlendFilter.m */,
-				16BFFE0828B35F01000A1FE6 /* GPUImageAverageColor.m */,
-				16BFFE0928B35F01000A1FE6 /* GPUImageHighPassFilter.h */,
-				16BFFE0A28B35F01000A1FE6 /* GPUImageSobelEdgeDetectionFilter.h */,
-				16BFFE0B28B35F01000A1FE6 /* GPUImageRGBDilationFilter.m */,
-				16BFFE0C28B35F01000A1FE6 /* GPUImageContrastFilter.m */,
-				16BFFE0D28B35F01000A1FE6 /* GPUImageFilterGroup.h */,
-				16BFFE0E28B35F01000A1FE6 /* GPUImageParallelCoordinateLineTransformFilter.h */,
-				16BFFE0F28B35F01000A1FE6 /* GPUImageHazeFilter.m */,
-				16BFFE1028B35F01000A1FE6 /* GPUImageHalftoneFilter.m */,
-				16BFFE1128B35F01000A1FE6 /* GPUImageRawDataOutput.m */,
-				16BFFE1228B35F01000A1FE6 /* GPUImageLuminanceThresholdFilter.h */,
-				16BFFE1328B35F01000A1FE6 /* GPUImageSmoothToonFilter.m */,
-				16BFFE1428B35F01000A1FE6 /* GPUImageVoronoiConsumerFilter.m */,
-				16BFFE1528B35F01000A1FE6 /* GPUImageChromaKeyFilter.h */,
-				16BFFE1628B35F01000A1FE6 /* GPUImageMovieComposition.m */,
-				16BFFE1728B35F01000A1FE6 /* GPUImageThresholdEdgeDetectionFilter.h */,
-				16BFFE1828B35F01000A1FE6 /* GPUImageThreeInputFilter.m */,
-				16BFFE1928B35F01000A1FE6 /* GPUImageShiTomasiFeatureDetectionFilter.m */,
-				16BFFE1A28B35F01000A1FE6 /* GPUImageBuffer.m */,
-				16BFFE1B28B35F01000A1FE6 /* GPUImageColorBurnBlendFilter.h */,
-				16BFFE1C28B35F01000A1FE6 /* GPUImageTwoPassTextureSamplingFilter.h */,
-				16BFFE1D28B35F01000A1FE6 /* GPUImageUnsharpMaskFilter.h */,
-				16BFFE1E28B35F01000A1FE6 /* GPUImageThresholdSketchFilter.m */,
-				16BFFE1F28B35F01000A1FE6 /* GPUImageGammaFilter.h */,
-				16BFFE2028B35F01000A1FE6 /* GPUImageAlphaBlendFilter.h */,
-				16BFFE2128B35F01000A1FE6 /* GPUImageRGBOpeningFilter.m */,
-				16BFFE2228B35F01000A1FE6 /* GPUImageWhiteBalanceFilter.m */,
-				16BFFE2328B35F01000A1FE6 /* GPUImageRawDataInput.m */,
-				16BFFE2428B35F01000A1FE6 /* GPUImageHistogramGenerator.h */,
-				16BFFE2528B35F01000A1FE6 /* GPUImageRGBErosionFilter.m */,
-				16BFFE2628B35F01000A1FE6 /* GPUImageBilateralFilter.h */,
-				16BFFE2728B35F01000A1FE6 /* GPUImageLowPassFilter.m */,
-				16BFFE2828B35F01000A1FE6 /* GPUImageKuwaharaRadius3Filter.h */,
-				16BFFE2928B35F01000A1FE6 /* GPUImageMonochromeFilter.m */,
-				16BFFE2A28B35F01000A1FE6 /* GPUImageThresholdedNonMaximumSuppressionFilter.h */,
-				16BFFE2B28B35F01000A1FE6 /* GPUImageAmatorkaFilter.h */,
-				16BFFE2C28B35F01000A1FE6 /* GPUImageHoughTransformLineDetector.m */,
-				16BFFE2D28B35F01000A1FE6 /* GPUImageTransformFilter.h */,
-				16BFFE2E28B35F01000A1FE6 /* GPUImageMotionDetector.m */,
-				16BFFE2F28B35F01000A1FE6 /* GPUImageHueFilter.h */,
-				16BFFE3028B35F01000A1FE6 /* GPUImageClosingFilter.m */,
-				16BFFE3128B35F01000A1FE6 /* GPUImageJFAVoronoiFilter.h */,
-				16BFFE3228B35F01000A1FE6 /* GPUImageiOSBlurFilter.h */,
-				16BFFE3328B35F01000A1FE6 /* GPUImageSketchFilter.h */,
-				16BFFE3428B35F01000A1FE6 /* GPUImageDirectionalNonMaximumSuppressionFilter.m */,
-				16BFFE3528B35F01000A1FE6 /* GPUImageVignetteFilter.h */,
-				16BFFE3628B35F01000A1FE6 /* GPUImageHistogramEqualizationFilter.h */,
-				16BFFE3728B35F01000A1FE6 /* GPUImageMissEtikateFilter.h */,
-				16BFFE3828B35F01000A1FE6 /* GPUImagePixellatePositionFilter.h */,
-				16BFFE3928B35F01000A1FE6 /* GPUImageLinearBurnBlendFilter.m */,
-				16BFFE3A28B35F01000A1FE6 /* GPUImageMedianFilter.m */,
-				16BFFE3B28B35F01000A1FE6 /* GPUImageLocalBinaryPatternFilter.m */,
-				16BFFE3C28B35F01000A1FE6 /* GPUImageHistogramFilter.h */,
-				16BFFE3D28B35F01000A1FE6 /* GPUImageFASTCornerDetectionFilter.h */,
-				16BFFE3E28B35F01000A1FE6 /* GPUImagePinchDistortionFilter.m */,
-				16BFFE3F28B35F01000A1FE6 /* GPUImageScreenBlendFilter.m */,
-				16BFFE4028B35F01000A1FE6 /* GPUImageTwoInputCrossTextureSamplingFilter.m */,
-				16BFFE4128B35F01000A1FE6 /* GPUImageGlassSphereFilter.m */,
-				16BFFE4228B35F01000A1FE6 /* GPUImageMotionBlurFilter.m */,
-				16BFFE4328B35F01000A1FE6 /* GPUImageLevelsFilter.h */,
-				16BFFE4428B35F01000A1FE6 /* GPUImageMovie.h */,
-				16BFFE4528B35F01000A1FE6 /* GPUImageCannyEdgeDetectionFilter.h */,
-				16BFFE4628B35F01000A1FE6 /* GPUImagePrewittEdgeDetectionFilter.m */,
-				16BFFE4728B35F01000A1FE6 /* GPUImageLineGenerator.h */,
-				16BFFE4828B35F01000A1FE6 /* GPUImageVideoCamera.m */,
-				16BFFE4928B35F01000A1FE6 /* GPUImageSepiaFilter.h */,
-				16BFFE4A28B35F01000A1FE6 /* GPUImage3x3TextureSamplingFilter.h */,
-				16BFFE4B28B35F01000A1FE6 /* GPUImagePerlinNoiseFilter.m */,
-				16BFFE4C28B35F01000A1FE6 /* GPUImageTextureOutput.m */,
-				16BFFE4D28B35F01000A1FE6 /* GPUImageSphereRefractionFilter.h */,
-				16BFFE4E28B35F01000A1FE6 /* GPUImageRGBClosingFilter.h */,
-				16BFFE4F28B35F01000A1FE6 /* GPUImageTextureInput.h */,
-				16BFFE5028B35F01000A1FE6 /* GPUImageHueBlendFilter.m */,
-				16BFFE5128B35F01000A1FE6 /* GPUImageOpacityFilter.h */,
-				16BFFE5228B35F01000A1FE6 /* GPUImageHSBFilter.m */,
-				16BFFE5328B35F01000A1FE6 /* GPUImagePixellateFilter.h */,
-				16BFFE5428B35F01000A1FE6 /* GPUImageCropFilter.h */,
-				16BFFE5528B35F01000A1FE6 /* GPUImageDissolveBlendFilter.h */,
-				16BFFE5628B35F01000A1FE6 /* GPUImageToonFilter.h */,
-				16BFFE5728B35F01000A1FE6 /* GPUImageErosionFilter.h */,
-				16BFFE5828B35F01000A1FE6 /* GPUImageAddBlendFilter.m */,
-				16BFFE5928B35F01000A1FE6 /* GPUImageSaturationFilter.h */,
-				16BFFE5A28B35F02000A1FE6 /* GPUImageOpeningFilter.h */,
-				16BFFE5B28B35F02000A1FE6 /* GPUImageNormalBlendFilter.m */,
-				16BFFE5C28B35F02000A1FE6 /* GPUImageDilationFilter.m */,
-				16BFFE5D28B35F02000A1FE6 /* GPUImagePolarPixellateFilter.h */,
-				16BFFE5E28B35F02000A1FE6 /* GPUImageAdaptiveThresholdFilter.h */,
-				16BFFE5F28B35F02000A1FE6 /* GPUImageHardLightBlendFilter.h */,
-				16BFFE6028B35F02000A1FE6 /* GPUImageZoomBlurFilter.h */,
-				16BFFE6128B35F02000A1FE6 /* GPUImageHarrisCornerDetectionFilter.h */,
-				16BFFE6228B35F02000A1FE6 /* GPUImage3x3ConvolutionFilter.m */,
-				16BFFE6328B35F02000A1FE6 /* GPUImageMultiplyBlendFilter.h */,
-				16BFFE6428B35F02000A1FE6 /* GPUImageNobleCornerDetectionFilter.m */,
-				16BFFE6528B35F02000A1FE6 /* GPUImageCrosshatchFilter.m */,
-				16BFFE6628B35F02000A1FE6 /* GPUImageHighlightShadowFilter.m */,
-				16BFFE6728B35F02000A1FE6 /* GPUImageOverlayBlendFilter.h */,
-				16BFFE6828B35F02000A1FE6 /* GPUImageKuwaharaFilter.m */,
-				16BFFE6928B35F02000A1FE6 /* GPUImageSingleComponentGaussianBlurFilter.m */,
-				16BFFE6A28B35F02000A1FE6 /* GPUImageColorMatrixFilter.h */,
-				16BFFE6B28B35F02000A1FE6 /* GPUImageMosaicFilter.m */,
-				16BFFE6C28B35F02000A1FE6 /* GPUImageSolidColorGenerator.h */,
-				16BFFE6D28B35F02000A1FE6 /* GPUImageExclusionBlendFilter.h */,
-				16BFFE6E28B35F02000A1FE6 /* GPUImageToneCurveFilter.h */,
-				16BFFE6F28B35F02000A1FE6 /* GPUImageGaussianBlurFilter.h */,
-				16BFFE7028B35F02000A1FE6 /* GPUImageExposureFilter.m */,
-				16BFFE7128B35F02000A1FE6 /* GPUImageLuminosityBlendFilter.m */,
-				16BFFE7228B35F02000A1FE6 /* GPUImageFramebufferCache.h */,
-				16BFFE7328B35F02000A1FE6 /* GPUImageTiltShiftFilter.h */,
-				16BFFE7428B35F02000A1FE6 /* GPUImageSaturationBlendFilter.h */,
-				16BFFE7528B35F02000A1FE6 /* GPUImageLuminanceRangeFilter.m */,
-				16BFFE7628B35F02000A1FE6 /* GPUImageChromaKeyBlendFilter.m */,
-				16BFFE7728B35F02000A1FE6 /* GPUImage.h */,
-				16BFFE7828B35F02000A1FE6 /* GPUImageFalseColorFilter.m */,
-				16BFFE7928B35F02000A1FE6 /* GPUImagePolkaDotFilter.m */,
-				16BFFE7A28B35F02000A1FE6 /* GPUImageRGBFilter.h */,
-				16BFFE7B28B35F02000A1FE6 /* GPUImageBoxBlurFilter.h */,
-				16BFFE7C28B35F02000A1FE6 /* GPUImageSourceOverBlendFilter.h */,
-				16BFFE7D28B35F02000A1FE6 /* GPUImageBulgeDistortionFilter.m */,
-				16BFFE7E28B35F02000A1FE6 /* GPUImageLookupFilter.m */,
-				16BFFE7F28B35F02000A1FE6 /* GPUImageFramebuffer.h */,
-				16BFFE8028B35F02000A1FE6 /* GPUImageFilter.m */,
-				16BFFE8128B35F02000A1FE6 /* GPUImageLaplacianFilter.h */,
-				16BFFE8228B35F02000A1FE6 /* GPUImageLanczosResamplingFilter.h */,
-				16BFFE8328B35F02000A1FE6 /* GPUImageStillCamera.m */,
-				16BFFE8428B35F02000A1FE6 /* GPUImageFilterPipeline.h */,
-				16BFFE8528B35F02000A1FE6 /* GPUImageXYDerivativeFilter.h */,
-				16BFFE8628B35F02000A1FE6 /* GPUImageColorDodgeBlendFilter.h */,
-				16BFFE8728B35F02000A1FE6 /* GPUImageAverageLuminanceThresholdFilter.h */,
-				16BFFE8828B35F02000A1FE6 /* GPUImageOutput.h */,
-				16BFFE8928B35F02000A1FE6 /* GPUImagePosterizeFilter.h */,
-				16BFFE8A28B35F02000A1FE6 /* GPUImageDirectionalSobelEdgeDetectionFilter.h */,
-				16BFFE8B28B35F02000A1FE6 /* GPUImageLightenBlendFilter.m */,
-				16BFFE8C28B35F02000A1FE6 /* GPUImageBrightnessFilter.h */,
-				16BFFE8D28B35F02000A1FE6 /* GPUImageDifferenceBlendFilter.h */,
-				16BFFE8E28B35F02000A1FE6 /* GPUImageCGAColorspaceFilter.m */,
-				16BFFE8F28B35F02000A1FE6 /* GPUImageDivideBlendFilter.h */,
-				16BFFE9028B35F02000A1FE6 /* GPUImageStretchDistortionFilter.h */,
 				16BFFE9128B35F02000A1FE6 /* GLProgram.h */,
+				16BFFDC228B35F00000A1FE6 /* GLProgram.m */,
+				16BFFE7728B35F02000A1FE6 /* GPUImage.h */,
+				16BFFDA628B35F00000A1FE6 /* GPUImage3x3ConvolutionFilter.h */,
+				16BFFE6228B35F02000A1FE6 /* GPUImage3x3ConvolutionFilter.m */,
+				16BFFE4A28B35F01000A1FE6 /* GPUImage3x3TextureSamplingFilter.h */,
+				16BFFDBA28B35F00000A1FE6 /* GPUImage3x3TextureSamplingFilter.m */,
+				16BFFE5E28B35F02000A1FE6 /* GPUImageAdaptiveThresholdFilter.h */,
+				16BFFDAC28B35F00000A1FE6 /* GPUImageAdaptiveThresholdFilter.m */,
+				16BFFDAF28B35F00000A1FE6 /* GPUImageAddBlendFilter.h */,
+				16BFFE5828B35F01000A1FE6 /* GPUImageAddBlendFilter.m */,
+				16BFFE2028B35F01000A1FE6 /* GPUImageAlphaBlendFilter.h */,
+				16BFFD9928B35F00000A1FE6 /* GPUImageAlphaBlendFilter.m */,
+				16BFFE2B28B35F01000A1FE6 /* GPUImageAmatorkaFilter.h */,
+				16BFFD8C28B35F00000A1FE6 /* GPUImageAmatorkaFilter.m */,
+				16BFFD5F28B35F00000A1FE6 /* GPUImageAverageColor.h */,
+				16BFFE0828B35F01000A1FE6 /* GPUImageAverageColor.m */,
+				16BFFE8728B35F02000A1FE6 /* GPUImageAverageLuminanceThresholdFilter.h */,
+				16BFFDCD28B35F01000A1FE6 /* GPUImageAverageLuminanceThresholdFilter.m */,
+				16BFFE2628B35F01000A1FE6 /* GPUImageBilateralFilter.h */,
+				16BFFD9028B35F00000A1FE6 /* GPUImageBilateralFilter.m */,
+				16BFFE7B28B35F02000A1FE6 /* GPUImageBoxBlurFilter.h */,
+				16BFFDD728B35F01000A1FE6 /* GPUImageBoxBlurFilter.m */,
+				16BFFE8C28B35F02000A1FE6 /* GPUImageBrightnessFilter.h */,
+				16BFFDC428B35F00000A1FE6 /* GPUImageBrightnessFilter.m */,
+				16BFFD4728B35F00000A1FE6 /* GPUImageBuffer.h */,
+				16BFFE1A28B35F01000A1FE6 /* GPUImageBuffer.m */,
+				16BFFDD928B35F01000A1FE6 /* GPUImageBulgeDistortionFilter.h */,
+				16BFFE7D28B35F02000A1FE6 /* GPUImageBulgeDistortionFilter.m */,
+				16BFFE4528B35F01000A1FE6 /* GPUImageCannyEdgeDetectionFilter.h */,
+				16BFFD7628B35F00000A1FE6 /* GPUImageCannyEdgeDetectionFilter.m */,
+				16BFFDC628B35F00000A1FE6 /* GPUImageCGAColorspaceFilter.h */,
+				16BFFE8E28B35F02000A1FE6 /* GPUImageCGAColorspaceFilter.m */,
+				16BFFDDD28B35F01000A1FE6 /* GPUImageChromaKeyBlendFilter.h */,
+				16BFFE7628B35F02000A1FE6 /* GPUImageChromaKeyBlendFilter.m */,
+				16BFFE1528B35F01000A1FE6 /* GPUImageChromaKeyFilter.h */,
+				16BFFD5128B35F00000A1FE6 /* GPUImageChromaKeyFilter.m */,
+				16BFFD8728B35F00000A1FE6 /* GPUImageClosingFilter.h */,
+				16BFFE3028B35F01000A1FE6 /* GPUImageClosingFilter.m */,
+				16BFFD6028B35F00000A1FE6 /* GPUImageColorBlendFilter.h */,
+				16BFFE0728B35F01000A1FE6 /* GPUImageColorBlendFilter.m */,
+				16BFFE1B28B35F01000A1FE6 /* GPUImageColorBurnBlendFilter.h */,
+				16BFFD4828B35F00000A1FE6 /* GPUImageColorBurnBlendFilter.m */,
+				16BFFE8628B35F02000A1FE6 /* GPUImageColorDodgeBlendFilter.h */,
+				16BFFDD228B35F01000A1FE6 /* GPUImageColorDodgeBlendFilter.m */,
+				16BFFDF428B35F01000A1FE6 /* GPUImageColorInvertFilter.h */,
+				16BFFD7028B35F00000A1FE6 /* GPUImageColorInvertFilter.m */,
+				16BFFE6A28B35F02000A1FE6 /* GPUImageColorMatrixFilter.h */,
+				16BFFDA028B35F00000A1FE6 /* GPUImageColorMatrixFilter.m */,
+				16BFFDFE28B35F01000A1FE6 /* GPUImageColorPackingFilter.h */,
+				16BFFD6628B35F00000A1FE6 /* GPUImageColorPackingFilter.m */,
+				16BFFD5428B35F00000A1FE6 /* GPUImageContrastFilter.h */,
+				16BFFE0C28B35F01000A1FE6 /* GPUImageContrastFilter.m */,
+				16BFFE5428B35F01000A1FE6 /* GPUImageCropFilter.h */,
+				16BFFDB528B35F00000A1FE6 /* GPUImageCropFilter.m */,
+				16BFFD5D28B35F00000A1FE6 /* GPUImageCrosshairGenerator.h */,
+				16BFFE0428B35F01000A1FE6 /* GPUImageCrosshairGenerator.m */,
+				16BFFDA128B35F00000A1FE6 /* GPUImageCrosshatchFilter.h */,
+				16BFFE6528B35F02000A1FE6 /* GPUImageCrosshatchFilter.m */,
+				16BFFDC328B35F00000A1FE6 /* GPUImageDarkenBlendFilter.h */,
 				16BFFE9228B35F02000A1FE6 /* GPUImageDarkenBlendFilter.m */,
+				16BFFE8D28B35F02000A1FE6 /* GPUImageDifferenceBlendFilter.h */,
+				16BFFDC528B35F00000A1FE6 /* GPUImageDifferenceBlendFilter.m */,
+				16BFFDAB28B35F00000A1FE6 /* GPUImageDilationFilter.h */,
+				16BFFE5C28B35F02000A1FE6 /* GPUImageDilationFilter.m */,
+				16BFFD8328B35F00000A1FE6 /* GPUImageDirectionalNonMaximumSuppressionFilter.h */,
+				16BFFE3428B35F01000A1FE6 /* GPUImageDirectionalNonMaximumSuppressionFilter.m */,
+				16BFFE8A28B35F02000A1FE6 /* GPUImageDirectionalSobelEdgeDetectionFilter.h */,
+				16BFFDCA28B35F00000A1FE6 /* GPUImageDirectionalSobelEdgeDetectionFilter.m */,
+				16BFFE5528B35F01000A1FE6 /* GPUImageDissolveBlendFilter.h */,
+				16BFFDB128B35F00000A1FE6 /* GPUImageDissolveBlendFilter.m */,
+				16BFFE8F28B35F02000A1FE6 /* GPUImageDivideBlendFilter.h */,
+				16BFFDC828B35F00000A1FE6 /* GPUImageDivideBlendFilter.m */,
+				16BFFDF628B35F01000A1FE6 /* GPUImageEmbossFilter.h */,
+				16BFFD6F28B35F00000A1FE6 /* GPUImageEmbossFilter.m */,
+				16BFFE5728B35F01000A1FE6 /* GPUImageErosionFilter.h */,
+				16BFFDAE28B35F00000A1FE6 /* GPUImageErosionFilter.m */,
+				16BFFE6D28B35F02000A1FE6 /* GPUImageExclusionBlendFilter.h */,
+				16BFFD9A28B35F00000A1FE6 /* GPUImageExclusionBlendFilter.m */,
+				16BFFDE028B35F01000A1FE6 /* GPUImageExposureFilter.h */,
+				16BFFE7028B35F02000A1FE6 /* GPUImageExposureFilter.m */,
+				16BFFDDB28B35F01000A1FE6 /* GPUImageFalseColorFilter.h */,
+				16BFFE7828B35F02000A1FE6 /* GPUImageFalseColorFilter.m */,
+				16BFFE3D28B35F01000A1FE6 /* GPUImageFASTCornerDetectionFilter.h */,
+				16BFFD7928B35F00000A1FE6 /* GPUImageFASTCornerDetectionFilter.m */,
+				16BFFDD428B35F01000A1FE6 /* GPUImageFilter.h */,
+				16BFFE8028B35F02000A1FE6 /* GPUImageFilter.m */,
+				16BFFE0D28B35F01000A1FE6 /* GPUImageFilterGroup.h */,
+				16BFFD5528B35F00000A1FE6 /* GPUImageFilterGroup.m */,
+				16BFFE8428B35F02000A1FE6 /* GPUImageFilterPipeline.h */,
+				16BFFDD028B35F01000A1FE6 /* GPUImageFilterPipeline.m */,
+				16BFFE7F28B35F02000A1FE6 /* GPUImageFramebuffer.h */,
+				16BFFDD328B35F01000A1FE6 /* GPUImageFramebuffer.m */,
+				16BFFE7228B35F02000A1FE6 /* GPUImageFramebufferCache.h */,
+				16BFFDE128B35F01000A1FE6 /* GPUImageFramebufferCache.m */,
+				16BFFE1F28B35F01000A1FE6 /* GPUImageGammaFilter.h */,
+				16BFFD9728B35F00000A1FE6 /* GPUImageGammaFilter.m */,
+				16BFFE6F28B35F02000A1FE6 /* GPUImageGaussianBlurFilter.h */,
+				16BFFDF228B35F01000A1FE6 /* GPUImageGaussianBlurFilter.m */,
+				16BFFE0228B35F01000A1FE6 /* GPUImageGaussianBlurPositionFilter.h */,
+				16BFFD6128B35F00000A1FE6 /* GPUImageGaussianBlurPositionFilter.m */,
+				16BFFD6B28B35F00000A1FE6 /* GPUImageGaussianSelectiveBlurFilter.h */,
+				16BFFDFA28B35F01000A1FE6 /* GPUImageGaussianSelectiveBlurFilter.m */,
+				16BFFD7328B35F00000A1FE6 /* GPUImageGlassSphereFilter.h */,
+				16BFFE4128B35F01000A1FE6 /* GPUImageGlassSphereFilter.m */,
+				16BFFDF728B35F01000A1FE6 /* GPUImageGrayscaleFilter.h */,
+				16BFFD7128B35F00000A1FE6 /* GPUImageGrayscaleFilter.m */,
+				16BFFD5628B35F00000A1FE6 /* GPUImageHalftoneFilter.h */,
+				16BFFE1028B35F01000A1FE6 /* GPUImageHalftoneFilter.m */,
+				16BFFE5F28B35F02000A1FE6 /* GPUImageHardLightBlendFilter.h */,
+				16BFFDA828B35F00000A1FE6 /* GPUImageHardLightBlendFilter.m */,
+				16BFFE6128B35F02000A1FE6 /* GPUImageHarrisCornerDetectionFilter.h */,
+				16BFFDA428B35F00000A1FE6 /* GPUImageHarrisCornerDetectionFilter.m */,
+				16BFFD5728B35F00000A1FE6 /* GPUImageHazeFilter.h */,
+				16BFFE0F28B35F01000A1FE6 /* GPUImageHazeFilter.m */,
+				16BFFDA328B35F00000A1FE6 /* GPUImageHighlightShadowFilter.h */,
+				16BFFE6628B35F02000A1FE6 /* GPUImageHighlightShadowFilter.m */,
+				16BFFE0928B35F01000A1FE6 /* GPUImageHighPassFilter.h */,
+				16BFFD5B28B35F00000A1FE6 /* GPUImageHighPassFilter.m */,
+				16BFFE3628B35F01000A1FE6 /* GPUImageHistogramEqualizationFilter.h */,
+				16BFFD8228B35F00000A1FE6 /* GPUImageHistogramEqualizationFilter.m */,
+				16BFFE3C28B35F01000A1FE6 /* GPUImageHistogramFilter.h */,
+				16BFFD7B28B35F00000A1FE6 /* GPUImageHistogramFilter.m */,
+				16BFFE2428B35F01000A1FE6 /* GPUImageHistogramGenerator.h */,
+				16BFFD9428B35F00000A1FE6 /* GPUImageHistogramGenerator.m */,
+				16BFFD8F28B35F00000A1FE6 /* GPUImageHoughTransformLineDetector.h */,
+				16BFFE2C28B35F01000A1FE6 /* GPUImageHoughTransformLineDetector.m */,
+				16BFFDB428B35F00000A1FE6 /* GPUImageHSBFilter.h */,
+				16BFFE5228B35F01000A1FE6 /* GPUImageHSBFilter.m */,
+				16BFFDB828B35F00000A1FE6 /* GPUImageHueBlendFilter.h */,
+				16BFFE5028B35F01000A1FE6 /* GPUImageHueBlendFilter.m */,
+				16BFFE2F28B35F01000A1FE6 /* GPUImageHueFilter.h */,
+				16BFFD8A28B35F00000A1FE6 /* GPUImageHueFilter.m */,
+				16BFFE3228B35F01000A1FE6 /* GPUImageiOSBlurFilter.h */,
+				16BFFD8528B35F00000A1FE6 /* GPUImageiOSBlurFilter.m */,
+				16BFFE3128B35F01000A1FE6 /* GPUImageJFAVoronoiFilter.h */,
+				16BFFD8628B35F00000A1FE6 /* GPUImageJFAVoronoiFilter.m */,
+				16BFFD9F28B35F00000A1FE6 /* GPUImageKuwaharaFilter.h */,
+				16BFFE6828B35F02000A1FE6 /* GPUImageKuwaharaFilter.m */,
+				16BFFE2828B35F01000A1FE6 /* GPUImageKuwaharaRadius3Filter.h */,
+				16BFFD8B28B35F00000A1FE6 /* GPUImageKuwaharaRadius3Filter.m */,
+				16BFFE8228B35F02000A1FE6 /* GPUImageLanczosResamplingFilter.h */,
+				16BFFDCE28B35F01000A1FE6 /* GPUImageLanczosResamplingFilter.m */,
+				16BFFE8128B35F02000A1FE6 /* GPUImageLaplacianFilter.h */,
+				16BFFDD528B35F01000A1FE6 /* GPUImageLaplacianFilter.m */,
+				16BFFE4328B35F01000A1FE6 /* GPUImageLevelsFilter.h */,
+				16BFFD7528B35F00000A1FE6 /* GPUImageLevelsFilter.m */,
+				16BFFDCC28B35F01000A1FE6 /* GPUImageLightenBlendFilter.h */,
+				16BFFE8B28B35F02000A1FE6 /* GPUImageLightenBlendFilter.m */,
+				16BFFD7F28B35F00000A1FE6 /* GPUImageLinearBurnBlendFilter.h */,
+				16BFFE3928B35F01000A1FE6 /* GPUImageLinearBurnBlendFilter.m */,
+				16BFFE4728B35F01000A1FE6 /* GPUImageLineGenerator.h */,
+				16BFFDBF28B35F00000A1FE6 /* GPUImageLineGenerator.m */,
+				16BFFD8028B35F00000A1FE6 /* GPUImageLocalBinaryPatternFilter.h */,
+				16BFFE3B28B35F01000A1FE6 /* GPUImageLocalBinaryPatternFilter.m */,
+				16BFFDD628B35F01000A1FE6 /* GPUImageLookupFilter.h */,
+				16BFFE7E28B35F02000A1FE6 /* GPUImageLookupFilter.m */,
+				16BFFD9228B35F00000A1FE6 /* GPUImageLowPassFilter.h */,
+				16BFFE2728B35F01000A1FE6 /* GPUImageLowPassFilter.m */,
+				16BFFDDE28B35F01000A1FE6 /* GPUImageLuminanceRangeFilter.h */,
+				16BFFE7528B35F02000A1FE6 /* GPUImageLuminanceRangeFilter.m */,
+				16BFFE1228B35F01000A1FE6 /* GPUImageLuminanceThresholdFilter.h */,
+				16BFFD5328B35F00000A1FE6 /* GPUImageLuminanceThresholdFilter.m */,
+				16BFFD6728B35F00000A1FE6 /* GPUImageLuminosity.h */,
+				16BFFDFB28B35F01000A1FE6 /* GPUImageLuminosity.m */,
+				16BFFDDF28B35F01000A1FE6 /* GPUImageLuminosityBlendFilter.h */,
+				16BFFE7128B35F02000A1FE6 /* GPUImageLuminosityBlendFilter.m */,
+				16BFFD6328B35F00000A1FE6 /* GPUImageMaskFilter.h */,
+				16BFFDFF28B35F01000A1FE6 /* GPUImageMaskFilter.m */,
+				16BFFD7D28B35F00000A1FE6 /* GPUImageMedianFilter.h */,
+				16BFFE3A28B35F01000A1FE6 /* GPUImageMedianFilter.m */,
+				16BFFE3728B35F01000A1FE6 /* GPUImageMissEtikateFilter.h */,
+				16BFFD7C28B35F00000A1FE6 /* GPUImageMissEtikateFilter.m */,
+				16BFFD8D28B35F00000A1FE6 /* GPUImageMonochromeFilter.h */,
+				16BFFE2928B35F01000A1FE6 /* GPUImageMonochromeFilter.m */,
+				16BFFD9B28B35F00000A1FE6 /* GPUImageMosaicFilter.h */,
+				16BFFE6B28B35F02000A1FE6 /* GPUImageMosaicFilter.m */,
+				16BFFD7228B35F00000A1FE6 /* GPUImageMotionBlurFilter.h */,
+				16BFFE4228B35F01000A1FE6 /* GPUImageMotionBlurFilter.m */,
+				16BFFD8928B35F00000A1FE6 /* GPUImageMotionDetector.h */,
+				16BFFE2E28B35F01000A1FE6 /* GPUImageMotionDetector.m */,
+				16BFFE4428B35F01000A1FE6 /* GPUImageMovie.h */,
+				16BFFD7428B35F00000A1FE6 /* GPUImageMovie.m */,
+				16BFFD5028B35F00000A1FE6 /* GPUImageMovieComposition.h */,
+				16BFFE1628B35F01000A1FE6 /* GPUImageMovieComposition.m */,
+				16BFFE6328B35F02000A1FE6 /* GPUImageMultiplyBlendFilter.h */,
+				16BFFDA528B35F00000A1FE6 /* GPUImageMultiplyBlendFilter.m */,
+				16BFFDA228B35F00000A1FE6 /* GPUImageNobleCornerDetectionFilter.h */,
+				16BFFE6428B35F02000A1FE6 /* GPUImageNobleCornerDetectionFilter.m */,
+				16BFFDF828B35F01000A1FE6 /* GPUImageNonMaximumSuppressionFilter.h */,
+				16BFFD6A28B35F00000A1FE6 /* GPUImageNonMaximumSuppressionFilter.m */,
+				16BFFDA928B35F00000A1FE6 /* GPUImageNormalBlendFilter.h */,
+				16BFFE5B28B35F02000A1FE6 /* GPUImageNormalBlendFilter.m */,
+				16BFFE5128B35F01000A1FE6 /* GPUImageOpacityFilter.h */,
+				16BFFDB328B35F00000A1FE6 /* GPUImageOpacityFilter.m */,
+				16BFFE5A28B35F02000A1FE6 /* GPUImageOpeningFilter.h */,
+				16BFFDAD28B35F00000A1FE6 /* GPUImageOpeningFilter.m */,
+				16BFFE8828B35F02000A1FE6 /* GPUImageOutput.h */,
+				16BFFDC928B35F00000A1FE6 /* GPUImageOutput.m */,
+				16BFFE6728B35F02000A1FE6 /* GPUImageOverlayBlendFilter.h */,
+				16BFFD9D28B35F00000A1FE6 /* GPUImageOverlayBlendFilter.m */,
+				16BFFE0E28B35F01000A1FE6 /* GPUImageParallelCoordinateLineTransformFilter.h */,
+				16BFFD5828B35F00000A1FE6 /* GPUImageParallelCoordinateLineTransformFilter.m */,
+				16BFFDB928B35F00000A1FE6 /* GPUImagePerlinNoiseFilter.h */,
+				16BFFE4B28B35F01000A1FE6 /* GPUImagePerlinNoiseFilter.m */,
+				16BFFD7A28B35F00000A1FE6 /* GPUImagePinchDistortionFilter.h */,
+				16BFFE3E28B35F01000A1FE6 /* GPUImagePinchDistortionFilter.m */,
+				16BFFE5328B35F01000A1FE6 /* GPUImagePixellateFilter.h */,
+				16BFFDB628B35F00000A1FE6 /* GPUImagePixellateFilter.m */,
+				16BFFE3828B35F01000A1FE6 /* GPUImagePixellatePositionFilter.h */,
+				16BFFD7E28B35F00000A1FE6 /* GPUImagePixellatePositionFilter.m */,
+				16BFFD6E28B35F00000A1FE6 /* GPUImagePoissonBlendFilter.h */,
+				16BFFDF528B35F01000A1FE6 /* GPUImagePoissonBlendFilter.m */,
+				16BFFE5D28B35F02000A1FE6 /* GPUImagePolarPixellateFilter.h */,
+				16BFFDAA28B35F00000A1FE6 /* GPUImagePolarPixellateFilter.m */,
+				16BFFDDC28B35F01000A1FE6 /* GPUImagePolkaDotFilter.h */,
+				16BFFE7928B35F02000A1FE6 /* GPUImagePolkaDotFilter.m */,
+				16BFFE8928B35F02000A1FE6 /* GPUImagePosterizeFilter.h */,
+				16BFFDCB28B35F01000A1FE6 /* GPUImagePosterizeFilter.m */,
+				16BFFDC028B35F00000A1FE6 /* GPUImagePrewittEdgeDetectionFilter.h */,
+				16BFFE4628B35F01000A1FE6 /* GPUImagePrewittEdgeDetectionFilter.m */,
+				16BFFD9628B35F00000A1FE6 /* GPUImageRawDataInput.h */,
+				16BFFE2328B35F01000A1FE6 /* GPUImageRawDataInput.m */,
+				16BFFD5228B35F00000A1FE6 /* GPUImageRawDataOutput.h */,
+				16BFFE1128B35F01000A1FE6 /* GPUImageRawDataOutput.m */,
+				16BFFE4E28B35F01000A1FE6 /* GPUImageRGBClosingFilter.h */,
+				16BFFDBD28B35F00000A1FE6 /* GPUImageRGBClosingFilter.m */,
+				16BFFD5A28B35F00000A1FE6 /* GPUImageRGBDilationFilter.h */,
+				16BFFE0B28B35F01000A1FE6 /* GPUImageRGBDilationFilter.m */,
+				16BFFD9128B35F00000A1FE6 /* GPUImageRGBErosionFilter.h */,
+				16BFFE2528B35F01000A1FE6 /* GPUImageRGBErosionFilter.m */,
+				16BFFE7A28B35F02000A1FE6 /* GPUImageRGBFilter.h */,
+				16BFFDDA28B35F01000A1FE6 /* GPUImageRGBFilter.m */,
+				16BFFD9328B35F00000A1FE6 /* GPUImageRGBOpeningFilter.h */,
+				16BFFE2128B35F01000A1FE6 /* GPUImageRGBOpeningFilter.m */,
+				16BFFE7428B35F02000A1FE6 /* GPUImageSaturationBlendFilter.h */,
+				16BFFDF028B35F01000A1FE6 /* GPUImageSaturationBlendFilter.m */,
+				16BFFE5928B35F01000A1FE6 /* GPUImageSaturationFilter.h */,
+				16BFFDB228B35F00000A1FE6 /* GPUImageSaturationFilter.m */,
+				16BFFD7728B35F00000A1FE6 /* GPUImageScreenBlendFilter.h */,
+				16BFFE3F28B35F01000A1FE6 /* GPUImageScreenBlendFilter.m */,
+				16BFFE4928B35F01000A1FE6 /* GPUImageSepiaFilter.h */,
+				16BFFDBE28B35F00000A1FE6 /* GPUImageSepiaFilter.m */,
+				16BFFD6C28B35F00000A1FE6 /* GPUImageSharpenFilter.h */,
+				16BFFDF928B35F01000A1FE6 /* GPUImageSharpenFilter.m */,
+				16BFFD4B28B35F00000A1FE6 /* GPUImageShiTomasiFeatureDetectionFilter.h */,
+				16BFFE1928B35F01000A1FE6 /* GPUImageShiTomasiFeatureDetectionFilter.m */,
+				16BFFD9E28B35F00000A1FE6 /* GPUImageSingleComponentGaussianBlurFilter.h */,
+				16BFFE6928B35F02000A1FE6 /* GPUImageSingleComponentGaussianBlurFilter.m */,
+				16BFFE3328B35F01000A1FE6 /* GPUImageSketchFilter.h */,
+				16BFFD8428B35F00000A1FE6 /* GPUImageSketchFilter.m */,
+				16BFFD4D28B35F00000A1FE6 /* GPUImageSmoothToonFilter.h */,
+				16BFFE1328B35F01000A1FE6 /* GPUImageSmoothToonFilter.m */,
+				16BFFE0A28B35F01000A1FE6 /* GPUImageSobelEdgeDetectionFilter.h */,
+				16BFFD5928B35F00000A1FE6 /* GPUImageSobelEdgeDetectionFilter.m */,
+				16BFFE0528B35F01000A1FE6 /* GPUImageSoftEleganceFilter.h */,
+				16BFFD5C28B35F00000A1FE6 /* GPUImageSoftEleganceFilter.m */,
+				16BFFD6528B35F00000A1FE6 /* GPUImageSoftLightBlendFilter.h */,
+				16BFFE0128B35F01000A1FE6 /* GPUImageSoftLightBlendFilter.m */,
+				16BFFE6C28B35F02000A1FE6 /* GPUImageSolidColorGenerator.h */,
+				16BFFD9C28B35F00000A1FE6 /* GPUImageSolidColorGenerator.m */,
+				16BFFE7C28B35F02000A1FE6 /* GPUImageSourceOverBlendFilter.h */,
+				16BFFDD828B35F01000A1FE6 /* GPUImageSourceOverBlendFilter.m */,
+				16BFFE4D28B35F01000A1FE6 /* GPUImageSphereRefractionFilter.h */,
+				16BFFDBB28B35F00000A1FE6 /* GPUImageSphereRefractionFilter.m */,
+				16BFFDCF28B35F01000A1FE6 /* GPUImageStillCamera.h */,
+				16BFFE8328B35F02000A1FE6 /* GPUImageStillCamera.m */,
+				16BFFE9028B35F02000A1FE6 /* GPUImageStretchDistortionFilter.h */,
+				16BFFDC728B35F00000A1FE6 /* GPUImageStretchDistortionFilter.m */,
+				16BFFD6228B35F00000A1FE6 /* GPUImageSubtractBlendFilter.h */,
+				16BFFE0328B35F01000A1FE6 /* GPUImageSubtractBlendFilter.m */,
+				16BFFD6428B35F00000A1FE6 /* GPUImageSwirlFilter.h */,
+				16BFFE0028B35F01000A1FE6 /* GPUImageSwirlFilter.m */,
+				16BFFE4F28B35F01000A1FE6 /* GPUImageTextureInput.h */,
+				16BFFDB728B35F00000A1FE6 /* GPUImageTextureInput.m */,
+				16BFFDBC28B35F00000A1FE6 /* GPUImageTextureOutput.h */,
+				16BFFE4C28B35F01000A1FE6 /* GPUImageTextureOutput.m */,
+				16BFFD4C28B35F00000A1FE6 /* GPUImageThreeInputFilter.h */,
+				16BFFE1828B35F01000A1FE6 /* GPUImageThreeInputFilter.m */,
+				16BFFE1728B35F01000A1FE6 /* GPUImageThresholdEdgeDetectionFilter.h */,
+				16BFFD4F28B35F00000A1FE6 /* GPUImageThresholdEdgeDetectionFilter.m */,
+				16BFFE2A28B35F01000A1FE6 /* GPUImageThresholdedNonMaximumSuppressionFilter.h */,
+				16BFFD8E28B35F00000A1FE6 /* GPUImageThresholdedNonMaximumSuppressionFilter.m */,
+				16BFFD9828B35F00000A1FE6 /* GPUImageThresholdSketchFilter.h */,
+				16BFFE1E28B35F01000A1FE6 /* GPUImageThresholdSketchFilter.m */,
+				16BFFE7328B35F02000A1FE6 /* GPUImageTiltShiftFilter.h */,
+				16BFFDE228B35F01000A1FE6 /* GPUImageTiltShiftFilter.m */,
+				16BFFE6E28B35F02000A1FE6 /* GPUImageToneCurveFilter.h */,
+				16BFFDF128B35F01000A1FE6 /* GPUImageToneCurveFilter.m */,
+				16BFFE5628B35F01000A1FE6 /* GPUImageToonFilter.h */,
+				16BFFDB028B35F00000A1FE6 /* GPUImageToonFilter.m */,
+				16BFFE2D28B35F01000A1FE6 /* GPUImageTransformFilter.h */,
+				16BFFD8828B35F00000A1FE6 /* GPUImageTransformFilter.m */,
+				16BFFD7828B35F00000A1FE6 /* GPUImageTwoInputCrossTextureSamplingFilter.h */,
+				16BFFE4028B35F01000A1FE6 /* GPUImageTwoInputCrossTextureSamplingFilter.m */,
+				16BFFDF328B35F01000A1FE6 /* GPUImageTwoInputFilter.h */,
+				16BFFD6D28B35F00000A1FE6 /* GPUImageTwoInputFilter.m */,
+				16BFFE0628B35F01000A1FE6 /* GPUImageTwoPassFilter.h */,
+				16BFFD5E28B35F00000A1FE6 /* GPUImageTwoPassFilter.m */,
+				16BFFE1C28B35F01000A1FE6 /* GPUImageTwoPassTextureSamplingFilter.h */,
+				16BFFD4928B35F00000A1FE6 /* GPUImageTwoPassTextureSamplingFilter.m */,
+				16BFFDFD28B35F01000A1FE6 /* GPUImageUIElement.h */,
+				16BFFD6928B35F00000A1FE6 /* GPUImageUIElement.m */,
+				16BFFE1D28B35F01000A1FE6 /* GPUImageUnsharpMaskFilter.h */,
+				16BFFD4A28B35F00000A1FE6 /* GPUImageUnsharpMaskFilter.m */,
+				16BFFDC128B35F00000A1FE6 /* GPUImageVideoCamera.h */,
+				16BFFE4828B35F01000A1FE6 /* GPUImageVideoCamera.m */,
+				16BFFE3528B35F01000A1FE6 /* GPUImageVignetteFilter.h */,
+				16BFFD8128B35F00000A1FE6 /* GPUImageVignetteFilter.m */,
+				16BFFD4E28B35F00000A1FE6 /* GPUImageVoronoiConsumerFilter.h */,
+				16BFFE1428B35F01000A1FE6 /* GPUImageVoronoiConsumerFilter.m */,
+				16BFFDFC28B35F01000A1FE6 /* GPUImageWeakPixelInclusionFilter.h */,
+				16BFFD6828B35F00000A1FE6 /* GPUImageWeakPixelInclusionFilter.m */,
+				16BFFD9528B35F00000A1FE6 /* GPUImageWhiteBalanceFilter.h */,
+				16BFFE2228B35F01000A1FE6 /* GPUImageWhiteBalanceFilter.m */,
+				16BFFE8528B35F02000A1FE6 /* GPUImageXYDerivativeFilter.h */,
+				16BFFDD128B35F01000A1FE6 /* GPUImageXYDerivativeFilter.m */,
+				16BFFE6028B35F02000A1FE6 /* GPUImageZoomBlurFilter.h */,
+				16BFFDA728B35F00000A1FE6 /* GPUImageZoomBlurFilter.m */,
+				16BFFDE328B35F01000A1FE6 /* iOS */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -1415,6 +1526,7 @@
 		8DFF693328C10B94007AB743 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				168C8CAC2A69387C00F25CC1 /* FacePP */,
 				8DFF693428C10B9C007AB743 /* Extension */,
 			);
 			path = Tool;
@@ -1432,6 +1544,7 @@
 		F45FDC826B025DD3F1B65F4D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				164CA2642A67BCC7007F3BEE /* libc++.tbd */,
 				498659CB7C38B9ABA68370B1 /* libPods-Photic.a */,
 			);
 			name = Frameworks;
@@ -1449,6 +1562,7 @@
 				16BFFCF628B33013000A1FE6 /* Frameworks */,
 				16BFFCF728B33013000A1FE6 /* Resources */,
 				988F7115E3D9D8D1B0431BFF /* [CP] Copy Pods Resources */,
+				D96FB008E713098B1DDB7DBD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1558,6 +1672,7 @@
 				16115D8028BF8D20002375D4 /* clean.png in Resources */,
 				16115D7928BF8D20002375D4 /* amatorka.png in Resources */,
 				16115D7E28BF8D20002375D4 /* yangqi.png in Resources */,
+				164CA2212A67B442007F3BEE /* megviifacepp_model in Resources */,
 				16115D7F28BF8D20002375D4 /* sweety.png in Resources */,
 				16BFFD0728B33013000A1FE6 /* Main.storyboard in Resources */,
 				16115D6628BF8CB2002375D4 /* FilterNameAndType.plist in Resources */,
@@ -1621,6 +1736,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Photic/Pods-Photic-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D96FB008E713098B1DDB7DBD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Photic/Pods-Photic-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Photic/Pods-Photic-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Photic/Pods-Photic-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1692,6 +1824,7 @@
 				16BFFF2A28B35F03000A1FE6 /* GPUImage3x3ConvolutionFilter.m in Sources */,
 				16BFFF2E28B35F03000A1FE6 /* GPUImageKuwaharaFilter.m in Sources */,
 				8D48FCDB28EDA935002C5268 /* GuidelineView.swift in Sources */,
+				164CA20E2A678BFC007F3BEE /* GPU3x3GridFilter.m in Sources */,
 				16BFFEE228B35F03000A1FE6 /* GPUImageDirectionalSobelEdgeDetectionFilter.m in Sources */,
 				16BFFEE928B35F03000A1FE6 /* GPUImageFramebuffer.m in Sources */,
 				16AAEB6828B8AC3C00D4EAE1 /* UIImage+ResizeSize.m in Sources */,
@@ -1727,6 +1860,7 @@
 				16BFFEDB28B35F03000A1FE6 /* GPUImageLineGenerator.m in Sources */,
 				16BFFF2228B35F03000A1FE6 /* GPUImageVideoCamera.m in Sources */,
 				16BFFF2328B35F03000A1FE6 /* GPUImagePerlinNoiseFilter.m in Sources */,
+				168C8CA82A69362200F25CC1 /* GPUThinFaceAndBigEyeFilter.m in Sources */,
 				16BFFECC28B35F03000A1FE6 /* GPUImagePolarPixellateFilter.m in Sources */,
 				16BFFF2828B35F03000A1FE6 /* GPUImageNormalBlendFilter.m in Sources */,
 				16BFFEB428B35F03000A1FE6 /* GPUImageMissEtikateFilter.m in Sources */,
@@ -1740,6 +1874,7 @@
 				8DFF693B28C10C2C007AB743 /* SegmentViewCell.swift in Sources */,
 				16BFFEAB28B35F03000A1FE6 /* GPUImageTwoInputFilter.m in Sources */,
 				16BAAB9828C703F500BB9555 /* PCAVCropGroup.m in Sources */,
+				164CA20A2A678810007F3BEE /* PC3PointFilterViewController.m in Sources */,
 				16BFFF3228B35F03000A1FE6 /* GPUImageLuminosityBlendFilter.m in Sources */,
 				16BFFEE528B35F03000A1FE6 /* GPUImageLanczosResamplingFilter.m in Sources */,
 				16BFFF3528B35F03000A1FE6 /* GPUImageFalseColorFilter.m in Sources */,
@@ -1773,8 +1908,10 @@
 				16BFFF3A28B35F03000A1FE6 /* GPUImageStillCamera.m in Sources */,
 				16BFFE9A28B35F03000A1FE6 /* GPUImageColorBurnBlendFilter.m in Sources */,
 				16BFFF2528B35F03000A1FE6 /* GPUImageHueBlendFilter.m in Sources */,
+				168C8CAB2A69387800F25CC1 /* PCFacePPTool.m in Sources */,
 				16BFFEC928B35F03000A1FE6 /* GPUImageMultiplyBlendFilter.m in Sources */,
 				16BFFF1E28B35F03000A1FE6 /* GPUImageTwoInputCrossTextureSamplingFilter.m in Sources */,
+				168C8C9B2A69231400F25CC1 /* GPUFaceDetectionDrawPointFilter.m in Sources */,
 				16BFFEF928B35F03000A1FE6 /* GPUImageSharpenFilter.m in Sources */,
 				16BFFF0528B35F03000A1FE6 /* GPUImageHazeFilter.m in Sources */,
 				16BFFEFD28B35F03000A1FE6 /* GPUImageSwirlFilter.m in Sources */,
@@ -1830,6 +1967,7 @@
 				8D0AAF0B28C4D39B00CC71FE /* EditAssetViewController.swift in Sources */,
 				16BFFED028B35F03000A1FE6 /* GPUImageToonFilter.m in Sources */,
 				16BFFF0128B35F03000A1FE6 /* GPUImageColorBlendFilter.m in Sources */,
+				164CA2692A67C078007F3BEE /* PCThinFaceAndBigEyeViewController.m in Sources */,
 				8D8D719529083488008F63D7 /* EditorPublisher.swift in Sources */,
 				16BAAB8928C6FC5000BB9555 /* PCMovieComposition.m in Sources */,
 				16BFFE9D28B35F03000A1FE6 /* GPUImageThresholdEdgeDetectionFilter.m in Sources */,
@@ -2006,10 +2144,15 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = N92TEW36P2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Photic/Modules/Trilateral/FacePP/libs",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Photic/PhoticHeader.h";
 				INFOPLIST_FILE = Photic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -2017,7 +2160,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gzinf.LJP.Photic;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Photic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -2037,9 +2180,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N92TEW36P2;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Photic/Modules/Trilateral/FacePP/libs",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/Photic/PhoticHeader.h";
 				INFOPLIST_FILE = Photic/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
@@ -2047,7 +2195,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.gzinf.LJP.Photic;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Photic;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

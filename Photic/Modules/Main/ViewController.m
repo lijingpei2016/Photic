@@ -8,9 +8,9 @@
 #import "ViewController.h"
 #import <AVFoundation/AVFoundation.h>
 #import <Photos/Photos.h>
+#import "PCFacePPTool.h"
 
-static NSString * const cellName = @"cellName";
-
+static NSString *const cellName = @"cellName";
 
 @interface ViewController ()<UITableViewDataSource, UITableViewDelegate>
 
@@ -25,57 +25,57 @@ static NSString * const cellName = @"cellName";
 #pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
     NSLog(@"hello，photic");
-    
-    self.demoList = @[@"镜头", @"相册", @"三分滤镜"];
-    self.demoPageNameList = @[@"PCCameraViewController", @"PCEditViewController", @"PC3PointFilterViewController"];
-    
+
+    self.demoList = @[@"镜头", @"相册", @"三分滤镜", @"瘦脸和大眼"];
+    self.demoPageNameList = @[@"PCCameraViewController", @"PCEditViewController", @"PC3PointFilterViewController", @"PCThinFaceAndBigEyeViewController"];
+
     [self.view addSubview:self.tableView];
-    
+
     //申请权限
     [self requestAuthorization];
-    
+
+    [self setupFacePPConfig];
 }
 
 #pragma mark - Utility
-- (void)requestAuthorization{
+
+- (void)setupFacePPConfig {
+    [PCFacePPTool setupFacePPConfig];
+}
+
+- (void)requestAuthorization {
     [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
-        dispatch_async(dispatch_get_main_queue(), ^(){
-            if (!granted) {
-                [self dismissViewControllerAnimated:YES completion:nil];
-                return ;
-            } else {
-                NSLog(@"摄像头权限 ok");
-                [AVCaptureDevice requestAccessForMediaType:AVMediaTypeAudio completionHandler:^(BOOL granted) {
-                    dispatch_async(dispatch_get_main_queue(), ^(){
-                        if (!granted) {
-                            [self dismissViewControllerAnimated:YES completion:nil];
-                            return;
-                        } else {
-                            NSLog(@"麦克风权限 ok");
-                            
-                            [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-                                dispatch_async(dispatch_get_main_queue(), ^{
-                                    
-                                    if (status == PHAuthorizationStatusAuthorized) {
-                                        NSLog(@"相册权限 ok");
-                                        
-                                    }else{
-                                        [self dismissViewControllerAnimated:YES completion:nil];
-                                        return;
-                                    }
-                                });
-                                
-                            }];
-                        }
-                        
-                    });
-                }];
-                
-            }
-            
-        });
+        dispatch_async(dispatch_get_main_queue(), ^() {
+                           if (!granted) {
+                               [self dismissViewControllerAnimated:YES completion:nil];
+                               return;
+                           } else {
+                               NSLog(@"摄像头权限 ok");
+                               [AVCaptureDevice requestAccessForMediaType:AVMediaTypeAudio completionHandler:^(BOOL granted) {
+                                   dispatch_async(dispatch_get_main_queue(), ^() {
+                                                      if (!granted) {
+                                                          [self dismissViewControllerAnimated:YES completion:nil];
+                                                          return;
+                                                      } else {
+                                                          NSLog(@"麦克风权限 ok");
+
+                                                          [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
+                                                              dispatch_async(dispatch_get_main_queue(), ^{
+                                                                                 if (status == PHAuthorizationStatusAuthorized) {
+                                                                                     NSLog(@"相册权限 ok");
+                                                                                 } else {
+                                                                                     [self dismissViewControllerAnimated:YES completion:nil];
+                                                                                     return;
+                                                                                 }
+                                                                             });
+                                                          }];
+                                                      }
+                                                  });
+                               }];
+                           }
+                       });
     }];
 }
 
@@ -93,17 +93,17 @@ static NSString * const cellName = @"cellName";
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellName];
     }
-    
+
     NSString *demoTitle = self.demoList[indexPath.row];
     cell.textLabel.text = demoTitle;
-    
+
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-    UIViewController *vc = [(UIViewController *) [NSClassFromString(self.demoPageNameList[indexPath.row]) alloc] init];
+    UIViewController *vc = [(UIViewController *)[NSClassFromString(self.demoPageNameList[indexPath.row]) alloc] init];
     [self.navigationController pushViewController:vc animated:YES];
 }
 

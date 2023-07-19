@@ -10,6 +10,15 @@
 
 @implementation PCVideoThumbnailHandel
 
++ (void)load {
+    
+//    @autoreleasepool {
+        NSMutableArray *arr = [NSMutableArray array];
+        [arr addObject:@"a"];
+//    }
+    
+}
+
 + (NSMutableArray *)getImageArrayWithAVURLAsset:(AVAsset *)asset timeRange:(CMTimeRange)timeRange imaegeCount:(NSInteger)imaegeCount imageSize:(CGSize)imageSize {
     
     dispatch_semaphore_t videoTrackSynLoadSemaphore = dispatch_semaphore_create(0);

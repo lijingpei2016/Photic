@@ -6,4 +6,5 @@ target 'Photic' do
   pod 'MBProgressHUD'     
   pod 'SnapKit'
   pod 'TZImagePickerController'
+  pod 'A4LoadMeasure', configuration: ['Debug']
 end

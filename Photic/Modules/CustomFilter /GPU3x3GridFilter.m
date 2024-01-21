@@ -7,6 +7,20 @@
 
 #import "GPU3x3GridFilter.h"
 
+//NSString *const kGPUImageVertexVertexShaderString = SHADER_STRING
+//(
+// attribute vec4 position;
+// attribute vec4 inputTextureCoordinate;
+//
+// varying vec2 textureCoordinate;
+//
+// void main()
+// {
+//     gl_Position = position;
+//     textureCoordinate = inputTextureCoordinate.xy;
+// }
+// );
+
 NSString *const kGPUImage3x3GridFragmentShaderString = SHADER_STRING
     (
     varying highp vec2 textureCoordinate;
@@ -34,6 +48,8 @@ NSString *const kGPUImage3x3GridFragmentShaderString = SHADER_STRING
     } else {
         textureCoord.y = (textureCoord.t - 0.666) * 3.0;
     }
+    
+    // 使用采样到的颜色进行后续操作
     gl_FragColor = texture2D(inputImageTexture, textureCoord);
 }
 
